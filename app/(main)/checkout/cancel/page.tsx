@@ -12,17 +12,16 @@ export default function CheckoutCancelPage() {
       <h1 className="text-display-sm mb-3">Pagamento annullato</h1>
 
       <p className="text-body-md text-neutral-500 mb-8 max-w-sm mx-auto">
-        Il pagamento è stato annullato. I prodotti nel tuo carrello sono
-        ancora disponibili.
+        Il pagamento è stato annullato. Puoi riprovare quando vuoi.
       </p>
 
       <div className="flex flex-col gap-3">
-        <Link href="/checkout">
-          <Button className="w-full">Torna al carrello</Button>
-        </Link>
         <Link href="/catalogo">
+          <Button className="w-full">Torna al catalogo</Button>
+        </Link>
+        <Link href="/">
           <Button variant="ghost" className="w-full">
-            Continua a sfogliare
+            Torna alla home
           </Button>
         </Link>
       </div>

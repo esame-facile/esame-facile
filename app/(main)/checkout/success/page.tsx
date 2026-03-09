@@ -1,12 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { CheckCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui";
-import { useCartStore } from "@/store/cart-store";
-import { trackPurchase } from "@/lib/analytics";
 import { formatPrice } from "@/lib/format-price";
 
 interface OrderData {
@@ -19,20 +17,8 @@ interface OrderData {
 
 export default function CheckoutSuccessPage() {
   const searchParams = useSearchParams();
-  const tracked = useRef(false);
   const [order, setOrder] = useState<OrderData | null>(null);
   const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const cart = useCartStore.getState();
-    if (!tracked.current && cart.items.length > 0) {
-      const sessionId = searchParams.get("session_id") || "unknown";
-      const total = cart.items.reduce((sum, item) => sum + item.price, 0);
-      trackPurchase(sessionId, total, cart.items.length);
-      tracked.current = true;
-    }
-    cart.clearCart();
-  }, [searchParams]);
 
   useEffect(() => {
     const sessionId = searchParams.get("session_id");

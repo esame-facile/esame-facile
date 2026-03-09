@@ -2,10 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ShoppingCart, Check } from "lucide-react";
-import { Card, Badge, PriceDisplay, StarRating, Button } from "@/components/ui";
-import { useCart } from "@/hooks/use-cart";
-import { useToast } from "@/components/ui/toast";
+import { Card, Badge, PriceDisplay, StarRating } from "@/components/ui";
 import { Product } from "@/types";
 
 interface ProductCardProps {
@@ -14,26 +11,6 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product, priority = false }: ProductCardProps) {
-  const { addItem, isInCart } = useCart();
-  const { toast } = useToast();
-  const inCart = isInCart(product.id);
-
-  const handleAddToCart = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (inCart) return;
-
-    addItem({
-      product_id: product.id,
-      name: product.name,
-      slug: product.slug,
-      price: product.price,
-      original_price: product.original_price,
-      preview_image: product.preview_image,
-    });
-    toast("Aggiunto al carrello", "success");
-  };
-
   return (
     <Link href={`/catalogo/${product.slug}`}>
       <Card className="h-full flex flex-col overflow-hidden group">
@@ -101,21 +78,12 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
             </div>
           )}
 
-          <div className="mt-auto flex items-end justify-between gap-2">
+          <div className="mt-auto">
             <PriceDisplay
               price={product.price}
               originalPrice={product.original_price}
               size="sm"
             />
-            <Button
-              size="icon"
-              variant={inCart ? "ghost" : "primary"}
-              onClick={handleAddToCart}
-              disabled={inCart}
-              className="flex-shrink-0"
-            >
-              {inCart ? <Check size={16} /> : <ShoppingCart size={16} />}
-            </Button>
           </div>
         </div>
       </Card>

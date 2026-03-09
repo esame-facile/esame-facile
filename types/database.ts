@@ -32,6 +32,7 @@ export interface Product {
   average_rating: number;
   review_count: number;
   download_count: number;
+  stripe_payment_link: string | null;
   created_at: string;
   updated_at: string;
   // Joined fields

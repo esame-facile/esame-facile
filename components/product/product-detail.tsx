@@ -2,38 +2,24 @@
 
 import { useEffect } from "react";
 import Image from "next/image";
-import { FileText, User, Calendar, BookOpen, ShoppingCart, Check } from "lucide-react";
+import { FileText, User, Calendar, BookOpen, CreditCard } from "lucide-react";
 import { Button, Badge, PriceDisplay, StarRating } from "@/components/ui";
-import { useCart } from "@/hooks/use-cart";
-import { useToast } from "@/components/ui/toast";
 import { Product } from "@/types";
-import { trackViewProduct, trackAddToCart } from "@/lib/analytics";
+import { trackViewProduct } from "@/lib/analytics";
 
 interface ProductDetailProps {
   product: Product;
 }
 
 export function ProductDetail({ product }: ProductDetailProps) {
-  const { addItem, isInCart } = useCart();
-  const { toast } = useToast();
-  const inCart = isInCart(product.id);
-
   useEffect(() => {
     trackViewProduct(product.id, product.name, product.price);
   }, [product.id, product.name, product.price]);
 
-  const handleAddToCart = () => {
-    if (inCart) return;
-    trackAddToCart(product.id, product.name, product.price);
-    addItem({
-      product_id: product.id,
-      name: product.name,
-      slug: product.slug,
-      price: product.price,
-      original_price: product.original_price,
-      preview_image: product.preview_image,
-    });
-    toast("Aggiunto al carrello", "success");
+  const handleBuy = () => {
+    if (product.stripe_payment_link) {
+      window.location.href = product.stripe_payment_link;
+    }
   };
 
   const metadata = [
@@ -160,19 +146,11 @@ export function ProductDetail({ product }: ProductDetailProps) {
           />
           <Button
             size="lg"
-            onClick={handleAddToCart}
-            disabled={inCart}
+            onClick={handleBuy}
+            disabled={!product.stripe_payment_link}
             className="flex-1 max-w-[200px]"
           >
-            {inCart ? (
-              <>
-                <Check size={18} /> Nel carrello
-              </>
-            ) : (
-              <>
-                <ShoppingCart size={18} /> Aggiungi
-              </>
-            )}
+            <CreditCard size={18} /> Acquista ora
           </Button>
         </div>
       </div>

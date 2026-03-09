@@ -12,7 +12,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     const inputId = id || label?.toLowerCase().replace(/\s+/g, "-");
 
     return (
-      <div className="w-full">
+      <div className={cn("w-full", className)}>
         {label && (
           <label
             htmlFor={inputId}
@@ -21,9 +21,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             {label}
           </label>
         )}
-        <div className="relative">
+        <div className="relative flex items-center">
           {icon && (
-            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400">
+            <div className="absolute left-3 flex items-center justify-center text-neutral-400 pointer-events-none">
               {icon}
             </div>
           )}
@@ -35,8 +35,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
               "focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent",
               "disabled:opacity-50 disabled:cursor-not-allowed",
               icon && "pl-10",
-              error && "border-red-500 focus:ring-red-500",
-              className
+              error && "border-red-500 focus:ring-red-500"
             )}
             {...props}
           />
