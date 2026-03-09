@@ -1,15 +1,3 @@
-import { CartItem } from "./product";
-
-export interface CheckoutRequest {
-  items: CartItem[];
-  customer_email: string;
-}
-
-export interface CheckoutResponse {
-  sessionId: string;
-  url: string;
-}
-
 export interface OrderConfirmation {
   order_id: string;
   customer_email: string;

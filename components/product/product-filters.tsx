@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { Pill } from "@/components/ui";
-import { UNIVERSITIES } from "@/lib/constants";
 import { Category, ProductFilters } from "@/types";
 
 interface ProductFiltersProps {
@@ -50,23 +49,8 @@ export function ProductFiltersBar({ filters, onFilterChange }: ProductFiltersPro
         ))}
       </div>
 
-      {/* University and sort dropdowns */}
+      {/* Sort dropdown */}
       <div className="flex gap-2">
-        <select
-          value={filters.university || ""}
-          onChange={(e) =>
-            onFilterChange({ university: e.target.value || undefined })
-          }
-          className="flex-1 rounded-brand border border-neutral-200 bg-neutral-100 px-3 py-2 text-body-sm text-neutral-700 focus:outline-none focus:ring-2 focus:ring-primary-500"
-        >
-          <option value="">Tutte le università</option>
-          {UNIVERSITIES.map((uni) => (
-            <option key={uni} value={uni}>
-              {uni}
-            </option>
-          ))}
-        </select>
-
         <select
           value={filters.sort || "newest"}
           onChange={(e) =>

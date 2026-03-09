@@ -93,7 +93,7 @@ export default function PrivacyPage() {
         </h2>
         <p>
           Utilizziamo esclusivamente cookie tecnici necessari al funzionamento
-          del sito (sessione, carrello). Non utilizziamo cookie di
+          del sito (sessione). Non utilizziamo cookie di
           profilazione.
         </p>
 

@@ -1,15 +1,5 @@
 import { Product } from "./database";
 
-export interface CartItem {
-  product_id: string;
-  name: string;
-  slug: string;
-  /** Price in EUR cents */
-  price: number;
-  original_price: number | null;
-  preview_image: string | null;
-}
-
 export interface ProductFilters {
   category?: string;
   university?: string;

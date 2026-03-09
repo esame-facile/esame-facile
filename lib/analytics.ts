@@ -35,16 +35,6 @@ export function trackViewProduct(productId: string, productName: string, price: 
   });
 }
 
-export function trackAddToCart(productId: string, productName: string, price: number) {
-  trackEvent("AddToCart", {
-    content_type: "product",
-    content_id: productId,
-    content_name: productName,
-    value: price / 100,
-    currency: "EUR",
-  });
-}
-
 export function trackPurchase(orderId: string, total: number, itemCount: number) {
   trackEvent("Purchase", {
     transaction_id: orderId,
