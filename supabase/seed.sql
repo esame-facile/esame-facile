@@ -1,5 +1,5 @@
 -- UniPass Seed Data
--- 8 real products with Stripe Payment Links
+-- 9 real products with Stripe Payment Links
 
 -- ============================================
 -- Categories
@@ -13,7 +13,7 @@ INSERT INTO categories (id, name, slug, description, icon) VALUES
 -- ============================================
 -- Products (all 19.99 EUR = 1999 cents)
 -- ============================================
-INSERT INTO products (id, category_id, name, slug, description, short_description, price, original_price, university, professor, academic_year, pages, format, is_featured, stripe_payment_link) VALUES
+INSERT INTO products (id, category_id, name, slug, description, short_description, price, original_price, university, professor, academic_year, pages, format, is_featured, stripe_payment_link, preview_image) VALUES
   (
     'b1b2c3d4-0001-4000-8000-000000000001',
     'a1b2c3d4-0001-4000-8000-000000000001',
@@ -29,7 +29,8 @@ INSERT INTO products (id, category_id, name, slug, description, short_descriptio
     NULL,
     'pdf',
     true,
-    'https://buy.stripe.com/bJebJ26uXd8K6xm8BA9IQ0g'
+    'https://buy.stripe.com/bJebJ26uXd8K6xm8BA9IQ0g',
+    '/images/products/covers/analisi-1.jpg'
   ),
   (
     'b1b2c3d4-0002-4000-8000-000000000002',
@@ -46,7 +47,8 @@ INSERT INTO products (id, category_id, name, slug, description, short_descriptio
     NULL,
     'pdf',
     true,
-    'https://buy.stripe.com/dRm9AUaLdfgSf3SbNM9IQ0h'
+    'https://buy.stripe.com/dRm9AUaLdfgSf3SbNM9IQ0h',
+    '/images/products/covers/analisi-2.jpg'
   ),
   (
     'b1b2c3d4-0003-4000-8000-000000000003',
@@ -63,7 +65,8 @@ INSERT INTO products (id, category_id, name, slug, description, short_descriptio
     NULL,
     'pdf',
     true,
-    'https://buy.stripe.com/14AdRa2eH5Gi6xm3hg9IQ0i'
+    'https://buy.stripe.com/14AdRa2eH5Gi6xm3hg9IQ0i',
+    '/images/products/covers/anatomia.jpg'
   ),
   (
     'b1b2c3d4-0004-4000-8000-000000000004',
@@ -80,7 +83,8 @@ INSERT INTO products (id, category_id, name, slug, description, short_descriptio
     NULL,
     'pdf',
     true,
-    'https://buy.stripe.com/14AeVe06zc4Gg7WdVU9IQ0k'
+    'https://buy.stripe.com/14AeVe06zc4Gg7WdVU9IQ0k',
+    '/images/products/covers/fisica-1.jpg'
   ),
   (
     'b1b2c3d4-0005-4000-8000-000000000005',
@@ -97,7 +101,8 @@ INSERT INTO products (id, category_id, name, slug, description, short_descriptio
     NULL,
     'pdf',
     false,
-    'https://buy.stripe.com/dRm3cw7z16Km8Fu5po9IQ0l'
+    'https://buy.stripe.com/dRm3cw7z16Km8Fu5po9IQ0l',
+    NULL
   ),
   (
     'b1b2c3d4-0006-4000-8000-000000000006',
@@ -114,7 +119,8 @@ INSERT INTO products (id, category_id, name, slug, description, short_descriptio
     NULL,
     'pdf',
     false,
-    'https://buy.stripe.com/fZu00k1aD5Gig7W1989IQ0m'
+    'https://buy.stripe.com/fZu00k1aD5Gig7W1989IQ0m',
+    NULL
   ),
   (
     'b1b2c3d4-0007-4000-8000-000000000007',
@@ -131,7 +137,8 @@ INSERT INTO products (id, category_id, name, slug, description, short_descriptio
     NULL,
     'pdf',
     false,
-    'https://buy.stripe.com/5kQbJ23iLgkWdZO5po9IQ0n'
+    'https://buy.stripe.com/5kQbJ23iLgkWdZO5po9IQ0n',
+    NULL
   ),
   (
     'b1b2c3d4-0008-4000-8000-000000000008',
@@ -148,5 +155,24 @@ INSERT INTO products (id, category_id, name, slug, description, short_descriptio
     NULL,
     'pdf',
     false,
-    'https://buy.stripe.com/3cI3cw6uX5Gif3ScRQ9IQ0o'
+    'https://buy.stripe.com/3cI3cw6uX5Gif3ScRQ9IQ0o',
+    NULL
+  ),
+  (
+    'b1b2c3d4-0009-4000-8000-000000000009',
+    'a1b2c3d4-0001-4000-8000-000000000001',
+    'Informatica',
+    'informatica',
+    'Riassunto completo di Informatica. Copre: architettura dei calcolatori, algoritmi e strutture dati, programmazione, reti di calcolatori, basi di dati, sistemi operativi. Schemi riassuntivi e trucchi per l''esame.',
+    'Riassunto di Informatica con schemi e trucchi per l''esame.',
+    1999,
+    NULL,
+    'Università test',
+    NULL,
+    '2024/2025',
+    NULL,
+    'pdf',
+    false,
+    'https://buy.stripe.com/aFabJ24mP6Km9Jy0549IQ0j',
+    '/images/products/covers/informatica.jpg'
   );
