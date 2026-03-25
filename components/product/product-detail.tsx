@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Image from "next/image";
-import { FileText, User, Calendar, BookOpen, CreditCard } from "lucide-react";
+import { FileText, User, Calendar, BookOpen, CreditCard, CheckCircle2 } from "lucide-react";
 import { Button, Badge, PriceDisplay, StarRating } from "@/components/ui";
 import { Product } from "@/types";
 import { trackViewProduct } from "@/lib/analytics";
@@ -126,15 +126,36 @@ export function ProductDetail({ product }: ProductDetailProps) {
         </p>
       </div>
 
+      {/* What's inside */}
+      <div className="p-4 rounded-brand bg-primary-50 border border-primary-100">
+        <h2 className="text-body-lg font-bold mb-3">Cosa troverai dentro</h2>
+        <ul className="space-y-2">
+          {[
+            "Riassunto completo di tutti i capitoli",
+            "Schemi e mappe concettuali per il ripasso",
+            "Esercizi svolti e trucchi per l'esame",
+            "Formato PDF, leggibile su qualsiasi dispositivo",
+          ].map((item) => (
+            <li key={item} className="flex items-start gap-2">
+              <CheckCircle2 size={16} className="text-primary-500 mt-0.5 flex-shrink-0" />
+              <span className="text-body-sm text-neutral-700">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
       {/* Format badge */}
       <div className="flex items-center gap-2">
         <Badge variant="success">
           {product.format.toUpperCase()}
         </Badge>
         <span className="text-caption text-neutral-400">
-          Download immediato
+          Download immediato dopo il pagamento
         </span>
       </div>
+
+      {/* Spacer for sticky CTA */}
+      <div className="h-24" />
 
       {/* Sticky CTA */}
       <div className="fixed bottom-0 left-0 right-0 p-4 bg-white/95 backdrop-blur-md border-t border-neutral-200 z-40 safe-bottom">

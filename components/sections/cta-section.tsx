@@ -8,11 +8,10 @@ export function CTASection() {
         <div className="p-8 rounded-brand gradient-primary relative overflow-hidden">
           <div className="relative z-10">
             <h2 className="text-display-md text-white mb-3">
-              Pronto a studiare smart?
+              Il prossimo esame ti spaventa?
             </h2>
             <p className="text-body-md text-white/80 mb-6 max-w-sm mx-auto">
-              Trova gli appunti per il tuo prossimo esame e risparmia ore di
-              studio.
+              Con i nostri riassunti studi in met&agrave; tempo. Provare per credere.
             </p>
             <Link href="/catalogo">
               <Button

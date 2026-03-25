@@ -1,25 +1,25 @@
-import { Shield, FileCheck, Clock, CreditCard } from "lucide-react";
+import { Zap, Target, Clock, BadgeCheck } from "lucide-react";
 
 const signals = [
   {
-    icon: FileCheck,
-    title: "Qualità verificata",
-    description: "Ogni appunto è controllato prima della pubblicazione.",
+    icon: Target,
+    title: "Mirati per il tuo esame",
+    description: "Niente fuffa: solo quello che esce all'esame, strutturato per capitoli.",
   },
   {
-    icon: Shield,
-    title: "Pagamento sicuro",
-    description: "Transazioni protette da Stripe, leader mondiale nei pagamenti.",
+    icon: BadgeCheck,
+    title: "Scritti da chi ha passato",
+    description: "Ogni appunto è creato da studenti che hanno superato lo stesso esame.",
   },
   {
     icon: Clock,
-    title: "Download immediato",
-    description: "Accesso istantaneo dopo l'acquisto, nessuna attesa.",
+    title: "Pronti in 30 secondi",
+    description: "Paghi, scarichi il PDF e inizi a studiare. Zero attese.",
   },
   {
-    icon: CreditCard,
-    title: "Prezzi accessibili",
-    description: "Materiale di qualità a prezzi pensati per gli studenti.",
+    icon: Zap,
+    title: "Risparmia settimane",
+    description: "Riassunti che condensano mesi di lezioni in poche ore di studio.",
   },
 ];
 

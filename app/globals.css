@@ -27,6 +27,8 @@
   .text-gradient {
     @apply bg-clip-text text-transparent;
     background: linear-gradient(135deg, #6366F1 0%, #818CF8 50%, #F59E0B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .safe-bottom {
