@@ -29,9 +29,9 @@ export function Hero() {
             </Button>
           </Link>
           <Link href="/#come-funziona">
-            <Button variant="secondary" size="lg" className="w-full sm:w-auto border-neutral-600 text-neutral-200 hover:bg-neutral-800">
+            <button className="inline-flex items-center justify-center font-medium transition-all duration-200 rounded-brand text-body-lg px-6 py-3 w-full sm:w-auto border border-neutral-500 text-white hover:bg-white/10 active:scale-[0.97]">
               Come funziona
-            </Button>
+            </button>
           </Link>
         </div>
       </div>
