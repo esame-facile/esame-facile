@@ -16,7 +16,7 @@ export function ProductGrid({ products, loading }: ProductGridProps) {
       <div className="grid grid-cols-2 gap-3">
         {Array.from({ length: 6 }).map((_, i) => (
           <div key={i} className="rounded-brand overflow-hidden">
-            <Skeleton className="aspect-[4/3]" />
+            <Skeleton className="aspect-[3/4]" />
             <div className="p-3 space-y-2">
               <Skeleton className="h-3 w-16" />
               <Skeleton className="h-4 w-full" />

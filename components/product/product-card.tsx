@@ -14,13 +14,13 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
   return (
     <Link href={`/catalogo/${product.slug}`}>
       <Card className="h-full flex flex-col overflow-hidden group">
-        <div className="relative aspect-[4/3] bg-neutral-100 overflow-hidden">
+        <div className="relative aspect-[3/4] bg-neutral-900 overflow-hidden">
           {product.preview_image ? (
             <Image
               src={product.preview_image}
               alt={product.name}
               fill
-              className="object-cover group-hover:scale-105 transition-transform duration-300"
+              className="object-contain group-hover:scale-105 transition-transform duration-300"
               sizes="(max-width: 768px) 50vw, 33vw"
               priority={priority}
             />

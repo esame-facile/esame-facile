@@ -44,13 +44,13 @@ export function ProductDetail({ product }: ProductDetailProps) {
   return (
     <div className="space-y-6">
       {/* Image */}
-      <div className="relative aspect-[4/3] bg-neutral-100 rounded-brand overflow-hidden">
+      <div className="relative aspect-[3/4] bg-neutral-900 rounded-brand overflow-hidden">
         {product.preview_image ? (
           <Image
             src={product.preview_image}
             alt={product.name}
             fill
-            className="object-cover"
+            className="object-contain"
             sizes="100vw"
             priority
           />
