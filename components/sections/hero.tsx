@@ -11,9 +11,8 @@ export function Hero() {
           Appunti verificati da studenti come te
         </div>
 
-        <h1 className="text-display-lg md:text-[3.5rem] leading-tight mb-4 text-white">
-          Basta notti in bianco.
-          <br />
+        <h1 className="text-[1.75rem] md:text-[3.5rem] font-bold leading-tight mb-4 text-white">
+          Basta notti in bianco.<br />
           <span className="text-gradient">Passa al primo colpo.</span>
         </h1>
 
