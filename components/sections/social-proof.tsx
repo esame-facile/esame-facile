@@ -1,10 +1,9 @@
-import { BookOpen, Users, Star, Download } from "lucide-react";
+import { Users, Star, Download } from "lucide-react";
 
 const stats = [
-  { icon: BookOpen, value: "200+", label: "Appunti disponibili" },
-  { icon: Users, value: "5.000+", label: "Studenti soddisfatti" },
+  { icon: Users, value: "1.200+", label: "Studenti soddisfatti" },
+  { icon: Download, value: "2.000+", label: "Download totali" },
   { icon: Star, value: "4.8", label: "Valutazione media" },
-  { icon: Download, value: "15.000+", label: "Download totali" },
 ];
 
 export function SocialProof() {

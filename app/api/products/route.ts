@@ -7,6 +7,7 @@ export async function GET(request: NextRequest) {
   const category = searchParams.get("category");
   const university = searchParams.get("university");
   const search = searchParams.get("search");
+  const featured = searchParams.get("featured");
   const sort = searchParams.get("sort") || "newest";
   const page = Math.max(1, Number(searchParams.get("page")) || 1);
   const limit = Math.min(50, Math.max(1, Number(searchParams.get("limit")) || 12));
@@ -18,6 +19,10 @@ export async function GET(request: NextRequest) {
     .from("products")
     .select("*, category:categories(*)", { count: "exact" })
     .eq("is_active", true);
+
+  if (featured === "true") {
+    query = query.eq("is_featured", true);
+  }
 
   if (category) {
     query = query.eq("category.slug", category).not("category", "is", null);

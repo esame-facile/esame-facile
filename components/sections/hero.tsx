@@ -12,10 +12,9 @@ export function Hero() {
         </div>
 
         <h1 className="text-display-lg md:text-[3.5rem] leading-tight mb-4 text-white">
-          Il{" "}
-          <span className="text-gradient">cheat code</span>{" "}
+          Basta notti in bianco.
           <br />
-          per i tuoi esami.
+          <span className="text-gradient">Passa al primo colpo.</span>
         </h1>
 
         <p className="text-body-lg text-neutral-300 max-w-sm mx-auto mb-8">

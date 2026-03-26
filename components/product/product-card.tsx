@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Card, Badge, PriceDisplay, StarRating } from "@/components/ui";
+import { Card, PriceDisplay, StarRating } from "@/components/ui";
 import { Product } from "@/types";
 
 interface ProductCardProps {
@@ -44,19 +44,6 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
               <span className="text-white/90 text-caption font-bold text-center px-2 line-clamp-1">
                 PDF
               </span>
-            </div>
-          )}
-          {product.original_price && (
-            <div className="absolute top-2 left-2">
-              <Badge variant="discount">
-                -
-                {Math.round(
-                  ((product.original_price - product.price) /
-                    product.original_price) *
-                    100
-                )}
-                %
-              </Badge>
             </div>
           )}
         </div>

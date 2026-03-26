@@ -1,5 +1,4 @@
 import { formatPrice } from "@/lib/format-price";
-import { Badge } from "./badge";
 import { cn } from "@/lib/utils";
 
 interface PriceDisplayProps {
@@ -16,10 +15,6 @@ export function PriceDisplay({
   size = "md",
 }: PriceDisplayProps) {
   const hasDiscount = originalPrice && originalPrice > price;
-  const discountPercent = hasDiscount
-    ? Math.round(((originalPrice - price) / originalPrice) * 100)
-    : 0;
-
   const sizeClasses = {
     sm: "text-body-sm",
     md: "text-body-lg",
@@ -32,12 +27,9 @@ export function PriceDisplay({
         {formatPrice(price)}
       </span>
       {hasDiscount && (
-        <>
-          <span className="text-body-sm text-neutral-400 line-through">
-            {formatPrice(originalPrice)}
-          </span>
-          <Badge variant="discount">-{discountPercent}%</Badge>
-        </>
+        <span className="text-body-sm text-neutral-400 line-through">
+          {formatPrice(originalPrice)}
+        </span>
       )}
     </div>
   );
