@@ -75,6 +75,9 @@ export function ProductDetail({ product }: ProductDetailProps) {
         )}
       </div>
 
+      {/* Preview Carousel - subito visibile */}
+      <PreviewCarousel slug={product.slug} previewCount={3} />
+
       {/* Category */}
       {product.category && (
         <Badge>{product.category.name}</Badge>
@@ -133,9 +136,6 @@ export function ProductDetail({ product }: ProductDetailProps) {
           {product.description}
         </p>
       </div>
-
-      {/* Preview Carousel */}
-      <PreviewCarousel slug={product.slug} previewCount={3} />
 
       {/* What's inside */}
       <div className="p-4 rounded-brand bg-primary-50 border border-primary-100">

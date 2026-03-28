@@ -56,7 +56,7 @@ export function PreviewCarousel({ slug, previewCount = 3 }: PreviewCarouselProps
                   <div className="bg-white/90 rounded-2xl p-6 text-center shadow-lg mx-6">
                     <Lock size={28} className="text-primary-500 mx-auto mb-3" />
                     <p className="text-body-md font-bold text-neutral-900 mb-1">
-                      +{previewCount > 3 ? "30" : "25"}+ schemi nel kit completo
+                      25+ schemi nel kit completo
                     </p>
                     <p className="text-body-sm text-neutral-500">
                       Acquista per sbloccare tutto il contenuto
