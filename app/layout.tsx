@@ -39,6 +39,14 @@ export const metadata: Metadata = {
     title: "Esame Facile — Kit Superamento Esami Universitari",
     description:
       "Schemi, trucchi e strategie per superare i tuoi esami universitari.",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Esame Facile — Kit Superamento Esami Universitari",
+      },
+    ],
   },
   robots: {
     index: true,

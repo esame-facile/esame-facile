@@ -16,11 +16,12 @@ export function Navbar() {
       <div className="container-app flex items-center justify-between h-14">
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/images/brand/logo-light.png"
+            src="/images/logo-light.png"
             alt="Esame Facile"
-            width={160}
-            height={44}
-            className="h-9 w-auto"
+            width={200}
+            height={50}
+            className="h-10 w-auto"
+            priority
           />
         </Link>
 
