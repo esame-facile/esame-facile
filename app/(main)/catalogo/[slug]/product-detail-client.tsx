@@ -14,7 +14,7 @@ export function ProductDetailClient({ product, reviews }: Props) {
   return (
     <div className="container-app py-6 pb-28 space-y-10">
       <ProductDetail product={product} />
-      <ProductReviews reviews={reviews} productId={product.id} />
+      <ProductReviews reviews={reviews} productId={product.id} reviewCount={product.review_count} />
       <RelatedProducts
         categorySlug={product.category?.slug}
         currentProductId={product.id}

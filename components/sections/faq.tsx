@@ -7,16 +7,16 @@ import { cn } from "@/lib/utils";
 
 const faqs = [
   {
-    q: "Cosa sono gli appunti Esame Facile?",
-    a: "Sono riassunti e appunti universitari creati da studenti che hanno superato l'esame. Ogni materiale è verificato per garantire qualità e completezza.",
+    q: "Cosa sono i Kit Superamento Esame?",
+    a: "Sono guide strategiche con schemi, trucchi e metodi di studio creati da studenti che hanno superato l'esame. Ogni kit è verificato per garantire qualità e completezza.",
   },
   {
     q: "Come ricevo il materiale dopo l'acquisto?",
     a: "Subito dopo il pagamento ricevi un'email con il link di download. Il link è valido per 48 ore e puoi scaricare il file fino a 5 volte.",
   },
   {
-    q: "In che formato sono gli appunti?",
-    a: "Tutti gli appunti sono in formato PDF, facilmente leggibili da qualsiasi dispositivo: smartphone, tablet o computer.",
+    q: "In che formato sono i kit?",
+    a: "Tutti i kit sono in formato PDF, facilmente leggibili da qualsiasi dispositivo: smartphone, tablet o computer.",
   },
   {
     q: "Posso avere il rimborso?",
@@ -27,8 +27,8 @@ const faqs = [
     a: "Assolutamente sì. Utilizziamo Stripe, il sistema di pagamento usato da milioni di aziende nel mondo. Non memorizziamo i dati della tua carta.",
   },
   {
-    q: "Posso usare gli appunti per qualsiasi università?",
-    a: "Gli appunti sono specifici per il corso e l'università indicati. Tuttavia, gli argomenti trattati possono essere utili anche per corsi simili in altre università.",
+    q: "I kit vanno bene per qualsiasi università?",
+    a: "I kit coprono argomenti standard che si trovano nella maggior parte dei corsi universitari italiani. Schemi e metodi sono applicabili ovunque.",
   },
   {
     q: "Come posso contattarvi?",
@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     q: "Posso diventare un autore?",
-    a: "Certo! Se hai appunti di qualità e vuoi guadagnare aiutando altri studenti, scrivici a info@esamefacile.site con un campione del tuo materiale.",
+    a: "Certo! Se hai materiale di qualità e vuoi guadagnare aiutando altri studenti, scrivici a info@esamefacile.site con un campione.",
   },
 ];
 

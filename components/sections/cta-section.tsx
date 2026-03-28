@@ -11,7 +11,7 @@ export function CTASection() {
               Il prossimo esame ti spaventa?
             </h2>
             <p className="text-body-md text-white/80 mb-6 max-w-sm mx-auto">
-              Con i nostri riassunti studi in met&agrave; tempo. Provare per credere.
+              Con i nostri kit studi in met&agrave; tempo. Provare per credere.
             </p>
             <Link href="/catalogo">
               <Button

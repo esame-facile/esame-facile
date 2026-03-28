@@ -22,7 +22,7 @@ function CatalogoContent() {
       <h1 className="text-display-md mb-6">Catalogo</h1>
 
       <Input
-        placeholder="Cerca appunti..."
+        placeholder="Cerca kit..."
         icon={<Search size={18} />}
         value={query || filters.search || ""}
         onChange={(e) => handleSearch(e.target.value)}

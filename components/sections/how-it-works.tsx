@@ -5,7 +5,7 @@ const steps = [
     icon: Search,
     title: "1. Cerca",
     description:
-      "Trova gli appunti per il tuo esame filtrando per università, materia o professore.",
+      "Trova il kit per il tuo esame nel catalogo.",
   },
   {
     icon: CreditCard,

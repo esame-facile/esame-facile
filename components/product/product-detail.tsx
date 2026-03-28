@@ -44,13 +44,13 @@ export function ProductDetail({ product }: ProductDetailProps) {
   return (
     <div className="space-y-6">
       {/* Image */}
-      <div className="relative aspect-[3/4] bg-neutral-900 rounded-brand overflow-hidden">
+      <div className="relative aspect-[3/4] bg-neutral-100 rounded-brand overflow-hidden">
         {product.preview_image ? (
           <Image
             src={product.preview_image}
             alt={product.name}
             fill
-            className="object-contain"
+            className="object-cover"
             sizes="100vw"
             priority
           />
@@ -94,11 +94,18 @@ export function ProductDetail({ product }: ProductDetailProps) {
       )}
 
       {/* Price */}
-      <PriceDisplay
-        price={product.price}
-        originalPrice={product.original_price}
-        size="lg"
-      />
+      <div>
+        <PriceDisplay
+          price={product.price}
+          originalPrice={product.original_price}
+          size="lg"
+        />
+        {product.original_price && (
+          <p className="text-caption text-red-500 font-semibold mt-1">
+            Prezzo promozionale — potrebbe aumentare presto
+          </p>
+        )}
+      </div>
 
       {/* Metadata */}
       <div className="grid grid-cols-2 gap-3">

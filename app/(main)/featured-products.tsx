@@ -34,7 +34,7 @@ export function FeaturedProducts() {
           I più richiesti
         </h2>
         <p className="text-body-sm text-neutral-400 text-center mb-8">
-          Gli appunti più scaricati dai nostri studenti
+          I kit più scaricati dai nostri studenti
         </p>
 
         {loading ? (
@@ -61,7 +61,7 @@ export function FeaturedProducts() {
         <div className="text-center mt-8">
           <Link href="/catalogo">
             <Button variant="secondary" size="lg">
-              Vedi tutti gli appunti
+              Vedi tutti i Kit
             </Button>
           </Link>
         </div>

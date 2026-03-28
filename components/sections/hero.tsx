@@ -8,7 +8,7 @@ export function Hero() {
       <div className="container-app relative z-10 text-center pt-10 pb-10">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-500/20 border border-accent-500/30 text-caption text-accent-300 mb-4">
           <span className="w-1.5 h-1.5 bg-accent-400 rounded-full animate-pulse-slow" />
-          Appunti verificati da studenti come te
+          Kit verificati da studenti come te
         </div>
 
         <h1 className="text-[1.75rem] md:text-[3.5rem] font-bold leading-tight mb-4 text-white">
@@ -17,7 +17,7 @@ export function Hero() {
         </h1>
 
         <p className="text-body-lg text-neutral-300 max-w-sm mx-auto mb-8">
-          Riassunti mirati, schemi pronti e trucchi per passare. Creati da chi ce l&apos;ha fatta.
+          Schemi, trucchi e strategie per passare l&apos;esame. Creati da chi ce l&apos;ha fatta.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
