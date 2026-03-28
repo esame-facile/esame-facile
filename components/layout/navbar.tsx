@@ -18,9 +18,9 @@ export function Navbar() {
           <Image
             src="/images/brand/logo-light.png"
             alt="Esame Facile"
-            width={140}
-            height={32}
-            className="h-8 w-auto"
+            width={160}
+            height={44}
+            className="h-9 w-auto"
           />
         </Link>
 
