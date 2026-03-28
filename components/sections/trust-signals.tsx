@@ -28,7 +28,7 @@ export function TrustSignals() {
     <section className="py-16 bg-neutral-100">
       <div className="container-app">
         <h2 className="text-display-md text-center mb-10">
-          Perché scegliere UniPass
+          Perché scegliere Esame Facile
         </h2>
 
         <div className="grid grid-cols-2 gap-4">

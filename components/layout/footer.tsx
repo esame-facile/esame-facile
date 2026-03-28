@@ -10,12 +10,12 @@ export function Footer() {
           <Link href="/" className="flex items-center gap-2">
             <Image
               src="/images/brand/logo-icon.svg"
-              alt="UniPass"
+              alt="Esame Facile"
               width={24}
               height={24}
             />
             <span className="font-bold text-body-md text-neutral-900">
-              UniPass
+              Esame Facile
             </span>
           </Link>
 

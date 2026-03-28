@@ -1,10 +1,10 @@
 export const SITE_CONFIG = {
-  name: process.env.NEXT_PUBLIC_APP_NAME || "UniPass",
+  name: process.env.NEXT_PUBLIC_APP_NAME || "Esame Facile",
   url: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
   description:
     "Appunti e riassunti universitari verificati. Studia meglio, studia meno.",
   tagline: "Studia smart, passa gli esami.",
-  email: "info@unipass.it",
+  email: "info@esamefacile.site",
 } as const;
 
 export const DOWNLOAD_CONFIG = {

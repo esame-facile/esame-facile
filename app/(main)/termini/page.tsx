@@ -3,7 +3,7 @@ import { SITE_CONFIG } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Termini e Condizioni",
-  description: "Termini e condizioni di utilizzo di UniPass.",
+  description: "Termini e condizioni di utilizzo di Esame Facile.",
 };
 
 export default function TerminiPage() {

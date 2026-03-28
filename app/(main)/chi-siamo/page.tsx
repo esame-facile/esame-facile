@@ -4,7 +4,7 @@ import { BookOpen, Users, Heart } from "lucide-react";
 export const metadata: Metadata = {
   title: "Chi siamo",
   description:
-    "UniPass nasce per aiutare gli studenti universitari a studiare meglio con appunti verificati.",
+    "Esame Facile nasce per aiutare gli studenti universitari a studiare meglio con appunti verificati.",
 };
 
 export default function ChiSiamoPage() {
@@ -14,7 +14,7 @@ export default function ChiSiamoPage() {
 
       <div className="space-y-6 text-body-md text-neutral-700 leading-relaxed">
         <p>
-          <strong className="text-neutral-900">UniPass</strong> nasce da
+          <strong className="text-neutral-900">Esame Facile</strong> nasce da
           un&apos;idea semplice: rendere lo studio universitario più
           efficiente. Sappiamo quanto sia difficile preparare un esame
           partendo da zero, con centinaia di pagine da leggere e poco tempo
@@ -68,10 +68,10 @@ export default function ChiSiamoPage() {
           Se hai appunti di qualità e vuoi aiutare altri studenti (guadagnando),
           scrivici a{" "}
           <a
-            href="mailto:info@unipass.it"
+            href="mailto:info@esamefacile.site"
             className="text-primary-400 hover:underline"
           >
-            info@unipass.it
+            info@esamefacile.site
           </a>
           .
         </p>

@@ -19,8 +19,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "UniPass — Appunti Universitari Verificati",
-    template: "%s | UniPass",
+    default: "Esame Facile — Appunti Universitari Verificati",
+    template: "%s | Esame Facile",
   },
   description:
     "Appunti e riassunti universitari verificati per superare i tuoi esami. Studia meglio, studia meno.",
@@ -31,12 +31,12 @@ export const metadata: Metadata = {
     "esami universitari",
     "appunti PDF",
   ],
-  authors: [{ name: "UniPass" }],
+  authors: [{ name: "Esame Facile" }],
   openGraph: {
     type: "website",
     locale: "it_IT",
-    siteName: "UniPass",
-    title: "UniPass — Appunti Universitari Verificati",
+    siteName: "Esame Facile",
+    title: "Esame Facile — Appunti Universitari Verificati",
     description:
       "Appunti e riassunti universitari verificati per superare i tuoi esami.",
   },

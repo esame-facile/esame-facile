@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 const faqs = [
   {
-    q: "Cosa sono gli appunti UniPass?",
+    q: "Cosa sono gli appunti Esame Facile?",
     a: "Sono riassunti e appunti universitari creati da studenti che hanno superato l'esame. Ogni materiale è verificato per garantire qualità e completezza.",
   },
   {
@@ -32,11 +32,11 @@ const faqs = [
   },
   {
     q: "Come posso contattarvi?",
-    a: "Puoi scriverci a info@unipass.it o tramite la pagina Contatti. Rispondiamo entro 24 ore.",
+    a: "Puoi scriverci a info@esamefacile.site o tramite la pagina Contatti. Rispondiamo entro 24 ore.",
   },
   {
     q: "Posso diventare un autore?",
-    a: "Certo! Se hai appunti di qualità e vuoi guadagnare aiutando altri studenti, scrivici a info@unipass.it con un campione del tuo materiale.",
+    a: "Certo! Se hai appunti di qualità e vuoi guadagnare aiutando altri studenti, scrivici a info@esamefacile.site con un campione del tuo materiale.",
   },
 ];
 

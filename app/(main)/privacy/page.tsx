@@ -3,7 +3,7 @@ import { SITE_CONFIG } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Informativa sulla privacy di UniPass.",
+  description: "Informativa sulla privacy di Esame Facile.",
 };
 
 export default function PrivacyPage() {

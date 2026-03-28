@@ -5,8 +5,8 @@ import { ExternalLink, ShoppingBag, BookOpen, Mail } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Link | UniPass",
-  description: "Tutti i link utili di UniPass.",
+  title: "Link | Esame Facile",
+  description: "Tutti i link utili di Esame Facile.",
 };
 
 const links = [
@@ -35,7 +35,7 @@ export default function LinkPage() {
     <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12">
       <Image
         src="/images/brand/logo-icon.svg"
-        alt="UniPass"
+        alt="Esame Facile"
         width={56}
         height={56}
         className="mb-4"

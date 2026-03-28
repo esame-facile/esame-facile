@@ -17,12 +17,12 @@ export function Navbar() {
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/images/brand/logo-icon.svg"
-            alt="UniPass"
+            alt="Esame Facile"
             width={28}
             height={28}
           />
           <span className="font-bold text-body-lg text-neutral-900">
-            UniPass
+            Esame Facile
           </span>
         </Link>
 
