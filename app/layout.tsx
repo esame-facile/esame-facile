@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { ToastProvider } from "@/components/ui/toast";
-import { Analytics } from "@/components/analytics";
+import { Analytics as CustomAnalytics } from "@/components/analytics";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const inter = Inter({
@@ -65,6 +66,7 @@ export default function RootLayout({
         <ToastProvider>
           {children}
         </ToastProvider>
+        <CustomAnalytics />
         <Analytics />
       </body>
     </html>
