@@ -9,10 +9,10 @@ export function Footer() {
         <div className="flex flex-col gap-6">
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/images/logo-light.png"
+              src="/images/brand/logo-light.png"
               alt="Esame Facile"
               width={180}
-              height={45}
+              height={38}
               className="h-9 w-auto"
             />
           </Link>

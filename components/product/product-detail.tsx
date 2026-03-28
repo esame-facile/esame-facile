@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Image from "next/image";
-import { FileText, User, Calendar, BookOpen, CreditCard, CheckCircle2, Shield } from "lucide-react";
+import { FileText, User, Calendar, BookOpen, CreditCard, CheckCircle2, Shield, Eye } from "lucide-react";
 import { Button, Badge, PriceDisplay, StarRating } from "@/components/ui";
 import { Product } from "@/types";
 import { trackViewProduct } from "@/lib/analytics";
@@ -44,6 +44,15 @@ export function ProductDetail({ product }: ProductDetailProps) {
 
   return (
     <div className="space-y-6">
+      {/* Link anteprima sopra copertina */}
+      <button
+        onClick={() => document.getElementById("anteprima-kit")?.scrollIntoView({ behavior: "smooth" })}
+        className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-brand bg-primary-50 border border-primary-200 text-primary-600 font-semibold text-body-sm hover:bg-primary-100 active:scale-[0.98] transition-all"
+      >
+        <Eye size={16} />
+        Guarda l&apos;anteprima del kit
+      </button>
+
       {/* Image */}
       <div className="relative aspect-[3/4] bg-neutral-100 rounded-brand overflow-hidden">
         {product.preview_image ? (
@@ -74,9 +83,6 @@ export function ProductDetail({ product }: ProductDetailProps) {
           </div>
         )}
       </div>
-
-      {/* Preview Carousel - subito visibile */}
-      <PreviewCarousel slug={product.slug} previewCount={3} />
 
       {/* Category */}
       {product.category && (
@@ -135,6 +141,11 @@ export function ProductDetail({ product }: ProductDetailProps) {
         <p className="text-body-sm text-neutral-500 leading-relaxed whitespace-pre-line">
           {product.description}
         </p>
+      </div>
+
+      {/* Preview Carousel */}
+      <div id="anteprima-kit">
+        <PreviewCarousel slug={product.slug} previewCount={3} />
       </div>
 
       {/* What's inside */}
