@@ -34,7 +34,7 @@ export default function LinkPage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12">
       <Image
-        src="/images/brand/logo-icon.svg"
+        src="/images/brand/favicon.png"
         alt="Esame Facile"
         width={56}
         height={56}

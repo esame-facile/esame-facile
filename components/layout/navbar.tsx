@@ -16,14 +16,12 @@ export function Navbar() {
       <div className="container-app flex items-center justify-between h-14">
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/images/brand/logo-icon.svg"
+            src="/images/brand/logo-light.png"
             alt="Esame Facile"
-            width={28}
-            height={28}
+            width={140}
+            height={32}
+            className="h-8 w-auto"
           />
-          <span className="font-bold text-body-lg text-neutral-900">
-            Esame Facile
-          </span>
         </Link>
 
         <button
