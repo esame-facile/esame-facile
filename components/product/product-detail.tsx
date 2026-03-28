@@ -169,7 +169,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
             size="lg"
             onClick={handleBuy}
             disabled={!product.stripe_payment_link}
-            className="flex-1 max-w-[200px]"
+            className="flex-1 max-w-[200px] !text-white"
           >
             <CreditCard size={18} /> Acquista ora
           </Button>

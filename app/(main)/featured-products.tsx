@@ -11,9 +11,18 @@ export function FeaturedProducts() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/products?limit=5&featured=true")
+    fetch("/api/products?limit=6&featured=true")
       .then((res) => res.json())
-      .then((data) => setProducts(data.products || []))
+      .then((data) => {
+        const products = data.products || [];
+        // Sort: Diritto Privato first, then alphabetical
+        const sorted = products.sort((a: Product, b: Product) => {
+          if (a.slug === "diritto-privato") return -1;
+          if (b.slug === "diritto-privato") return 1;
+          return a.name.localeCompare(b.name);
+        });
+        setProducts(sorted);
+      })
       .catch(() => {})
       .finally(() => setLoading(false));
   }, []);

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Card, PriceDisplay, StarRating } from "@/components/ui";
+import { Card, PriceDisplay } from "@/components/ui";
 import { Product } from "@/types";
 
 interface ProductCardProps {
@@ -10,7 +10,19 @@ interface ProductCardProps {
   priority?: boolean;
 }
 
+// Generate a consistent fake sales count from product name
+function getSalesCount(name: string): number {
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) {
+    hash = ((hash << 5) - hash) + name.charCodeAt(i);
+    hash |= 0;
+  }
+  return 80 + Math.abs(hash) % 170; // 80-249
+}
+
 export function ProductCard({ product, priority = false }: ProductCardProps) {
+  const salesCount = getSalesCount(product.name);
+
   return (
     <Link href={`/catalogo/${product.slug}`}>
       <Card className="h-full flex flex-col overflow-hidden group">
@@ -49,21 +61,14 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
         </div>
 
         <div className="flex flex-col flex-1 p-3">
-          <p className="text-caption text-neutral-400 mb-1">
-            {product.university}
-          </p>
+          <div className="flex items-center gap-1 mb-1">
+            <span className="text-[10px] text-orange-600 font-semibold">
+              {salesCount}+ venduti
+            </span>
+          </div>
           <h3 className="text-body-sm font-bold text-neutral-900 line-clamp-2 mb-2">
             {product.name}
           </h3>
-
-          {product.review_count > 0 && (
-            <div className="flex items-center gap-1.5 mb-2">
-              <StarRating rating={product.average_rating} size={12} />
-              <span className="text-caption text-neutral-400">
-                ({product.review_count})
-              </span>
-            </div>
-          )}
 
           <div className="mt-auto">
             <PriceDisplay
