@@ -2,10 +2,11 @@
 
 import { useEffect } from "react";
 import Image from "next/image";
-import { FileText, User, Calendar, BookOpen, CreditCard, CheckCircle2 } from "lucide-react";
+import { FileText, User, Calendar, BookOpen, CreditCard, CheckCircle2, Shield } from "lucide-react";
 import { Button, Badge, PriceDisplay, StarRating } from "@/components/ui";
 import { Product } from "@/types";
 import { trackViewProduct } from "@/lib/analytics";
+import { PreviewCarousel } from "./preview-carousel";
 
 interface ProductDetailProps {
   product: Product;
@@ -133,14 +134,18 @@ export function ProductDetail({ product }: ProductDetailProps) {
         </p>
       </div>
 
+      {/* Preview Carousel */}
+      <PreviewCarousel slug={product.slug} previewCount={3} />
+
       {/* What's inside */}
       <div className="p-4 rounded-brand bg-primary-50 border border-primary-100">
         <h2 className="text-body-lg font-bold mb-3">Cosa troverai dentro</h2>
         <ul className="space-y-2">
           {[
-            "Riassunto completo di tutti i capitoli",
-            "Schemi e mappe concettuali per il ripasso",
-            "Esercizi svolti e trucchi per l'esame",
+            "Schemi e tabelle comparative per ogni argomento",
+            "Articoli del Codice Civile evidenziati e spiegati",
+            "Top 30 domande d'esame con risposta strutturata",
+            "Piano studio 20 giorni con checklist giornaliera",
             "Formato PDF, leggibile su qualsiasi dispositivo",
           ].map((item) => (
             <li key={item} className="flex items-start gap-2">
@@ -149,6 +154,19 @@ export function ProductDetail({ product }: ProductDetailProps) {
             </li>
           ))}
         </ul>
+      </div>
+
+      {/* Garanzia */}
+      <div className="p-4 rounded-brand bg-green-50 border border-green-200">
+        <div className="flex items-start gap-3">
+          <Shield size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
+          <div>
+            <p className="text-body-sm font-bold text-green-800">Garanzia soddisfatto o rimborsato</p>
+            <p className="text-caption text-green-700 mt-1">
+              Se il kit non ti soddisfa, scrivici entro 7 giorni e ti rimborsiamo. Zero domande.
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Format badge */}
