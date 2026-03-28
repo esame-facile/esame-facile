@@ -23,7 +23,7 @@ export function Hero() {
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link href="/catalogo">
             <Button size="lg" className="w-full sm:w-auto bg-accent-500 hover:bg-accent-600 text-neutral-900 font-bold">
-              Trova i tuoi appunti
+              Scopri i Kit
             </Button>
           </Link>
           <Link href="/#come-funziona">
