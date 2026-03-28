@@ -2,7 +2,7 @@ export const SITE_CONFIG = {
   name: process.env.NEXT_PUBLIC_APP_NAME || "Esame Facile",
   url: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
   description:
-    "Appunti e riassunti universitari verificati. Studia meglio, studia meno.",
+    "Kit con schemi, trucchi e strategie per superare gli esami universitari.",
   tagline: "Studia smart, passa gli esami.",
   email: "info@esamefacile.site",
 } as const;

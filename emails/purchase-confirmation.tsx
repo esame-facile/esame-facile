@@ -49,8 +49,8 @@ export default function PurchaseConfirmationEmail({
           </Heading>
 
           <Text style={{ color: "#333", fontSize: "16px" }}>
-            Ecco il riepilogo del tuo ordine e i link per scaricare i tuoi
-            appunti.
+            Ecco il riepilogo del tuo ordine e i link per scaricare il tuo
+            kit.
           </Text>
 
           <Section

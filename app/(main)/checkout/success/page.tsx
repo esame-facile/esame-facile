@@ -43,7 +43,7 @@ export default function CheckoutSuccessPage() {
 
       <p className="text-body-md text-neutral-500 mb-2 max-w-sm mx-auto">
         Grazie per il tuo acquisto. Riceverai a breve un&apos;email con i link
-        per scaricare i tuoi appunti.
+        per scaricare il tuo kit.
       </p>
 
       {loading ? (

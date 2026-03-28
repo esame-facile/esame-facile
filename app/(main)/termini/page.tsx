@@ -21,7 +21,7 @@ export default function TerminiPage() {
         </h2>
         <p>
           I presenti Termini e Condizioni regolano l&apos;acquisto di prodotti
-          digitali (appunti e riassunti universitari in formato PDF) tramite il
+          digitali (kit con schemi e strategie in formato PDF) tramite il
           sito {SITE_CONFIG.name} ({SITE_CONFIG.url}).
         </p>
 

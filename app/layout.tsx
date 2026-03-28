@@ -19,26 +19,26 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Esame Facile — Appunti Universitari Verificati",
+    default: "Esame Facile — Kit Superamento Esami Universitari",
     template: "%s | Esame Facile",
   },
   description:
-    "Appunti e riassunti universitari verificati per superare i tuoi esami. Studia meglio, studia meno.",
+    "Kit con schemi, trucchi e strategie per superare i tuoi esami universitari. Creati da chi ce l'ha fatta.",
   keywords: [
-    "appunti universitari",
-    "riassunti università",
-    "materiale studio",
+    "kit superamento esame",
+    "schemi universitari",
+    "trucchi esame",
     "esami universitari",
-    "appunti PDF",
+    "metodo studio università",
   ],
   authors: [{ name: "Esame Facile" }],
   openGraph: {
     type: "website",
     locale: "it_IT",
     siteName: "Esame Facile",
-    title: "Esame Facile — Appunti Universitari Verificati",
+    title: "Esame Facile — Kit Superamento Esami Universitari",
     description:
-      "Appunti e riassunti universitari verificati per superare i tuoi esami.",
+      "Schemi, trucchi e strategie per superare i tuoi esami universitari.",
   },
   robots: {
     index: true,

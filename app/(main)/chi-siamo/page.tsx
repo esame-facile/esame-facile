@@ -4,7 +4,7 @@ import { BookOpen, Users, Heart } from "lucide-react";
 export const metadata: Metadata = {
   title: "Chi siamo",
   description:
-    "Esame Facile nasce per aiutare gli studenti universitari a studiare meglio con appunti verificati.",
+    "Esame Facile nasce per aiutare gli studenti universitari a superare gli esami con kit di schemi, trucchi e strategie.",
 };
 
 export default function ChiSiamoPage() {
@@ -23,8 +23,8 @@ export default function ChiSiamoPage() {
 
         <p>
           Per questo abbiamo creato una piattaforma dove gli studenti possono
-          trovare appunti e riassunti verificati, scritti da chi ha già
-          superato l&apos;esame con successo. Ogni materiale viene controllato
+          trovare kit completi con schemi, strategie e trucchi, scritti da chi ha già
+          superato l&apos;esame con successo. Ogni kit viene controllato
           per garantire qualità, completezza e chiarezza.
         </p>
 
@@ -33,7 +33,7 @@ export default function ChiSiamoPage() {
             {
               icon: BookOpen,
               title: "Qualità garantita",
-              desc: "Ogni appunto è verificato prima della pubblicazione per garantire completezza e accuratezza.",
+              desc: "Ogni kit è verificato prima della pubblicazione per garantire completezza e accuratezza.",
             },
             {
               icon: Users,
@@ -65,7 +65,7 @@ export default function ChiSiamoPage() {
         </div>
 
         <p>
-          Se hai appunti di qualità e vuoi aiutare altri studenti (guadagnando),
+          Se hai materiale di qualità e vuoi aiutare altri studenti (guadagnando),
           scrivici a{" "}
           <a
             href="mailto:info@esamefacile.site"

@@ -21,7 +21,7 @@ export async function sendPurchaseEmail(order: OrderConfirmation) {
         <h1 style="color: #6366F1; font-size: 24px;">Grazie per il tuo acquisto!</h1>
 
         <p style="color: #333; font-size: 16px;">
-          Ecco il riepilogo del tuo ordine e i link per scaricare i tuoi appunti.
+          Ecco il riepilogo del tuo ordine e i link per scaricare il tuo kit.
         </p>
 
         <div style="background: #f5f5f5; border-radius: 12px; padding: 16px; margin: 24px 0;">

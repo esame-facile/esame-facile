@@ -16,25 +16,25 @@ const reviews = [
   {
     name: "Ale",
     faculty: "Ingegneria",
-    text: "Fisica 1 era il mio incubo. Con questi appunti ho finalmente capito la termodinamica, cosa che il prof non è riuscito a fare in 3 mesi.",
+    text: "Fisica 1 era il mio incubo. Con questo kit ho finalmente capito la termodinamica, cosa che il prof non è riuscito a fare in 3 mesi.",
     rating: 5,
   },
   {
     name: "Sara L.",
     faculty: "Medicina",
-    text: "Per Anatomia serviva qualcosa di schematico. Questi appunti sono esattamente quello, niente fuffa. 4 stelle perché mancano un paio di immagini.",
+    text: "Per Anatomia serviva qualcosa di schematico. Questo kit è esattamente quello, niente fuffa. 4 stelle perché mancano un paio di immagini.",
     rating: 4,
   },
   {
     name: "Fede",
     faculty: "Economia",
-    text: "Statistica mi faceva schifo. Ho preso gli appunti, studiato due weekend e passato con 28. Li vale tutti i 20 euro.",
+    text: "Statistica mi faceva schifo. Ho preso il kit, studiato due weekend e passato con 28. Li vale tutti i 20 euro.",
     rating: 5,
   },
   {
     name: "Chiara P.",
     faculty: "Scienze",
-    text: "Chimica era l'ultimo esame che mi mancava. Comprato il riassunto lunedì, passato venerdì. Non ci credo ancora.",
+    text: "Chimica era l'ultimo esame che mi mancava. Comprato il kit lunedì, passato venerdì. Non ci credo ancora.",
     rating: 5,
   },
 ];
