@@ -127,7 +127,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
           <div>
             <p className="text-body-sm font-bold text-green-800">Garanzia soddisfatto o rimborsato</p>
             <p className="text-caption text-green-700 mt-1">
-              Se il kit non ti soddisfa, scrivici entro 7 giorni e ti rimborsiamo. Zero domande.
+              Se entro 7 giorni il kit non ti ha aiutato, scrivici su WhatsApp e ti rimborsiamo.
             </p>
           </div>
         </div>

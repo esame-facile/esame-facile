@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: "Posso avere il rimborso?",
-    a: "Sì. Offriamo una garanzia soddisfatti o rimborsati di 7 giorni. Se il kit non ti soddisfa, scrivici entro 7 giorni dall'acquisto e ti rimborsiamo. Zero domande.",
+    a: "Sì. Se entro 7 giorni il kit non ti ha aiutato, scrivici su WhatsApp e ti rimborsiamo.",
   },
   {
     q: "Il pagamento è sicuro?",

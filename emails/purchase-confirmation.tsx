@@ -82,7 +82,7 @@ export default function PurchaseConfirmationEmail({
           {/* Warning */}
           <Section style={warningBox}>
             <Text style={warningText}>
-              Salva subito il file sul tuo dispositivo per averlo sempre disponibile.
+              Salva subito il file sul tuo dispositivo. Se entro 7 giorni il kit non ti ha aiutato, scrivici su WhatsApp e ti rimborsiamo.
             </Text>
           </Section>
 
