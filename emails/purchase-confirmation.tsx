@@ -55,12 +55,13 @@ export default function PurchaseConfirmationEmail({
               <Section key={i} style={itemCard}>
                 <Row>
                   <Column>
+                    <Text style={itemSubtitle}>Kit Superamento Esame</Text>
                     <Text style={itemName}>{item.product_name}</Text>
                     <Text style={itemPrice}>{formatPrice(item.price)}</Text>
                   </Column>
                 </Row>
                 <Button href={item.download_url} style={downloadButton}>
-                  ⬇ Scarica il tuo kit
+                  Scarica il tuo kit →
                 </Button>
               </Section>
             ))}
@@ -81,7 +82,7 @@ export default function PurchaseConfirmationEmail({
           {/* Warning */}
           <Section style={warningBox}>
             <Text style={warningText}>
-              ⏱ <strong>Attenzione:</strong> I link scadono tra 48 ore e puoi scaricare ogni file fino a 5 volte. Salvalo subito sul tuo dispositivo.
+              Salva subito il file sul tuo dispositivo per averlo sempre disponibile.
             </Text>
           </Section>
 
@@ -197,10 +198,19 @@ const itemCard = {
   border: "1px solid #e8e8ff",
 };
 
+const itemSubtitle = {
+  color: "#9ca3af",
+  fontSize: "11px",
+  fontWeight: "600",
+  letterSpacing: "0.5px",
+  textTransform: "uppercase" as const,
+  margin: "0 0 4px",
+};
+
 const itemName = {
   color: "#1e1b4b",
-  fontSize: "16px",
-  fontWeight: "700",
+  fontSize: "18px",
+  fontWeight: "800",
   margin: "0 0 4px",
 };
 
