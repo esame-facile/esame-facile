@@ -76,6 +76,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
               originalPrice={product.original_price}
               size="sm"
             />
+            <p className="text-[10px] text-neutral-400 mt-0.5">Meno di un aperitivo</p>
           </div>
         </div>
       </Card>

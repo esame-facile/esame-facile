@@ -110,11 +110,27 @@ export function ProductDetail({ product }: ProductDetailProps) {
           originalPrice={product.original_price}
           size="lg"
         />
+        <p className="text-caption text-neutral-400 mt-1">
+          Meno di un aperitivo. Una volta, per sempre.
+        </p>
         {product.original_price && (
-          <p className="text-caption text-red-500 font-semibold mt-1">
+          <p className="text-caption text-red-500 font-semibold mt-0.5">
             Prezzo promozionale — potrebbe aumentare presto
           </p>
         )}
+      </div>
+
+      {/* Garanzia — subito dopo il prezzo */}
+      <div className="p-4 rounded-brand bg-green-50 border border-green-200">
+        <div className="flex items-start gap-3">
+          <Shield size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
+          <div>
+            <p className="text-body-sm font-bold text-green-800">Garanzia soddisfatto o rimborsato</p>
+            <p className="text-caption text-green-700 mt-1">
+              Se il kit non ti soddisfa, scrivici entro 7 giorni e ti rimborsiamo. Zero domande.
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Metadata */}
@@ -165,19 +181,6 @@ export function ProductDetail({ product }: ProductDetailProps) {
             </li>
           ))}
         </ul>
-      </div>
-
-      {/* Garanzia */}
-      <div className="p-4 rounded-brand bg-green-50 border border-green-200">
-        <div className="flex items-start gap-3">
-          <Shield size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
-          <div>
-            <p className="text-body-sm font-bold text-green-800">Garanzia soddisfatto o rimborsato</p>
-            <p className="text-caption text-green-700 mt-1">
-              Se il kit non ti soddisfa, scrivici entro 7 giorni e ti rimborsiamo. Zero domande.
-            </p>
-          </div>
-        </div>
       </div>
 
       {/* Format badge */}

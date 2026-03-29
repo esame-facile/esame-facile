@@ -3,37 +3,37 @@ import { Star } from "lucide-react";
 const reviews = [
   {
     name: "Marco R.",
-    faculty: "Ingegneria",
-    text: "Ho comprato Analisi 1 tre giorni prima dell'esame. Non dico che sia magia, ma 25 non me lo aspettavo proprio.",
+    meta: "28 — Politecnico di Milano",
+    text: "Ho comprato Analisi 1 tre giorni prima dell'esame. Non dico che sia magia, ma 28 non me lo aspettavo proprio.",
     rating: 5,
   },
   {
     name: "Giulia T.",
-    faculty: "Giurisprudenza",
+    meta: "30 — La Sapienza",
     text: "Diritto Privato riassunto in modo che si capisce davvero, non come il libro da 900 pagine. Soldi spesi bene.",
     rating: 5,
   },
   {
-    name: "Ale",
-    faculty: "Ingegneria",
+    name: "Alessandro M.",
+    meta: "27 — Politecnico di Torino",
     text: "Fisica 1 era il mio incubo. Con questo kit ho finalmente capito la termodinamica, cosa che il prof non è riuscito a fare in 3 mesi.",
     rating: 5,
   },
   {
     name: "Sara L.",
-    faculty: "Medicina",
-    text: "Per Anatomia serviva qualcosa di schematico. Questo kit è esattamente quello, niente fuffa. 4 stelle perché mancano un paio di immagini.",
+    meta: "26 — Università di Bologna",
+    text: "Per Anatomia serviva qualcosa di schematico. Questo kit è esattamente quello: schemi chiari, niente fuffa.",
     rating: 4,
   },
   {
-    name: "Fede",
-    faculty: "Economia",
-    text: "Statistica mi faceva schifo. Ho preso il kit, studiato due weekend e passato con 28. Li vale tutti i 20 euro.",
+    name: "Federico B.",
+    meta: "28 — Bocconi",
+    text: "Statistica mi faceva schifo. Ho preso il kit, studiato due weekend e passato con 28. Li vale tutti.",
     rating: 5,
   },
   {
     name: "Chiara P.",
-    faculty: "Scienze",
+    meta: "29 — Università di Napoli",
     text: "Chimica era l'ultimo esame che mi mancava. Comprato il kit lunedì, passato venerdì. Non ci credo ancora.",
     rating: 5,
   },
@@ -62,7 +62,7 @@ function ReviewCard({ review }: { review: (typeof reviews)[0] }) {
       </p>
       <div>
         <p className="text-caption font-bold text-neutral-900">{review.name}</p>
-        <p className="text-caption text-neutral-400">{review.faculty}</p>
+        <p className="text-caption text-neutral-400">{review.meta}</p>
       </div>
     </div>
   );

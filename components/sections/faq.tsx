@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: "Posso avere il rimborso?",
-    a: "Trattandosi di prodotti digitali, non è previsto il rimborso dopo il download. Puoi però consultare l'anteprima prima dell'acquisto.",
+    a: "Sì. Offriamo una garanzia soddisfatti o rimborsati di 7 giorni. Se il kit non ti soddisfa, scrivici entro 7 giorni dall'acquisto e ti rimborsiamo. Zero domande.",
   },
   {
     q: "Il pagamento è sicuro?",
