@@ -204,14 +204,18 @@ export function ProductDetail({ product }: ProductDetailProps) {
             originalPrice={product.original_price}
             size="md"
           />
-          <Button
-            size="lg"
-            onClick={handleBuy}
-            disabled={!product.stripe_payment_link}
-            className="flex-1 max-w-[200px] !text-white"
-          >
-            <CreditCard size={18} /> Acquista ora
-          </Button>
+          {product.stripe_payment_link ? (
+            <a
+              href={product.stripe_payment_link}
+              className="flex-1 max-w-[200px] inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 active:scale-[0.98] text-white font-semibold rounded-brand px-6 h-12 text-body-md transition-all"
+            >
+              <CreditCard size={18} /> Acquista ora
+            </a>
+          ) : (
+            <Button size="lg" disabled className="flex-1 max-w-[200px] !text-white">
+              <CreditCard size={18} /> Acquista ora
+            </Button>
+          )}
         </div>
       </div>
     </div>
