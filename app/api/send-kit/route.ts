@@ -111,7 +111,12 @@ export async function POST(request: NextRequest) {
     });
   } catch (emailError) {
     console.error("[send-kit] Errore invio email:", emailError);
-    // Non bloccare la risposta — ordine e token sono già creati
+    return NextResponse.json({
+      success: true,
+      order_id: order.id,
+      download_url: downloadUrl,
+      email_error: emailError instanceof Error ? emailError.message : String(emailError),
+    });
   }
 
   return NextResponse.json({
