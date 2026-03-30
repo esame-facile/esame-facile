@@ -29,7 +29,7 @@ export function WhatsAppButton() {
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
   return (
-    <div className="fixed bottom-28 right-4 z-50 flex flex-col items-end gap-2">
+    <div className="fixed bottom-36 right-4 z-50 flex flex-col items-end gap-2">
       {/* Tooltip */}
       {showTooltip && !dismissed && (
         <div className="flex items-start gap-2 bg-white rounded-2xl shadow-lg border border-neutral-200 px-4 py-3 max-w-[220px] animate-in slide-in-from-bottom-2 fade-in duration-300">
