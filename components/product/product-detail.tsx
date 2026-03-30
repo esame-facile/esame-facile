@@ -17,12 +17,6 @@ export function ProductDetail({ product }: ProductDetailProps) {
     trackViewProduct(product.id, product.name, product.price);
   }, [product.id, product.name, product.price]);
 
-  const handleBuy = () => {
-    if (product.stripe_payment_link) {
-      window.location.href = product.stripe_payment_link;
-    }
-  };
-
   const metadata = [
     { icon: BookOpen, label: "Università", value: product.university },
     product.professor && {

@@ -106,7 +106,7 @@ export default function DownloadPage() {
             </span>
           </div>
           <ol style={{ color: "#9ca3af", fontSize: "13px", margin: 0, paddingLeft: "20px", lineHeight: "1.8" }}>
-            <li>Clicca "Scarica il PDF" qui sopra</li>
+            <li>Clicca &quot;Scarica il PDF&quot; qui sopra</li>
             <li>Quando si apre il PDF, tocca l&apos;icona <strong style={{ color: "#ffffff" }}>Condividi</strong> (quadrato con freccia in su)</li>
             <li>Scegli <strong style={{ color: "#ffffff" }}>Salva su File</strong> oppure <strong style={{ color: "#ffffff" }}>Aggiungi a Libri</strong></li>
           </ol>
