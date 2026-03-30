@@ -40,13 +40,16 @@ export async function GET(
     );
   }
 
-  const filePath = tokenRecord.product?.file_path;
-  if (!filePath) {
+  const rawPath = tokenRecord.product?.file_path;
+  if (!rawPath) {
     return NextResponse.json(
       { error: "File non trovato" },
       { status: 404 }
     );
   }
+
+  // Rimuove prefisso bucket se presente (es. "ebooks/file.pdf" → "file.pdf")
+  const filePath = rawPath.replace(/^ebooks\//, "");
 
   // Increment download count
   await supabase
