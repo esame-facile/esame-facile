@@ -56,7 +56,7 @@ export async function GET(
 
   // Generate signed URL (60 seconds)
   const { data: signedUrl, error: urlError } = await supabase.storage
-    .from("products")
+    .from("ebooks")
     .createSignedUrl(filePath, DOWNLOAD_CONFIG.signedUrlDurationSeconds);
 
   if (urlError || !signedUrl) {
