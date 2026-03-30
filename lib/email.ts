@@ -15,7 +15,7 @@ export async function sendPurchaseEmail(order: OrderConfirmation) {
   const { error } = await getResend().emails.send({
     from: `${SITE_CONFIG.name} <noreply@${SITE_CONFIG.email.split("@")[1]}>`,
     to: order.customer_email,
-    subject: `Conferma acquisto - ${SITE_CONFIG.name}`,
+    subject: `Conferma acquisto - ${SITE_CONFIG.name.trim()}`,
     html: `
       <div style="font-family: sans-serif; max-width: 480px; margin: 0 auto; padding: 24px;">
         <h1 style="color: #6366F1; font-size: 24px;">Grazie per il tuo acquisto!</h1>
