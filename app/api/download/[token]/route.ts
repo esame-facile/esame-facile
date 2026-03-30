@@ -57,17 +57,27 @@ export async function GET(
     .update({ download_count: tokenRecord.download_count + 1 })
     .eq("id", tokenRecord.id);
 
-  // Generate signed URL (60 seconds)
-  const { data: signedUrl, error: urlError } = await supabase.storage
+  // Scarica il file da Supabase e lo restituisce direttamente
+  // così Content-Disposition: attachment forza il download su tutti i device (incluso iPhone)
+  const { data: fileData, error: downloadError } = await supabase.storage
     .from("ebooks")
-    .createSignedUrl(filePath, DOWNLOAD_CONFIG.signedUrlDurationSeconds);
+    .download(filePath);
 
-  if (urlError || !signedUrl) {
+  if (downloadError || !fileData) {
     return NextResponse.json(
       { error: "Impossibile generare il link di download" },
       { status: 500 }
     );
   }
 
-  return NextResponse.redirect(signedUrl.signedUrl);
+  const fileName = tokenRecord.product?.name
+    ? `${tokenRecord.product.name}.pdf`
+    : "kit-esame.pdf";
+
+  return new NextResponse(fileData, {
+    headers: {
+      "Content-Type": "application/pdf",
+      "Content-Disposition": `attachment; filename="${fileName}"`,
+    },
+  });
 }
