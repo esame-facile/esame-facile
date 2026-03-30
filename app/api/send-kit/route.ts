@@ -93,7 +93,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Errore interno" }, { status: 500 });
   }
 
-  const downloadUrl = `${SITE_CONFIG.url}/api/download/${token}`;
+  const downloadUrl = `${SITE_CONFIG.url}/scarica/${token}`;
 
   // Invia email
   try {

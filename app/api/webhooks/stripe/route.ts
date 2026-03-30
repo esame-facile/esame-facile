@@ -104,7 +104,7 @@ export async function POST(request: NextRequest) {
         downloadLinks.push({
           product_name: product.name,
           price: product.price,
-          download_url: `${SITE_CONFIG.url}/api/download/${token}`,
+          download_url: `${SITE_CONFIG.url}/scarica/${token}`,
         });
       }
 
