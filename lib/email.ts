@@ -12,7 +12,7 @@ function getResend() {
 }
 
 export async function sendPurchaseEmail(order: OrderConfirmation) {
-  await getResend().emails.send({
+  const { error } = await getResend().emails.send({
     from: `${SITE_CONFIG.name} <noreply@${SITE_CONFIG.email.split("@")[1]}>`,
     to: order.customer_email,
     subject: `Conferma acquisto - ${SITE_CONFIG.name}`,
@@ -67,4 +67,7 @@ export async function sendPurchaseEmail(order: OrderConfirmation) {
       </div>
     `,
   });
+  if (error) {
+    throw new Error(`Resend error: ${JSON.stringify(error)}`);
+  }
 }
