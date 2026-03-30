@@ -50,6 +50,7 @@ export async function POST(request: NextRequest) {
       customer_email: email,
       total: product.price,
       status: "completed",
+      stripe_session_id: `manual_${Date.now()}`,
     })
     .select()
     .single();
