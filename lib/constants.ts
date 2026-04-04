@@ -16,6 +16,7 @@ export const DOWNLOAD_CONFIG = {
 export const NAVIGATION_ITEMS = [
   { label: "Home", href: "/" },
   { label: "Catalogo", href: "/catalogo" },
+  { label: "🏆 Concorsi", href: "/concorsi" },
   { label: "Come funziona", href: "/#come-funziona" },
   { label: "FAQ", href: "/#faq" },
   { label: "Contatti", href: "/contatti" },
