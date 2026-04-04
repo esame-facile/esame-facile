@@ -52,7 +52,7 @@ export default function CheckoutSuccessPage() {
         </div>
         <h1 className="text-display-sm mb-2">Acquisto completato!</h1>
         <p className="text-body-md text-neutral-500 max-w-xs mx-auto">
-          Ti abbiamo inviato un&apos;email con il link per scaricare il tuo kit.
+          Scrivi su WhatsApp per ricevere subito il tuo PDF.
         </p>
       </div>
 
@@ -89,35 +89,38 @@ export default function CheckoutSuccessPage() {
         </div>
       ) : null}
 
-      {/* Steps */}
-      <div className="bg-primary-950 rounded-brand p-5 mb-6 space-y-4">
-        <p className="text-body-sm font-bold text-white mb-1">Cosa succede adesso</p>
-        {[
-          { icon: Mail, text: "Controlla la tua email (anche spam)" },
-          { icon: Download, text: "Clicca sul bottone \"Scarica il tuo kit\"" },
-          { icon: CheckCircle, text: "Inizia a studiare subito!" },
-        ].map((step, i) => (
-          <div key={i} className="flex items-center gap-3">
-            <div className="w-7 h-7 rounded-full bg-primary-800 flex items-center justify-center flex-shrink-0">
-              <step.icon size={14} className="text-primary-300" />
-            </div>
-            <p className="text-body-sm text-neutral-300">{step.text}</p>
-          </div>
-        ))}
-      </div>
-
-      {/* Support */}
-      <div className="text-center mb-8">
-        <p className="text-body-sm text-neutral-400 mb-3">Problemi con il download?</p>
+      {/* WhatsApp CTA */}
+      <div className="bg-green-950 border border-green-800 rounded-brand p-5 mb-6 text-center">
+        <p className="text-body-sm font-bold text-white mb-1">Come ricevere il tuo PDF</p>
+        <p className="text-body-sm text-green-300 mb-5">
+          Scrivi su WhatsApp con il nome dell&apos;esame che hai acquistato e ti inviamo il PDF in pochi minuti.
+        </p>
         <a
           href="https://wa.me/37258472379"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-green-500 text-white text-body-sm font-semibold hover:bg-green-600 transition-colors"
+          className="inline-flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-brand bg-green-500 text-white text-body-sm font-bold hover:bg-green-600 active:bg-green-700 transition-colors"
         >
-          <MessageCircle size={16} />
+          <MessageCircle size={18} />
           Scrivici su WhatsApp
         </a>
+      </div>
+
+      {/* Steps */}
+      <div className="bg-neutral-900 rounded-brand p-5 mb-6 space-y-4">
+        <p className="text-body-sm font-bold text-white mb-1">Come funziona</p>
+        {[
+          { icon: MessageCircle, text: "Scrivi su WhatsApp il nome del tuo esame" },
+          { icon: Download, text: "Ricevi il PDF direttamente in chat" },
+          { icon: CheckCircle, text: "Inizia a studiare subito!" },
+        ].map((step, i) => (
+          <div key={i} className="flex items-center gap-3">
+            <div className="w-7 h-7 rounded-full bg-neutral-800 flex items-center justify-center flex-shrink-0">
+              <step.icon size={14} className="text-green-400" />
+            </div>
+            <p className="text-body-sm text-neutral-300">{step.text}</p>
+          </div>
+        ))}
       </div>
 
       {/* CTA */}
