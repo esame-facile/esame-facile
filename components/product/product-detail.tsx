@@ -12,6 +12,80 @@ interface ProductDetailProps {
   product: Product;
 }
 
+const PRODUCT_FEATURES: Record<string, string[]> = {
+  "analisi-1": [
+    "Schemi risolutivi per limiti, derivate, integrali e serie",
+    "66 esercizi tipo esame risolti passo-passo",
+    "Sistema 90/10: le 6 tipologie che coprono il 90% dell'esame",
+    "Piano studio 21 giorni con checklist giornaliera",
+    "Formato PDF, leggibile su qualsiasi dispositivo",
+  ],
+  "analisi-2": [
+    "Schemi per serie numeriche, integrali multipli e campi vettoriali",
+    "Metodo riconosci-il-pattern per ogni tipologia di esercizio",
+    "Equazioni differenziali: tutti i casi risolti",
+    "Planner di studio strutturato + trucchi per i calcoli",
+    "Formato PDF, leggibile su qualsiasi dispositivo",
+  ],
+  "fisica-1": [
+    "Schemi risolutivi per meccanica, termodinamica, onde e ottica",
+    "Formulario ragionato: quando e come usare ogni formula",
+    "Esercizi tipo esame risolti passo-passo con commento",
+    "Trucchi per non sbagliare segni e unità di misura",
+    "Formato PDF, leggibile su qualsiasi dispositivo",
+  ],
+  "chimica": [
+    "Schemi per stechiometria, equilibri, acidi-basi ed elettrochimica",
+    "Metodo in 3 passi per ogni tipologia di esercizio",
+    "Tavola periodica ragionata con i trend che escono all'esame",
+    "Trucchi per bilanciamenti e unità di misura",
+    "Formato PDF, leggibile su qualsiasi dispositivo",
+  ],
+  "statistica": [
+    "Schemi passo-passo per distribuzioni, test e regressione",
+    "Quando usare quale formula: tabella comparativa",
+    "Gli errori che bocciano il 70% degli studenti (e come evitarli)",
+    "Esercizi risolti con il ragionamento dietro ogni passaggio",
+    "Formato PDF, leggibile su qualsiasi dispositivo",
+  ],
+  "informatica": [
+    "Mappe concettuali per architettura, algoritmi, reti e basi di dati",
+    "Pattern ricorrenti nelle domande d'esame",
+    "Metodo per memorizzare concetti tecnici velocemente",
+    "Schemi sintetici per sistemi operativi e programmazione",
+    "Formato PDF, leggibile su qualsiasi dispositivo",
+  ],
+  "biochimica": [
+    "Mappe metaboliche semplificate (glicolisi, Krebs, fosforilazione)",
+    "Mnemoniche per enzimi, cofattori e regolazioni",
+    "Metodo dei collegamenti logici tra vie metaboliche",
+    "Schemi visivi che condensano capitoli interi in una pagina",
+    "Formato PDF, leggibile su qualsiasi dispositivo",
+  ],
+  "anatomia": [
+    "Mnemoniche per ossa, muscoli, nervi e vasi di ogni sistema",
+    "Mappe mentali visive con il metodo Palazzo della Memoria",
+    "Sistema a strati: dal generale al particolare",
+    "Metodo delle 3V (Visualizza, Verbalizza, Verifica) con spaced repetition",
+    "Formato PDF, leggibile su qualsiasi dispositivo",
+  ],
+  "diritto-privato": [
+    "Schemi logici per contratti, obbligazioni, proprietà e successioni",
+    "Articoli del Codice Civile evidenziati e spiegati",
+    "Top 30 domande d'esame orali con risposta strutturata",
+    "Trucchi mnemonici per ricordare numeri e termini giuridici",
+    "Formato PDF, leggibile su qualsiasi dispositivo",
+  ],
+};
+
+const DEFAULT_FEATURES = [
+  "Schemi e tabelle comparative per ogni argomento",
+  "Esercizi tipo esame risolti passo-passo",
+  "Top 30 domande d'esame con risposta strutturata",
+  "Piano studio 20 giorni con checklist giornaliera",
+  "Formato PDF, leggibile su qualsiasi dispositivo",
+];
+
 export function ProductDetail({ product }: ProductDetailProps) {
   useEffect(() => {
     trackViewProduct(product.id, product.name, product.price);
@@ -162,13 +236,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
       <div className="p-4 rounded-brand bg-primary-50 border border-primary-100">
         <h2 className="text-body-lg font-bold mb-3">Cosa troverai dentro</h2>
         <ul className="space-y-2">
-          {[
-            "Schemi e tabelle comparative per ogni argomento",
-            "Articoli del Codice Civile evidenziati e spiegati",
-            "Top 30 domande d'esame con risposta strutturata",
-            "Piano studio 20 giorni con checklist giornaliera",
-            "Formato PDF, leggibile su qualsiasi dispositivo",
-          ].map((item) => (
+          {(PRODUCT_FEATURES[product.slug] ?? DEFAULT_FEATURES).map((item) => (
             <li key={item} className="flex items-start gap-2">
               <CheckCircle2 size={16} className="text-primary-500 mt-0.5 flex-shrink-0" />
               <span className="text-body-sm text-neutral-700">{item}</span>
