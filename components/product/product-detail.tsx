@@ -14,11 +14,11 @@ interface ProductDetailProps {
 
 const PRODUCT_FEATURES: Record<string, string[]> = {
   "analisi-1": [
-    "Schemi risolutivi per limiti, derivate, integrali e serie",
-    "66 esercizi tipo esame risolti passo-passo",
-    "Sistema 90/10: le 6 tipologie che coprono il 90% dell'esame",
-    "Piano studio 21 giorni con checklist giornaliera",
-    "Formato PDF, leggibile su qualsiasi dispositivo",
+    "Mappa concettuale completa: tutti gli argomenti del corso collegati",
+    "35+ teoremi con dimostrazione e spiegazione in italiano semplice",
+    "Tabelle comparative: derivate, limiti notevoli, tecniche di integrazione, criteri di convergenza",
+    "20 esercizi risolti passo-passo + 30 domande orali tipo esame",
+    "Formato PDF 47 pagine, leggibile su qualsiasi dispositivo",
   ],
   "analisi-2": [
     "Schemi per serie numeriche, integrali multipli e campi vettoriali",
