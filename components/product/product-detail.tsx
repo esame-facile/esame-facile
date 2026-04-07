@@ -69,6 +69,13 @@ const PRODUCT_FEATURES: Record<string, string[]> = {
     "30 domande orali per ogni sistema — quelle che fanno davvero i professori",
     "Basato su Anastasi (Edi.Ermes) — il manuale standard per Medicina e Scienze Motorie",
   ],
+  "diritto-commerciale": [
+    "Mappa concettuale completa: tutti gli istituti del corso collegati",
+    "Tabella comparativa SS, SNC, SAS, SpA, Srl — responsabilità, capitale, governance",
+    "Articoli chiave del Codice Civile e del CCII evidenziati e spiegati",
+    "25 casi pratici risolti + 30 domande orali con risposta strutturata",
+    "Basato su Campobasso (UTET) — il manuale più usato nelle facoltà di Giurisprudenza",
+  ],
   "diritto-privato": [
     "Schemi logici per contratti, obbligazioni, diritti reali, famiglia e successioni",
     "Articoli del Codice Civile collegati tra loro — vedi la struttura, non i singoli articoli",
