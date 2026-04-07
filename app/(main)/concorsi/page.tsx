@@ -44,7 +44,7 @@ const kits = [
     title: "Kit Cultura Generale Medicina",
     description:
       "4 simulazioni TOLC-MED su logica, biologia, chimica, fisica e matematica. Schemi riassuntivi per ogni materia con soluzioni commentate.",
-    badge: "TOLC-MED 2025",
+    badge: "TOLC-MED 2026",
     badgeColor: "bg-green-500 text-white",
     price: "5,99€",
     priceNote: "una tantum · PDF immediato",
@@ -75,7 +75,7 @@ const features = [
   { icon: Target, title: "Domande ufficiali", desc: "Tratte dalle ultime sessioni reali del concorso" },
   { icon: BookOpen, title: "Soluzioni commentate", desc: "Ogni risposta spiegata con la norma o il concetto" },
   { icon: Zap, title: "PDF immediato", desc: "Link al download subito dopo il pagamento" },
-  { icon: ShieldCheck, title: "Aggiornato 2025", desc: "Include le novità normative dell'ultimo anno" },
+  { icon: ShieldCheck, title: "Aggiornato 2026", desc: "Include le novità normative dell'ultimo anno" },
 ];
 
 const faqs = [
@@ -114,7 +114,7 @@ export default function ConcorsiPage() {
         <div className="container-app relative z-10 text-center pt-10 pb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/20 border border-amber-400/30 text-caption text-amber-300 mb-4">
             <span className="w-1.5 h-1.5 bg-amber-400 rounded-full animate-pulse" />
-            Quiz aggiornati alle prove reali 2025
+            Quiz aggiornati alle prove reali 2026
           </div>
 
           <h1 className="text-[1.75rem] font-bold leading-tight mb-4 text-white">
@@ -203,25 +203,25 @@ export default function ConcorsiPage() {
               Solo ciò che viene chiesto. Nient&apos;altro.
             </h2>
             <p className="text-body-sm text-blue-200 mt-2 max-w-xs mx-auto">
-              I nostri PDF sono costruiti al contrario: partiamo dalle prove ufficiali e risaliamo alla teoria. Studi solo ciò che conta.
+              I nostri PDF sono costruiti sugli argomenti realmente richiesti dai concorsi: schemi sintetici, simulazioni complete e soluzioni spiegate.
             </p>
           </div>
           <div className="space-y-3">
             {[
               {
                 check: "✓",
-                title: "Quiz tratti dalle prove reali",
-                desc: "Ogni domanda del kit proviene dalle sessioni ufficiali degli ultimi anni. Non ipotesi, non esercizi inventati — le stesse domande del concorso.",
+                title: "Domande sugli argomenti reali del concorso",
+                desc: "Ogni quiz è costruito sulle materie e sui temi che appaiono effettivamente nelle prove: niente fuori tema, niente superfluo.",
               },
               {
                 check: "✓",
-                title: "Teoria solo dove serve",
-                desc: "Prima degli quiz trovi schemi sintetici per ogni materia. Ti danno le basi esatte richieste dal concorso, senza pagine inutili.",
+                title: "Schemi riassuntivi per ogni materia",
+                desc: "Prima delle simulazioni trovi schemi sintetici con la teoria essenziale. Capisci prima, poi ti alleni con i quiz.",
               },
               {
                 check: "✓",
-                title: "Simulazioni cronometrate",
-                desc: "3–5 simulazioni complete strutturate come la prova vera. Ti alleni alla velocità e alla pressione prima del giorno dell'esame.",
+                title: "3–5 simulazioni complete",
+                desc: "Strutturate come la prova vera, con lo stesso numero di domande e la stessa distribuzione di materie.",
               },
               {
                 check: "✓",
@@ -267,7 +267,7 @@ export default function ConcorsiPage() {
             },
             {
               name: "Luca M.",
-              concorso: "TOLC-MED 2025",
+              concorso: "TOLC-MED 2026",
               text: "Cercavo simulazioni vere, non esercizi casuali. Qui trovi domande costruite come quelle del test. Vale ogni centesimo.",
               stars: 5,
             },
@@ -439,7 +439,7 @@ export default function ConcorsiPage() {
           <Award size={32} className="text-amber-400 mx-auto mb-3" />
           <h2 className="text-heading-sm font-bold text-white mb-2">Il concorso non aspetta.</h2>
           <p className="text-body-sm text-blue-200 mb-5 max-w-xs mx-auto">
-            Inizia a prepararti oggi con quiz aggiornati alle prove reali 2025.
+            Inizia a prepararti oggi con quiz aggiornati alle prove reali 2026.
           </p>
           <a
             href="https://buy.stripe.com/9B65kE2eHgkW7Bq7xw9IQ0t"
