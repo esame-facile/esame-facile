@@ -1,5 +1,6 @@
 import { Target, Zap, ShieldCheck, BookOpen, ChevronDown, Award } from "lucide-react";
 import type { Metadata } from "next";
+import { PreviewCarousel } from "@/components/product/preview-carousel";
 
 export const metadata: Metadata = {
   title: "Kit Concorsi & Cultura Generale – Concorsi Facili",
@@ -20,6 +21,7 @@ const kits = [
     topics: ["Storia d'Italia", "Grammatica italiana", "Costituzione", "Scienze", "Logica", "3 simulazioni"],
     pages: "47 pagine",
     stripeUrl: "https://buy.stripe.com/9B65kE2eHgkW7Bq7xw9IQ0t",
+    slug: "carabinieri-allievi",
     comingSoon: false,
   },
   {
@@ -34,6 +36,7 @@ const kits = [
     topics: ["Diritto Costituzionale", "Ordinamento PS", "Grammatica", "Logica", "Scienze", "5 simulazioni"],
     pages: "44 pagine",
     stripeUrl: "https://buy.stripe.com/cNiaEY9H9gkW8FuaJI9IQ0u",
+    slug: "polizia-di-stato",
     comingSoon: false,
   },
   {
@@ -48,6 +51,7 @@ const kits = [
     topics: ["Ragionamento logico", "Biologia", "Chimica", "Fisica & Matematica", "Comprensione testi", "4 simulazioni"],
     pages: "34 pagine",
     stripeUrl: "https://buy.stripe.com/9B68wQ06z4Ce8FuaJI9IQ0v",
+    slug: "test-medicina",
     comingSoon: false,
   },
   {
@@ -62,6 +66,7 @@ const kits = [
     topics: ["Cultura generale", "Diritto", "Matematica", "Storia", "Geografia", "Logica"],
     pages: "",
     stripeUrl: "",
+    slug: "",
     comingSoon: true,
   },
 ];
@@ -169,6 +174,13 @@ export default function ConcorsiPage() {
             {/* Card body */}
             <div className="px-4 py-4">
               <p className="text-body-sm text-neutral-600 mb-3">{kit.description}</p>
+
+              {/* Preview carousel */}
+              {!kit.comingSoon && kit.slug && (
+                <div className="mb-4">
+                  <PreviewCarousel slug={kit.slug} previewCount={3} />
+                </div>
+              )}
 
               {/* Topics */}
               <div className="flex flex-wrap gap-1.5 mb-4">
