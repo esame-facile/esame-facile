@@ -72,7 +72,7 @@ const kits = [
 ];
 
 const features = [
-  { icon: Target, title: "Domande ufficiali", desc: "Tratte dalle ultime sessioni reali del concorso" },
+  { icon: Target, title: "Domande sugli argomenti reali", desc: "Costruite sulle materie e i temi che appaiono nelle prove" },
   { icon: BookOpen, title: "Soluzioni commentate", desc: "Ogni risposta spiegata con la norma o il concetto" },
   { icon: Zap, title: "PDF immediato", desc: "Link al download subito dopo il pagamento" },
   { icon: ShieldCheck, title: "Aggiornato 2026", desc: "Include le novità normative dell'ultimo anno" },
