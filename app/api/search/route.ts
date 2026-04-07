@@ -15,6 +15,7 @@ export async function GET(request: NextRequest) {
     .from("products")
     .select("id, name, slug, price, original_price, preview_image, university")
     .eq("is_active", true)
+    .neq("university", "Concorsi Pubblici")
     .textSearch("search_vector", q.trim(), {
       type: "plain",
       config: "italian",

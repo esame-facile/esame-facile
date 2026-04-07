@@ -18,7 +18,8 @@ export async function GET(request: NextRequest) {
   let query = supabase
     .from("products")
     .select("*, category:categories(*)", { count: "exact" })
-    .eq("is_active", true);
+    .eq("is_active", true)
+    .neq("university", "Concorsi Pubblici");
 
   if (featured === "true") {
     query = query.eq("is_featured", true);
