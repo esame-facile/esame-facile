@@ -130,7 +130,7 @@ export default function ConcorsiPage() {
           </p>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-3 max-w-xs mx-auto">
+          <div className="grid grid-cols-3 gap-3 max-w-xs mx-auto mb-6">
             {[
               { v: "650+", l: "Quiz totali" },
               { v: "3", l: "Concorsi" },
@@ -142,6 +142,13 @@ export default function ConcorsiPage() {
               </div>
             ))}
           </div>
+
+          <a
+            href="#kit"
+            className="inline-block bg-amber-400 hover:bg-amber-300 active:scale-95 text-neutral-900 font-bold text-body-md px-6 py-3 rounded-xl transition-all shadow-md"
+          >
+            Vedi i kit →
+          </a>
         </div>
       </section>
 
@@ -283,7 +290,7 @@ export default function ConcorsiPage() {
       </section>
 
       {/* ── KIT CARDS ── */}
-      <section className="container-app py-8 space-y-4">
+      <section id="kit" className="container-app py-8 space-y-4">
         <div className="text-center mb-2">
           <h2 className="text-heading-md font-bold text-neutral-900">Scegli il tuo kit</h2>
           <p className="text-body-sm text-neutral-500 mt-1">Pagamento sicuro via Stripe · PDF subito dopo l&apos;acquisto</p>
