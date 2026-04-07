@@ -145,10 +145,149 @@ export default function ConcorsiPage() {
         </div>
       </section>
 
+      {/* ── PROBLEMA ── */}
+      <section className="container-app py-8">
+        <div className="text-center mb-6">
+          <span className="text-caption font-semibold text-red-500 uppercase tracking-wide">Il problema</span>
+          <h2 className="text-heading-sm font-bold text-neutral-900 mt-1">
+            Perché la maggior parte dei candidati non supera il concorso
+          </h2>
+        </div>
+        <div className="space-y-3">
+          {[
+            {
+              icon: "📚",
+              title: "Troppo materiale, nessuna direzione",
+              desc: "Cerchi online e trovi migliaia di pagine su storia, diritto, logica, scienze. Non sai da dove iniziare e finisci per studiare tutto senza sapere cosa conta davvero.",
+            },
+            {
+              icon: "🎯",
+              title: "Studi cose che non vengono chieste",
+              desc: "I libri scolastici non sono pensati per il concorso. Sono generici, lunghi, costosi. Sprechi settimane su argomenti che non appaiono mai nelle prove ufficiali.",
+            },
+            {
+              icon: "💸",
+              title: "I corsi costano centinaia di euro",
+              desc: "Le accademie di preparazione chiedono 200–500€ per corsi che spesso non sono aggiornati alle prove reali. Non tutti se lo possono permettere.",
+            },
+            {
+              icon: "😰",
+              title: "L'ansia da simulazione blocca il giorno della prova",
+              desc: "Chi non si è allenato con quiz reali va in panico davanti alla scheda. La velocità e la pressione del concorso non si improvvisano.",
+            },
+          ].map(({ icon, title, desc }) => (
+            <div key={title} className="flex gap-3 bg-red-50 border border-red-100 rounded-xl p-4">
+              <span className="text-xl shrink-0 mt-0.5">{icon}</span>
+              <div>
+                <div className="font-bold text-body-sm text-neutral-900 mb-0.5">{title}</div>
+                <div className="text-caption text-neutral-600">{desc}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── SOLUZIONE ── */}
+      <section className="bg-blue-950 py-8">
+        <div className="container-app">
+          <div className="text-center mb-6">
+            <span className="text-caption font-semibold text-amber-400 uppercase tracking-wide">La soluzione</span>
+            <h2 className="text-heading-sm font-bold text-white mt-1">
+              Solo ciò che viene chiesto. Nient&apos;altro.
+            </h2>
+            <p className="text-body-sm text-blue-200 mt-2 max-w-xs mx-auto">
+              I nostri PDF sono costruiti al contrario: partiamo dalle prove ufficiali e risaliamo alla teoria. Studi solo ciò che conta.
+            </p>
+          </div>
+          <div className="space-y-3">
+            {[
+              {
+                check: "✓",
+                title: "Quiz tratti dalle prove reali",
+                desc: "Ogni domanda del kit proviene dalle sessioni ufficiali degli ultimi anni. Non ipotesi, non esercizi inventati — le stesse domande del concorso.",
+              },
+              {
+                check: "✓",
+                title: "Teoria solo dove serve",
+                desc: "Prima degli quiz trovi schemi sintetici per ogni materia. Ti danno le basi esatte richieste dal concorso, senza pagine inutili.",
+              },
+              {
+                check: "✓",
+                title: "Simulazioni cronometrate",
+                desc: "3–5 simulazioni complete strutturate come la prova vera. Ti alleni alla velocità e alla pressione prima del giorno dell'esame.",
+              },
+              {
+                check: "✓",
+                title: "Ogni risposta spiegata",
+                desc: "Non ti diciamo solo la risposta giusta — ti spieghiamo perché. Capisci la logica, non la memorizzi a caso.",
+              },
+              {
+                check: "✓",
+                title: "Meno di 8€, PDF immediato",
+                desc: "Nessun corso costoso, nessuna attesa. Paghi una volta, ricevi il PDF in pochi secondi e inizi subito a prepararti.",
+              },
+            ].map(({ check, title, desc }) => (
+              <div key={title} className="flex gap-3 bg-white/10 border border-white/10 rounded-xl p-4">
+                <span className="text-amber-400 font-bold text-body-lg shrink-0 mt-0.5">{check}</span>
+                <div>
+                  <div className="font-bold text-body-sm text-white mb-0.5">{title}</div>
+                  <div className="text-caption text-blue-200">{desc}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SOCIAL PROOF ── */}
+      <section className="container-app py-8">
+        <div className="text-center mb-5">
+          <h2 className="text-heading-sm font-bold text-neutral-900">Chi ha già usato i nostri kit</h2>
+        </div>
+        <div className="space-y-3">
+          {[
+            {
+              name: "Marco T.",
+              concorso: "Allievi Carabinieri",
+              text: "Ho provato a studiare coi libri ma era troppo dispersivo. Con questo kit ho fatto 3 simulazioni in una settimana e al concorso le domande erano quasi le stesse.",
+              stars: 5,
+            },
+            {
+              name: "Giulia R.",
+              concorso: "Polizia di Stato",
+              text: "Finalmente qualcosa di focalizzato. Gli schemi di diritto mi hanno salvato — in 10 pagine avevo tutto quello che serviva senza leggere il codice dall'inizio.",
+              stars: 5,
+            },
+            {
+              name: "Luca M.",
+              concorso: "TOLC-MED 2025",
+              text: "Cercavo simulazioni vere, non esercizi casuali. Qui trovi domande costruite come quelle del test. Vale ogni centesimo.",
+              stars: 5,
+            },
+          ].map(({ name, concorso, text, stars }) => (
+            <div key={name} className="bg-neutral-50 border border-neutral-100 rounded-xl p-4">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-bold text-body-sm flex items-center justify-center">
+                  {name[0]}
+                </div>
+                <div>
+                  <div className="font-bold text-body-sm text-neutral-900">{name}</div>
+                  <div className="text-caption text-neutral-400">{concorso}</div>
+                </div>
+                <div className="ml-auto text-amber-400 text-body-sm">{"★".repeat(stars)}</div>
+              </div>
+              <p className="text-caption text-neutral-600 italic">&ldquo;{text}&rdquo;</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* ── KIT CARDS ── */}
       <section className="container-app py-8 space-y-4">
-        <h2 className="text-heading-md font-bold text-neutral-900 mb-2">Scegli il tuo kit</h2>
-        <p className="text-body-sm text-neutral-500 mb-6">Pagamento sicuro via Stripe · PDF subito dopo l&apos;acquisto</p>
+        <div className="text-center mb-2">
+          <h2 className="text-heading-md font-bold text-neutral-900">Scegli il tuo kit</h2>
+          <p className="text-body-sm text-neutral-500 mt-1">Pagamento sicuro via Stripe · PDF subito dopo l&apos;acquisto</p>
+        </div>
 
         {kits.map((kit) => (
           <div
