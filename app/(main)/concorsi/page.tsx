@@ -1,4 +1,4 @@
-import { Target, Zap, ShieldCheck, BookOpen, ChevronDown, Award } from "lucide-react";
+import { Target, Zap, ShieldCheck, BookOpen, ChevronDown, Award, Layers, Ban, Banknote, AlertTriangle } from "lucide-react";
 import type { Metadata } from "next";
 import { PreviewCarousel } from "@/components/product/preview-carousel";
 
@@ -163,28 +163,28 @@ export default function ConcorsiPage() {
         <div className="space-y-3">
           {[
             {
-              icon: "📚",
+              icon: Layers,
               title: "Troppo materiale, nessuna direzione",
               desc: "Cerchi online e trovi migliaia di pagine su storia, diritto, logica, scienze. Non sai da dove iniziare e finisci per studiare tutto senza sapere cosa conta davvero.",
             },
             {
-              icon: "🎯",
+              icon: Ban,
               title: "Studi cose che non vengono chieste",
               desc: "I libri scolastici non sono pensati per il concorso. Sono generici, lunghi, costosi. Sprechi settimane su argomenti che non appaiono mai nelle prove ufficiali.",
             },
             {
-              icon: "💸",
+              icon: Banknote,
               title: "I corsi costano centinaia di euro",
               desc: "Le accademie di preparazione chiedono 200–500€ per corsi che spesso non sono aggiornati alle prove reali. Non tutti se lo possono permettere.",
             },
             {
-              icon: "😰",
+              icon: AlertTriangle,
               title: "L'ansia da simulazione blocca il giorno della prova",
               desc: "Chi non si è allenato con quiz reali va in panico davanti alla scheda. La velocità e la pressione del concorso non si improvvisano.",
             },
-          ].map(({ icon, title, desc }) => (
+          ].map(({ icon: Icon, title, desc }) => (
             <div key={title} className="flex gap-3 bg-red-50 border border-red-100 rounded-xl p-4">
-              <span className="text-xl shrink-0 mt-0.5">{icon}</span>
+              <Icon size={20} className="text-red-500 shrink-0 mt-0.5" />
               <div>
                 <div className="font-bold text-body-sm text-neutral-900 mb-0.5">{title}</div>
                 <div className="text-caption text-neutral-600">{desc}</div>
