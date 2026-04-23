@@ -63,10 +63,10 @@ const PRODUCT_FEATURES: Record<string, string[]> = {
     "Basato su Nelson-Cox (Lehninger, Zanichelli) — il testo di riferimento in Italia",
   ],
   "anatomia": [
-    "Mnemoniche visive per ossa, muscoli, nervi e vasi di ogni sistema del corpo",
-    "Metodo Palazzo della Memoria applicato all'anatomia: ricordi le strutture, non le ripeti",
-    "Mappe a strati: prima il sistema, poi il distretto, poi il dettaglio",
-    "30 domande orali per ogni sistema — quelle che fanno davvero i professori",
+    "Schemi per ogni apparato: locomotore, cardiovascolare, respiratorio, digerente, nervoso, urinario, riproduttivo",
+    "Tabelle comparative e classificazioni chiare per ogni sistema del corpo",
+    "I dettagli che i professori chiedono: nomi latini, rapporti topografici, strutture chiave",
+    "30 domande orali tipo esame con risposta strutturata — le più frequenti agli esami di Anatomia Umana",
     "Basato su Anastasi (Edi.Ermes) — il manuale standard per Medicina e Scienze Motorie",
   ],
   "diritto-commerciale": [
