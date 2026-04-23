@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: "Posso avere il rimborso?",
-    a: "Sì. Se entro 7 giorni il kit non ti ha aiutato, scrivici su WhatsApp e ti rimborsiamo.",
+    a: "In caso di problemi tecnici o se il contenuto non corrisponde a quanto descritto sulla pagina, contattaci entro 7 giorni dall'acquisto su WhatsApp. Valutiamo ogni richiesta singolarmente secondo i nostri Termini e Condizioni.",
   },
   {
     q: "Il pagamento è sicuro?",

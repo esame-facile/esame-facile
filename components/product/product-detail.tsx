@@ -200,9 +200,9 @@ export function ProductDetail({ product }: ProductDetailProps) {
         <div className="flex items-start gap-3">
           <Shield size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
           <div>
-            <p className="text-body-sm font-bold text-green-800">Garanzia soddisfatto o rimborsato</p>
+            <p className="text-body-sm font-bold text-green-800">Acquisto protetto</p>
             <p className="text-caption text-green-700 mt-1">
-              Se entro 7 giorni il kit non ti ha aiutato, scrivici su WhatsApp e ti rimborsiamo.
+              Pagamento sicuro via Stripe. PDF disponibile subito dopo l&apos;acquisto.
             </p>
           </div>
         </div>
