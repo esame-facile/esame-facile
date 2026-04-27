@@ -37,6 +37,16 @@ export default async function AdminPage() {
           </a>
         </div>
 
+        {/* Quick links */}
+        <div className="flex gap-3">
+          <a
+            href="/admin/affiliates"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-violet-600 hover:bg-violet-700 text-white text-sm font-semibold rounded-xl transition-colors"
+          >
+            Affiliates
+          </a>
+        </div>
+
         {/* Stats */}
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
           <div className="bg-white rounded-xl border border-gray-200 p-4">
