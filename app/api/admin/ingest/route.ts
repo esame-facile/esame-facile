@@ -4,6 +4,8 @@ import { generateToken, getDownloadExpiry } from "@/lib/tokens";
 import { sendPurchaseEmail } from "@/lib/email";
 import { DOWNLOAD_CONFIG, SITE_CONFIG } from "@/lib/constants";
 import { randomUUID } from "crypto";
+import { readStore, writeStore } from "@/lib/affiliate-store";
+import { sendPushNotifications } from "@/lib/web-push-server";
 
 export async function POST(req: NextRequest) {
   // API key auth
@@ -143,6 +145,33 @@ export async function POST(req: NextRequest) {
   } catch (emailError) {
     // Don't fail the request — token is already created
     console.error("[admin/ingest] sendPurchaseEmail:", emailError);
+  }
+
+  // 7. Send push notification to affiliate if coupon code matches
+  if (typeof discount_code === "string" && discount_code.trim()) {
+    try {
+      const affiliateStore = await readStore();
+      const affiliate = affiliateStore.affiliates.find(
+        (a) => a.code.toLowerCase() === discount_code.trim().toLowerCase()
+      );
+      if (affiliate?.push_subscriptions?.length) {
+        const expired = await sendPushNotifications(affiliate.push_subscriptions, {
+          title: "Nuova vendita!",
+          body: `${product.name} — commissione in arrivo`,
+        });
+        // Clean up expired subscriptions
+        if (expired.length > 0) {
+          const idx = affiliateStore.affiliates.findIndex((a) => a.id === affiliate.id);
+          affiliateStore.affiliates[idx].push_subscriptions =
+            affiliate.push_subscriptions.filter(
+              (s) => !expired.some((e) => e.endpoint === s.endpoint)
+            );
+          await writeStore(affiliateStore);
+        }
+      }
+    } catch (pushErr) {
+      console.error("[admin/ingest] push notification:", pushErr);
+    }
   }
 
   return NextResponse.json({ success: true, id: inboundOrder.id }, { status: 201 });

@@ -6,6 +6,15 @@ const SERVICE_ROLE = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 const BUCKET = "affiliate-data";
 const FILE = "data.json";
 
+export type PushSubscriptionJSON = {
+  endpoint: string;
+  expirationTime: number | null;
+  keys: {
+    p256dh: string;
+    auth: string;
+  };
+};
+
 export type Sale = {
   id: string;
   affiliate_id: string;
@@ -22,6 +31,7 @@ export type Affiliate = {
   created_at: string;
   username: string;
   password_hash: string;
+  push_subscriptions?: PushSubscriptionJSON[];
 };
 
 export type AffiliateStore = {

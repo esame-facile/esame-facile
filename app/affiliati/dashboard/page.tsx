@@ -7,6 +7,7 @@ import { CountUp } from "@/components/affiliati/count-up";
 import { SalesList } from "@/components/affiliati/sales-list";
 import { Chart } from "@/components/affiliati/chart";
 import { SalesInfoModal } from "@/components/affiliati/sales-info-modal";
+import { PushSubscribeButton } from "@/components/affiliati/push-subscribe-button";
 import type { Sale } from "@/lib/affiliate-store";
 
 export const dynamic = "force-dynamic";
@@ -26,6 +27,8 @@ export default async function AffiliateDashboard() {
   const sales: Sale[] = store.sales
     .filter((s) => s.affiliate_id === affiliateId)
     .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+
+  const vapidKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY ?? "";
 
   const totalEarned = sales.reduce((sum, s) => sum + s.amount * 0.2, 0);
   const totalPaid = sales.filter((s) => s.paid_at).reduce((sum, s) => sum + s.amount * 0.2, 0);
@@ -74,6 +77,9 @@ export default async function AffiliateDashboard() {
             <p className="text-xs text-neutral-500 mt-1">In arrivo</p>
           </div>
         </div>
+
+        {/* Push notifications */}
+        {vapidKey && <PushSubscribeButton vapidKey={vapidKey} />}
 
         {/* Sales list */}
         <div>
