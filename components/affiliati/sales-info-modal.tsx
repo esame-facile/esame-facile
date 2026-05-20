@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { HelpCircle, X, ShoppingCart, Tag, Percent, CreditCard } from "lucide-react";
+import { HelpCircle, X, ShoppingCart, Percent, CreditCard } from "lucide-react";
 
 export function SalesInfoModal({ code }: { code: string }) {
   const [open, setOpen] = useState(false);
@@ -58,25 +58,13 @@ export function SalesInfoModal({ code }: { code: string }) {
               </div>
 
               <div className="flex gap-3">
-                <div className="w-8 h-8 rounded-xl bg-amber-500/15 border border-amber-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Tag size={14} className="text-amber-400" />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-neutral-100">Valore della vendita</p>
-                  <p className="text-xs text-neutral-500 mt-0.5 leading-relaxed">
-                    Le vendite con codice sconto valgono <span className="text-white font-semibold">€10</span>. Le vendite senza codice valgono <span className="text-white font-semibold">€20</span>. Il valore riflette il ricavo effettivo per ogni ordine.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-3">
                 <div className="w-8 h-8 rounded-xl bg-green-500/15 border border-green-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Percent size={14} className="text-green-400" />
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-neutral-100">Commissione 20%</p>
                   <p className="text-xs text-neutral-500 mt-0.5 leading-relaxed">
-                    Ricevi il <span className="text-white font-semibold">20%</span> su ogni vendita. Vendita da €10 = <span className="text-green-400 font-semibold">€2</span> per te. Vendita da €20 = <span className="text-green-400 font-semibold">€4</span> per te.
+                    Ricevi il <span className="text-white font-semibold">20%</span> su ogni vendita generata dal tuo codice. Ogni vendita tracciata vale <span className="text-green-400 font-semibold">€2</span> di commissione per te.
                   </p>
                 </div>
               </div>
