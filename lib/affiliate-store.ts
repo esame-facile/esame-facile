@@ -20,6 +20,8 @@ export type Affiliate = {
   code: string;
   color: string;
   created_at: string;
+  username: string;
+  password_hash: string;
 };
 
 export type AffiliateStore = {
