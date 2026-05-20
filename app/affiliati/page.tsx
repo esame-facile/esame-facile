@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Loader2, TrendingUp } from "lucide-react";
+import { Loader2, TrendingUp, Smartphone, Share, Plus } from "lucide-react";
 
 export default function AffiliatiLogin() {
   const [username, setUsername] = useState("");
@@ -106,6 +106,34 @@ export default function AffiliatiLogin() {
               : "Entra →"}
           </button>
         </form>
+
+        {/* Install instructions */}
+        <div className="border-t border-white/[0.06] pt-6">
+          <div className="flex items-center gap-2 mb-3">
+            <Smartphone size={13} className="text-neutral-500 flex-shrink-0" />
+            <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wide">
+              Aggiungi alla schermata home
+            </p>
+          </div>
+          <div className="space-y-2">
+            {[
+              { icon: <span className="text-base leading-none">🧭</span>, text: "Apri questa pagina in Safari" },
+              { icon: <Share size={12} className="text-neutral-400" />, text: 'Tocca l\'icona "Condividi"' },
+              { icon: <Plus size={12} className="text-neutral-400" />, text: '"Aggiungi alla schermata Home"' },
+              { icon: <Smartphone size={12} className="text-neutral-400" />, text: "Apri l'app dalla home e accedi" },
+            ].map((step, i) => (
+              <div key={i} className="flex items-center gap-3">
+                <div className="w-5 h-5 rounded-full bg-white/[0.05] border border-white/[0.08] flex items-center justify-center flex-shrink-0">
+                  <span className="text-[10px] font-bold text-neutral-500">{i + 1}</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="flex-shrink-0">{step.icon}</span>
+                  <p className="text-xs text-neutral-500">{step.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
