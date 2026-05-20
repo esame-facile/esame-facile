@@ -6,6 +6,7 @@ import { readStore } from "@/lib/affiliate-store";
 import { CountUp } from "@/components/affiliati/count-up";
 import { SalesList } from "@/components/affiliati/sales-list";
 import { Chart } from "@/components/affiliati/chart";
+import { SalesInfoModal } from "@/components/affiliati/sales-info-modal";
 import type { Sale } from "@/lib/affiliate-store";
 
 export const dynamic = "force-dynamic";
@@ -76,9 +77,12 @@ export default async function AffiliateDashboard() {
 
         {/* Sales list */}
         <div>
-          <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wide mb-3">
-            Ultime vendite
-          </p>
+          <div className="flex items-center gap-2 mb-3">
+            <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wide">
+              Ultime vendite
+            </p>
+            <SalesInfoModal code={affiliate.code} />
+          </div>
           <SalesList sales={sales} />
         </div>
 
