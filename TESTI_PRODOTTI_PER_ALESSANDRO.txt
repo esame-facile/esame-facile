@@ -1,0 +1,377 @@
+════════════════════════════════════════════════════════════════════════════════
+TESTI COMPLETI TUTTI I PRODOTTI - FORMATO GREZZO
+════════════════════════════════════════════════════════════════════════════════
+
+
+═══════════════════════════════════════════════════════════════════════════════
+PRODOTTO 1: ANALISI 1
+═══════════════════════════════════════════════════════════════════════════════
+
+TITOLO:
+Analisi 1
+
+DESCRIZIONE BREVE:
+Riassunto completo di Analisi 1 con esercizi svolti e dimostrazioni.
+
+DESCRIZIONE LUNGA:
+Riassunto completo di Analisi Matematica 1. Copre tutti gli argomenti fondamentali: limiti, continuità, derivate, integrali definiti e indefiniti, serie numeriche. Include esercizi svolti e dimostrazioni dei teoremi principali.
+
+PREZZO:
+19,99 EUR (1999 cents)
+
+PREZZO SCONTO:
+29,99 EUR (originale)
+
+METADATI:
+- Slug: analisi-1
+- Categoria: Scienze e Ingegneria
+- Anno accademico: 2024/2025
+- Formato: PDF
+- Featured: SÌ
+
+IMMAGINI:
+- Copertina: /images/products/covers/analisi-1.jpg
+- Preview 1: /images/products/previews/analisi-1/preview-1.jpg
+- Preview 2: /images/products/previews/analisi-1/preview-2.jpg
+- Preview 3: /images/products/previews/analisi-1/preview-3.jpg
+
+RECENSIONI:
+
+Recensione 1:
+Nome: Marco R.
+Rating: 5 stelle
+Testo: "Ho comprato Analisi 1 tre giorni prima dell'esame. Non dico che sia magia, ma 28 non me lo aspettavo proprio."
+Data: 45 giorni fa
+Approvata: SÌ
+
+---
+
+═══════════════════════════════════════════════════════════════════════════════
+PRODOTTO 2: ANALISI 2
+═══════════════════════════════════════════════════════════════════════════════
+
+TITOLO:
+Analisi 2
+
+DESCRIZIONE BREVE:
+Riassunto completo di Analisi 2 con esercizi svolti.
+
+DESCRIZIONE LUNGA:
+Riassunto completo di Analisi Matematica 2. Argomenti trattati: funzioni a più variabili, derivate parziali, integrali multipli, equazioni differenziali, curve e superfici. Esercizi svolti per ogni argomento.
+
+PREZZO:
+19,99 EUR (1999 cents)
+
+PREZZO SCONTO:
+29,99 EUR (originale)
+
+METADATI:
+- Slug: analisi-2
+- Categoria: Scienze e Ingegneria
+- Anno accademico: 2024/2025
+- Formato: PDF
+- Featured: SÌ
+
+IMMAGINI:
+- Copertina: /images/products/covers/analisi-2.jpg
+- Preview 1: /images/products/previews/analisi-2/preview-1.jpg
+- Preview 2: /images/products/previews/analisi-2/preview-2.jpg
+- Preview 3: /images/products/previews/analisi-2/preview-3.jpg
+
+RECENSIONI:
+(nessuna)
+
+---
+
+═══════════════════════════════════════════════════════════════════════════════
+PRODOTTO 3: ANATOMIA
+═══════════════════════════════════════════════════════════════════════════════
+
+TITOLO:
+Anatomia
+
+DESCRIZIONE BREVE:
+Riassunto di Anatomia Umana con schemi e tavole anatomiche.
+
+DESCRIZIONE LUNGA:
+Riassunto di Anatomia Umana. Copre apparato locomotore, sistema nervoso, apparato cardiovascolare, respiratorio, digerente, urinario e riproduttore. Schemi e tavole anatomiche per il ripasso rapido.
+
+PREZZO:
+19,99 EUR (1999 cents)
+
+PREZZO SCONTO:
+29,99 EUR (originale)
+
+METADATI:
+- Slug: anatomia
+- Categoria: Medicina
+- Anno accademico: 2024/2025
+- Formato: PDF
+- Featured: SÌ
+
+IMMAGINI:
+- Copertina: /images/products/covers/anatomia.jpg
+- Preview 1: /images/products/previews/anatomia/preview-1.jpg
+- Preview 2: /images/products/previews/anatomia/preview-2.jpg
+- Preview 3: /images/products/previews/anatomia/preview-3.jpg
+
+RECENSIONI:
+
+Recensione 1:
+Nome: Sara L.
+Rating: 4 stelle
+Testo: "Per Anatomia serviva qualcosa di schematico. Questo kit è esattamente quello: schemi chiari, niente fuffa."
+Data: 35 giorni fa
+Approvata: SÌ
+
+---
+
+═══════════════════════════════════════════════════════════════════════════════
+PRODOTTO 4: FISICA 1
+═══════════════════════════════════════════════════════════════════════════════
+
+TITOLO:
+Fisica 1
+
+DESCRIZIONE BREVE:
+Riassunto di Fisica 1 con formulario e esercizi svolti.
+
+DESCRIZIONE LUNGA:
+Riassunto di Fisica Generale 1. Argomenti: cinematica, dinamica, lavoro ed energia, quantità di moto, rotazioni, termodinamica. Formulario completo e esercizi svolti passo passo.
+
+PREZZO:
+19,99 EUR (1999 cents)
+
+PREZZO SCONTO:
+29,99 EUR (originale)
+
+METADATI:
+- Slug: fisica-1
+- Categoria: Scienze e Ingegneria
+- Anno accademico: 2024/2025
+- Formato: PDF
+- Featured: SÌ
+
+IMMAGINI:
+- Copertina: /images/products/covers/fisica-1.jpg
+- Preview 1: /images/products/previews/fisica-1/preview-1.jpg
+- Preview 2: /images/products/previews/fisica-1/preview-2.jpg
+- Preview 3: /images/products/previews/fisica-1/preview-3.jpg
+
+RECENSIONI:
+
+Recensione 1:
+Nome: Alessandro M.
+Rating: 5 stelle
+Testo: "Fisica 1 era il mio incubo. Con questo kit ho finalmente capito la termodinamica, cosa che il prof non è riuscito a fare in 3 mesi."
+Data: 38 giorni fa
+Approvata: SÌ
+
+---
+
+═══════════════════════════════════════════════════════════════════════════════
+PRODOTTO 5: STATISTICA
+═══════════════════════════════════════════════════════════════════════════════
+
+TITOLO:
+Statistica
+
+DESCRIZIONE BREVE:
+Riassunto di Statistica con esercizi svolti e spiegazioni.
+
+DESCRIZIONE LUNGA:
+Riassunto completo di Statistica. Copre statistica descrittiva, probabilità, variabili aleatorie, distribuzioni, stima e intervalli di confidenza, test di ipotesi, regressione. Esercizi svolti con spiegazioni dettagliate.
+
+PREZZO:
+19,99 EUR (1999 cents)
+
+PREZZO SCONTO:
+29,99 EUR (originale)
+
+METADATI:
+- Slug: statistica
+- Categoria: Economia e Statistica
+- Anno accademico: 2024/2025
+- Formato: PDF
+- Featured: NO
+
+IMMAGINI:
+- Copertina: /images/products/covers/statistica.png
+- Preview 1: /images/products/previews/statistica/preview-1.jpg
+- Preview 2: /images/products/previews/statistica/preview-2.jpg
+- Preview 3: /images/products/previews/statistica/preview-3.jpg
+
+RECENSIONI:
+
+Recensione 1:
+Nome: Federico B.
+Rating: 5 stelle
+Testo: "Statistica mi faceva schifo. Ho preso il kit, studiato due weekend e passato con 28. Li vale tutti."
+Data: 32 giorni fa
+Approvata: SÌ
+
+---
+
+═══════════════════════════════════════════════════════════════════════════════
+PRODOTTO 6: BIOCHIMICA
+═══════════════════════════════════════════════════════════════════════════════
+
+TITOLO:
+Biochimica
+
+DESCRIZIONE BREVE:
+Riassunto di Biochimica con metabolismo e regolazione.
+
+DESCRIZIONE LUNGA:
+Riassunto di Biochimica. Argomenti: struttura e funzione delle proteine, enzimi e cinetica enzimatica, metabolismo glucidico, lipidico e proteico, ciclo di Krebs, fosforilazione ossidativa, regolazione metabolica.
+
+PREZZO:
+19,99 EUR (1999 cents)
+
+PREZZO SCONTO:
+29,99 EUR (originale)
+
+METADATI:
+- Slug: biochimica
+- Categoria: Medicina
+- Anno accademico: 2024/2025
+- Formato: PDF
+- Featured: NO
+
+IMMAGINI:
+- Copertina: /images/products/covers/biochimica.png
+- Preview 1: /images/products/previews/biochimica/preview-1.jpg
+- Preview 2: /images/products/previews/biochimica/preview-2.jpg
+- Preview 3: /images/products/previews/biochimica/preview-3.jpg
+
+RECENSIONI:
+(nessuna)
+
+---
+
+═══════════════════════════════════════════════════════════════════════════════
+PRODOTTO 7: CHIMICA
+═══════════════════════════════════════════════════════════════════════════════
+
+TITOLO:
+Chimica
+
+DESCRIZIONE BREVE:
+Riassunto di Chimica Generale con esercizi e tabelle.
+
+DESCRIZIONE LUNGA:
+Riassunto di Chimica Generale. Copre: struttura atomica, legami chimici, stechiometria, termodinamica chimica, cinetica, equilibri chimici, acidi e basi, elettrochimica. Esercizi svolti e tabelle riassuntive.
+
+PREZZO:
+19,99 EUR (1999 cents)
+
+PREZZO SCONTO:
+29,99 EUR (originale)
+
+METADATI:
+- Slug: chimica
+- Categoria: Scienze e Ingegneria
+- Anno accademico: 2024/2025
+- Formato: PDF
+- Featured: NO
+
+IMMAGINI:
+- Copertina: /images/products/covers/chimica.png
+- Preview 1: /images/products/previews/chimica/preview-1.jpg
+- Preview 2: /images/products/previews/chimica/preview-2.jpg
+- Preview 3: /images/products/previews/chimica/preview-3.jpg
+
+RECENSIONI:
+
+Recensione 1:
+Nome: Chiara P.
+Rating: 5 stelle
+Testo: "Chimica era l'ultimo esame che mi mancava. Comprato il kit lunedì, passato venerdì. Non ci credo ancora."
+Data: 28 giorni fa
+Approvata: SÌ
+
+---
+
+═══════════════════════════════════════════════════════════════════════════════
+PRODOTTO 8: DIRITTO PRIVATO
+═══════════════════════════════════════════════════════════════════════════════
+
+TITOLO:
+Diritto Privato
+
+DESCRIZIONE BREVE:
+Riassunto di Diritto Privato con riferimenti al codice civile.
+
+DESCRIZIONE LUNGA:
+Riassunto completo di Diritto Privato. Strutturato per argomenti: persone e capacità, diritti reali, obbligazioni, contratti, responsabilità civile, famiglia e successioni. Include riferimenti agli articoli del codice civile.
+
+PREZZO:
+19,99 EUR (1999 cents)
+
+PREZZO SCONTO:
+29,99 EUR (originale)
+
+METADATI:
+- Slug: diritto-privato
+- Categoria: Giurisprudenza
+- Anno accademico: 2024/2025
+- Formato: PDF
+- Featured: NO
+
+IMMAGINI:
+- Copertina: /images/products/covers/diritto-privato.png
+- Preview 1: /images/products/previews/diritto-privato/preview-1.jpg
+- Preview 2: /images/products/previews/diritto-privato/preview-2.jpg
+- Preview 3: /images/products/previews/diritto-privato/preview-3.jpg
+
+RECENSIONI:
+
+Recensione 1:
+Nome: Giulia T.
+Rating: 5 stelle
+Testo: "Diritto Privato riassunto in modo che si capisce davvero, non come il libro da 900 pagine. Soldi spesi bene."
+Data: 42 giorni fa
+Approvata: SÌ
+
+---
+
+═══════════════════════════════════════════════════════════════════════════════
+PRODOTTO 9: INFORMATICA
+═══════════════════════════════════════════════════════════════════════════════
+
+TITOLO:
+Informatica
+
+DESCRIZIONE BREVE:
+Riassunto di Informatica con schemi e trucchi per l'esame.
+
+DESCRIZIONE LUNGA:
+Riassunto completo di Informatica. Copre: architettura dei calcolatori, algoritmi e strutture dati, programmazione, reti di calcolatori, basi di dati, sistemi operativi. Schemi riassuntivi e trucchi per l'esame.
+
+PREZZO:
+19,99 EUR (1999 cents)
+
+PREZZO SCONTO:
+29,99 EUR (originale)
+
+METADATI:
+- Slug: informatica
+- Categoria: Scienze e Ingegneria
+- Anno accademico: 2024/2025
+- Formato: PDF
+- Featured: NO
+
+IMMAGINI:
+- Copertina: /images/products/covers/informatica.jpg
+- Preview 1: /images/products/previews/informatica/preview-1.jpg
+- Preview 2: /images/products/previews/informatica/preview-2.jpg
+- Preview 3: /images/products/previews/informatica/preview-3.jpg
+
+RECENSIONI:
+(nessuna)
+
+---
+
+════════════════════════════════════════════════════════════════════════════════
+FINE TESTI
+════════════════════════════════════════════════════════════════════════════════
