@@ -22,14 +22,14 @@ PACCHETTO_ALESSANDRO/
 │   │   ├── preview-1.jpg        (pagine dell'ebook v2, grafica nuova)
 │   │   ├── preview-2.jpg
 │   │   └── preview-3.jpg
-│   ├── analisi-2/   (solo cover, ebook v2 NON ancora generato)
+│   ├── analisi-2/   (cover + 3 preview v2, solo pagine anteprima)
 │   ├── anatomia/    (cover + 3 preview v2)
 │   ├── fisica-1/    (cover + 3 preview v2)
-│   ├── statistica/  (solo cover, ebook v2 NON ancora generato)
+│   ├── statistica/  (cover + 3 preview v2, solo pagine anteprima)
 │   ├── biochimica/  (cover + 3 preview v2)
 │   ├── chimica/     (cover + 3 preview v2)
 │   ├── diritto-privato/ (cover + 3 preview v2)
-│   └── informatica/ (solo cover, ebook v2 NON ancora generato)
+│   └── informatica/ (cover + 3 preview v2, solo pagine anteprima)
 │
 └── extra-immagini-senza-testo/  <- immagini ORFANE (NO testo nel database)
     ├── diritto-commerciale/ (cover + 3 preview + lista feature dal codice)
@@ -43,21 +43,24 @@ TABELLA STATO (la verità, niente fronzoli)
 
 PRODOTTI COMPLETI (testo nel database = vendibili):
 
-  PRODOTTO          COVER   PREVIEW v2   EBOOK v2     RECENSIONE
-  analisi-1          sì      3 sì         sì (47 pag)  Marco R. (5)
-  analisi-2          sì      NO           NO GENERATO  nessuna
-  anatomia           sì      3 sì         sì (51 pag)  Sara L. (4)
-  fisica-1           sì      3 sì         sì (50 pag)  Alessandro M. (5)
-  statistica         sì      NO           NO GENERATO  Federico B. (5)
-  biochimica         sì      3 sì         sì (34 pag)  nessuna
-  chimica            sì      3 sì         sì (33 pag)  Chiara P. (5)
-  diritto-privato    sì      3 sì         sì (47 pag)  Giulia T. (5)
-  informatica        sì      NO           NO GENERATO  nessuna
+  PRODOTTO          COVER   PREVIEW v2   EBOOK v2 COMPLETO   RECENSIONE
+  analisi-1          sì      3 sì         sì (47 pag)         Marco R. (5)
+  analisi-2          sì      3 sì         solo preview        nessuna
+  anatomia           sì      3 sì         sì (51 pag)         Sara L. (4)
+  fisica-1           sì      3 sì         sì (50 pag)         Alessandro M. (5)
+  statistica         sì      3 sì         solo preview        Federico B. (5)
+  biochimica         sì      3 sì         sì (34 pag)         nessuna
+  chimica            sì      3 sì         sì (33 pag)         Chiara P. (5)
+  diritto-privato    sì      3 sì         sì (47 pag)         Giulia T. (5)
+  informatica        sì      3 sì         solo preview        nessuna
 
-  -> 6 prodotti su 9 hanno l'ebook v2 (grafica nuova, kit-generator) e le
-     relative preview, estratte dalle pagine reali dell'ebook v2.
-  -> 3 prodotti (analisi-2, statistica, informatica) NON hanno ancora l'ebook
-     v2 generato col kit generator: niente preview finché non viene creato.
+  -> Tutti e 9 i prodotti hanno copertina + 3 preview in stile v2 (grafica
+     nuova del kit-generator).
+  -> 6 prodotti hanno l'ebook v2 COMPLETO: le preview sono pagine reali di
+     quell'ebook.
+  -> 3 prodotti (analisi-2, statistica, informatica) hanno SOLO le pagine di
+     anteprima v2 (create col kit generator con contenuti veri della materia).
+     L'ebook completo da ~50 pagine di questi 3 è ancora da generare.
   -> 6 recensioni totali, tutte vere, prese dal sito vecchio.
 
 IMMAGINI ORFANE (NON sono prodotti, nessun testo nel database):
@@ -88,10 +91,12 @@ Categorie usate:
 NOTA PER CHI RICOSTRUISCE IL SITO
 ───────────────────────────────────────────────────────────────────────
 
-- Le preview sono pagine reali degli ebook v2 (grafica nuova, fatti col kit
-  generator). Niente mockup inventati, niente pagine dei vecchi PDF.
-- 3 prodotti (analisi-2, statistica, informatica) NON hanno ancora l'ebook v2:
-  vanno generati col kit generator prima di poter avere le preview v2.
+- Tutte le preview sono in grafica v2 (kit-generator). Niente pagine dei
+  vecchi PDF, niente mockup vuoti.
+- Per 6 prodotti le preview sono pagine reali dell'ebook v2 completo.
+- Per 3 prodotti (analisi-2, statistica, informatica) esistono solo le pagine
+  di anteprima v2: l'ebook completo da ~50 pagine va ancora generato col kit
+  generator. I contenuti delle anteprime sono comunque corretti e reali.
 - I testi (descrizione + "cosa troverai dentro") sono completi per tutti e 9.
 - Le copertine sono presenti per tutti e 9.
 - Le recensioni sono 6 (alcuni prodotti non ne hanno: non sono state inventate).
