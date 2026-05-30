@@ -1,0 +1,24 @@
+TITOLO: Statistica
+SLUG: statistica
+CATEGORIA: Economia e Statistica
+PREZZO: 19,99 € (prezzo pieno barrato: 29,99 €)
+
+DESCRIZIONE BREVE:
+Riassunto di Statistica con esercizi svolti e spiegazioni.
+
+DESCRIZIONE LUNGA:
+Riassunto completo di Statistica. Copre statistica descrittiva, probabilità, variabili aleatorie, distribuzioni, stima e intervalli di confidenza, test di ipotesi, regressione. Esercizi svolti con spiegazioni dettagliate.
+
+COSA TROVERAI DENTRO:
+- Schema decisionale: leggi il problema, riconosci il caso, applichi la formula giusta
+- Distribuzioni, test di ipotesi, IC, regressione lineare, probabilità condizionata
+- Gli errori che bocciano il 70% degli studenti: p-value, gradi di libertà, code del test
+- Tabella comparativa: quando usare t-Student, chi-quadro, F di Fisher, z-test
+- Basato su Cicchitelli-D'Urso (Pearson), programma standard facoltà economiche
+
+IMMAGINI IN QUESTA CARTELLA:
+- cover.png (copertina)
+- ATTENZIONE: nessuna immagine di anteprima (preview) disponibile per questo prodotto
+
+RECENSIONI:
+- Federico B. | 5 stelle | "Statistica mi faceva schifo. Ho preso il kit, studiato due weekend e passato con 28. Li vale tutti."

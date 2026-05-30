@@ -1,0 +1,7 @@
+SLUG: polizia-di-stato
+STATO: presenti SOLO 3 immagini di anteprima (preview). Nessuna copertina,
+nessuna descrizione, nessuna recensione, nessun dato nel database seed.
+Materiale incompleto: o era un prodotto mai pubblicato, o un esperimento.
+
+IMMAGINI IN QUESTA CARTELLA:
+- preview-1.jpg, preview-2.jpg, preview-3.jpg

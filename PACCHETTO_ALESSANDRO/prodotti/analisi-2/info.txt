@@ -1,0 +1,24 @@
+TITOLO: Analisi 2
+SLUG: analisi-2
+CATEGORIA: Scienze e Ingegneria
+PREZZO: 19,99 € (prezzo pieno barrato: 29,99 €)
+
+DESCRIZIONE BREVE:
+Riassunto completo di Analisi 2 con esercizi svolti.
+
+DESCRIZIONE LUNGA:
+Riassunto completo di Analisi Matematica 2. Argomenti trattati: funzioni a più variabili, derivate parziali, integrali multipli, equazioni differenziali, curve e superfici. Esercizi svolti per ogni argomento.
+
+COSA TROVERAI DENTRO:
+- Integrali doppi e tripli: schema risolutivo per ogni cambio di variabili
+- Equazioni differenziali: tutti i casi (separabili, lineari, Bernoulli, ordine 2)
+- Campi vettoriali: rotore, divergenza, teoremi di Stokes e Gauss
+- Metodo riconosci-il-pattern: identifica il tipo di esercizio in 10 secondi
+- Basato su Fusco-Marcellini-Sbordone, programma standard tutti gli atenei
+
+IMMAGINI IN QUESTA CARTELLA:
+- cover.jpg (copertina)
+- ATTENZIONE: nessuna immagine di anteprima (preview) disponibile per questo prodotto
+
+RECENSIONI:
+- nessuna recensione

@@ -1,0 +1,96 @@
+═══════════════════════════════════════════════════════════════════════
+PACCHETTO PRODOTTI - UniPass (per ricostruzione sito)
+═══════════════════════════════════════════════════════════════════════
+
+COS'È:
+Tutti i contenuti dei prodotti (testi + immagini) impacchettati in modo
+autoconsistente. Ogni prodotto ha la SUA cartella con dentro le SUE immagini
+reali e un file info.txt con tutti i suoi testi. I percorsi non sono assoluti:
+le immagini stanno fisicamente accanto al testo che le descrive. Niente
+riferimenti a file inesistenti.
+
+───────────────────────────────────────────────────────────────────────
+STRUTTURA
+───────────────────────────────────────────────────────────────────────
+
+PACCHETTO_ALESSANDRO/
+├── LEGGIMI.txt                  <- questo file
+├── prodotti/                    <- 9 prodotti VERI (hanno testo nel database)
+│   ├── analisi-1/
+│   │   ├── info.txt             (titolo, descrizioni, prezzo, recensioni)
+│   │   ├── cover.jpg
+│   │   ├── preview-1.jpg
+│   │   ├── preview-2.jpg
+│   │   └── preview-3.jpg
+│   ├── analisi-2/   (solo cover, NO preview)
+│   ├── anatomia/    (solo cover, NO preview)
+│   ├── fisica-1/    (cover + 3 preview)
+│   ├── statistica/  (solo cover, NO preview)
+│   ├── biochimica/  (solo cover, NO preview)
+│   ├── chimica/     (solo cover, NO preview)
+│   ├── diritto-privato/ (cover + 3 preview)
+│   └── informatica/ (solo cover, NO preview)
+│
+└── extra-immagini-senza-testo/  <- immagini ORFANE (NO testo nel database)
+    ├── diritto-commerciale/ (cover + 3 preview + lista feature dal codice)
+    ├── carabinieri-allievi/ (solo 3 preview)
+    ├── polizia-di-stato/    (solo 3 preview)
+    └── test-medicina/       (solo 3 preview)
+
+───────────────────────────────────────────────────────────────────────
+TABELLA STATO (la verità, niente fronzoli)
+───────────────────────────────────────────────────────────────────────
+
+PRODOTTI COMPLETI (testo nel database = vendibili):
+
+  PRODOTTO          COVER   PREVIEW   RECENSIONE
+  analisi-1          sì      3 sì      Marco R. (5)
+  analisi-2          sì      NO        nessuna
+  anatomia           sì      NO        Sara L. (4)
+  fisica-1           sì      3 sì      Alessandro M. (5)
+  statistica         sì      NO        Federico B. (5)
+  biochimica         sì      NO        nessuna
+  chimica            sì      NO        Chiara P. (5)
+  diritto-privato    sì      3 sì      Giulia T. (5)
+  informatica        sì      NO        nessuna
+
+  -> 9 prodotti, tutti con copertina.
+  -> Solo 3 hanno le immagini di anteprima (analisi-1, fisica-1, diritto-privato).
+  -> 6 recensioni totali, tutte vere, prese dal sito vecchio.
+
+IMMAGINI ORFANE (NON sono prodotti, nessun testo nel database):
+
+  diritto-commerciale  cover + 3 preview (+ lista feature dal codice, NO descrizione)
+  carabinieri-allievi  solo 3 preview
+  polizia-di-stato     solo 3 preview
+  test-medicina        solo 3 preview
+
+───────────────────────────────────────────────────────────────────────
+DATI TECNICI COMUNI A TUTTI I 9 PRODOTTI
+───────────────────────────────────────────────────────────────────────
+
+- Prezzo: 19,99 € (in database: 1999 centesimi)
+- Prezzo pieno barrato: 29,99 € (in database: 2999 centesimi)
+- Formato: PDF
+- Anno accademico: 2024/2025
+- Valuta: EUR
+- Lingua: italiano
+
+Categorie usate:
+- Scienze e Ingegneria  (analisi-1, analisi-2, fisica-1, chimica, informatica)
+- Medicina              (anatomia, biochimica)
+- Economia e Statistica (statistica)
+- Giurisprudenza        (diritto-privato)
+
+───────────────────────────────────────────────────────────────────────
+NOTA PER CHI RICOSTRUISCE IL SITO
+───────────────────────────────────────────────────────────────────────
+
+- Le immagini di anteprima (preview) mancano per 6 prodotti su 9. Se il nuovo
+  sito ha una sezione "anteprima kit", quei 6 prodotti non avranno niente da
+  mostrare finché non si creano le preview.
+- Le copertine sono presenti per tutti e 9.
+- I testi (descrizione + "cosa troverai dentro") sono completi per tutti e 9.
+- Le recensioni sono solo 6 (alcuni prodotti non ne hanno).
+- diritto-commerciale ha le immagini ma NON una descrizione: va scritta da zero
+  se lo si vuole vendere.

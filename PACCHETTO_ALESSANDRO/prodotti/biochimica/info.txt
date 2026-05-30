@@ -1,0 +1,24 @@
+TITOLO: Biochimica
+SLUG: biochimica
+CATEGORIA: Medicina
+PREZZO: 19,99 € (prezzo pieno barrato: 29,99 €)
+
+DESCRIZIONE BREVE:
+Riassunto di Biochimica con metabolismo e regolazione.
+
+DESCRIZIONE LUNGA:
+Riassunto di Biochimica. Argomenti: struttura e funzione delle proteine, enzimi e cinetica enzimatica, metabolismo glucidico, lipidico e proteico, ciclo di Krebs, fosforilazione ossidativa, regolazione metabolica.
+
+COSA TROVERAI DENTRO:
+- Mappe metaboliche semplificate: glicolisi, Krebs, fosforilazione ossidativa, gluconeogenesi
+- Mnemoniche per enzimi chiave, cofattori e punti di regolazione allosterica
+- Collegamento tra vie metaboliche: come si integrano e si regolano a vicenda
+- 30 domande orali tipo esame con risposta strutturata per ogni via metabolica
+- Basato su Nelson-Cox (Lehninger, Zanichelli), il testo di riferimento in Italia
+
+IMMAGINI IN QUESTA CARTELLA:
+- cover.png (copertina)
+- ATTENZIONE: nessuna immagine di anteprima (preview) disponibile per questo prodotto
+
+RECENSIONI:
+- nessuna recensione

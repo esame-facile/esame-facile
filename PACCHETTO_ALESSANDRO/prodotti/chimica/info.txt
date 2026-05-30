@@ -1,0 +1,24 @@
+TITOLO: Chimica
+SLUG: chimica
+CATEGORIA: Scienze e Ingegneria
+PREZZO: 19,99 € (prezzo pieno barrato: 29,99 €)
+
+DESCRIZIONE BREVE:
+Riassunto di Chimica Generale con esercizi e tabelle.
+
+DESCRIZIONE LUNGA:
+Riassunto di Chimica Generale. Copre: struttura atomica, legami chimici, stechiometria, termodinamica chimica, cinetica, equilibri chimici, acidi e basi, elettrochimica. Esercizi svolti e tabelle riassuntive.
+
+COSA TROVERAI DENTRO:
+- Stechiometria, equilibri, acidi-basi, elettrochimica, termochimica: metodo in 3 passi
+- Tavola periodica commentata: trend di elettronegatività, raggi, energie di ionizzazione
+- I trabocchetti più frequenti: bilanciamenti redox, calcolo pH, costanti di equilibrio
+- Regola pratica per non sbagliare unità di misura e conversioni
+- Basato su Silvestroni (Zanichelli), riferimento standard per chimica generale
+
+IMMAGINI IN QUESTA CARTELLA:
+- cover.png (copertina)
+- ATTENZIONE: nessuna immagine di anteprima (preview) disponibile per questo prodotto
+
+RECENSIONI:
+- Chiara P. | 5 stelle | "Chimica era l'ultimo esame che mi mancava. Comprato il kit lunedì, passato venerdì. Non ci credo ancora."

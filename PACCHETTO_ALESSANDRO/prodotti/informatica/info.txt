@@ -1,0 +1,24 @@
+TITOLO: Informatica
+SLUG: informatica
+CATEGORIA: Scienze e Ingegneria
+PREZZO: 19,99 € (prezzo pieno barrato: 29,99 €)
+
+DESCRIZIONE BREVE:
+Riassunto di Informatica con schemi e trucchi per l'esame.
+
+DESCRIZIONE LUNGA:
+Riassunto completo di Informatica. Copre: architettura dei calcolatori, algoritmi e strutture dati, programmazione, reti di calcolatori, basi di dati, sistemi operativi. Schemi riassuntivi e trucchi per l'esame.
+
+COSA TROVERAI DENTRO:
+- Architettura dei calcolatori: CPU, memoria, pipeline, cache, schemi sintetici
+- Algoritmi e complessità: O-notation, ricerca, ordinamento, grafi con esempi
+- Reti e basi di dati: protocolli TCP/IP, modello ER, SQL, mappe concettuali
+- Pattern ricorrenti nelle domande scritte e orali dei principali atenei italiani
+- Basato su Sciuto-Buonanno-Mari (McGraw-Hill), il testo più adottato in Italia
+
+IMMAGINI IN QUESTA CARTELLA:
+- cover.jpg (copertina)
+- ATTENZIONE: nessuna immagine di anteprima (preview) disponibile per questo prodotto
+
+RECENSIONI:
+- nessuna recensione

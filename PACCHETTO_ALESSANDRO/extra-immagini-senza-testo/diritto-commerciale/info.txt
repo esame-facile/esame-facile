@@ -1,0 +1,17 @@
+TITOLO: Diritto Commerciale
+SLUG: diritto-commerciale
+CATEGORIA: Giurisprudenza (presunta)
+
+STATO: immagini presenti (copertina + 3 preview), MA nessuna descrizione
+ufficiale nel database seed. Sotto trovi solo la lista "Cosa troverai dentro"
+recuperata dal codice del sito. NON c'è una descrizione lunga/breve né recensioni.
+
+COSA TROVERAI DENTRO (dal codice, unica fonte disponibile):
+- Mappa concettuale completa: tutti gli istituti del corso collegati
+- Tabella comparativa SS, SNC, SAS, SpA, Srl, responsabilità, capitale, governance
+- Articoli chiave del Codice Civile e del CCII evidenziati e spiegati
+- 25 casi pratici risolti + 30 domande orali con risposta strutturata
+- Basato su Campobasso (UTET), il manuale più usato nelle facoltà di Giurisprudenza
+
+IMMAGINI IN QUESTA CARTELLA:
+- cover.jpg, preview-1.jpg, preview-2.jpg, preview-3.jpg

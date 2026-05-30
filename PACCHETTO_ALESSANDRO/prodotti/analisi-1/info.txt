@@ -1,0 +1,24 @@
+TITOLO: Analisi 1
+SLUG: analisi-1
+CATEGORIA: Scienze e Ingegneria
+PREZZO: 19,99 € (prezzo pieno barrato: 29,99 €)
+
+DESCRIZIONE BREVE:
+Riassunto completo di Analisi 1 con esercizi svolti e dimostrazioni.
+
+DESCRIZIONE LUNGA:
+Riassunto completo di Analisi Matematica 1. Copre tutti gli argomenti fondamentali: limiti, continuità, derivate, integrali definiti e indefiniti, serie numeriche. Include esercizi svolti e dimostrazioni dei teoremi principali.
+
+COSA TROVERAI DENTRO:
+- Mappa concettuale completa: tutti gli argomenti del corso collegati
+- 35+ teoremi con dimostrazione e spiegazione in italiano semplice
+- Tabelle comparative: derivate, limiti notevoli, tecniche di integrazione, criteri di convergenza
+- 20 esercizi risolti passo-passo + 30 domande orali tipo esame
+- Formato PDF 47 pagine, leggibile su qualsiasi dispositivo
+
+IMMAGINI IN QUESTA CARTELLA:
+- cover.jpg (copertina)
+- preview-1.jpg, preview-2.jpg, preview-3.jpg (anteprima kit)
+
+RECENSIONI:
+- Marco R. | 5 stelle | "Ho comprato Analisi 1 tre giorni prima dell'esame. Non dico che sia magia, ma 28 non me lo aspettavo proprio."

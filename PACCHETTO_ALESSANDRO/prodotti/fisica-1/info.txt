@@ -1,0 +1,24 @@
+TITOLO: Fisica 1
+SLUG: fisica-1
+CATEGORIA: Scienze e Ingegneria
+PREZZO: 19,99 € (prezzo pieno barrato: 29,99 €)
+
+DESCRIZIONE BREVE:
+Riassunto di Fisica 1 con formulario e esercizi svolti.
+
+DESCRIZIONE LUNGA:
+Riassunto di Fisica Generale 1. Argomenti: cinematica, dinamica, lavoro ed energia, quantità di moto, rotazioni, termodinamica. Formulario completo e esercizi svolti passo passo.
+
+COSA TROVERAI DENTRO:
+- Formulario ragionato: quando e come usare ogni legge fisica
+- Meccanica, termodinamica, onde e ottica, schema per ogni tipologia
+- 25+ esercizi risolti con commento sul ragionamento fisico step-by-step
+- Errori classici: segni, vettori, unità di misura, come non perderci punti
+- Basato su Halliday-Resnick-Walker, il manuale più usato in Italia
+
+IMMAGINI IN QUESTA CARTELLA:
+- cover.jpg (copertina)
+- preview-1.jpg, preview-2.jpg, preview-3.jpg (anteprima kit)
+
+RECENSIONI:
+- Alessandro M. | 5 stelle | "Fisica 1 era il mio incubo. Con questo kit ho finalmente capito la termodinamica, cosa che il prof non è riuscito a fare in 3 mesi."
