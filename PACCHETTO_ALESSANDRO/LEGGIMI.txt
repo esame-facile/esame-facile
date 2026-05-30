@@ -19,17 +19,17 @@ PACCHETTO_ALESSANDRO/
 │   ├── analisi-1/
 │   │   ├── info.txt             (titolo, descrizioni, prezzo, recensioni)
 │   │   ├── cover.jpg
-│   │   ├── preview-1.jpg
+│   │   ├── preview-1.jpg        (pagine dell'ebook v2, grafica nuova)
 │   │   ├── preview-2.jpg
 │   │   └── preview-3.jpg
-│   ├── analisi-2/   (solo cover, NO preview)
-│   ├── anatomia/    (solo cover, NO preview)
-│   ├── fisica-1/    (cover + 3 preview)
-│   ├── statistica/  (cover + 3 preview)
-│   ├── biochimica/  (cover + 3 preview)
-│   ├── chimica/     (cover + 3 preview)
-│   ├── diritto-privato/ (cover + 3 preview)
-│   └── informatica/ (cover + 3 preview)
+│   ├── analisi-2/   (solo cover, ebook v2 NON ancora generato)
+│   ├── anatomia/    (cover + 3 preview v2)
+│   ├── fisica-1/    (cover + 3 preview v2)
+│   ├── statistica/  (solo cover, ebook v2 NON ancora generato)
+│   ├── biochimica/  (cover + 3 preview v2)
+│   ├── chimica/     (cover + 3 preview v2)
+│   ├── diritto-privato/ (cover + 3 preview v2)
+│   └── informatica/ (solo cover, ebook v2 NON ancora generato)
 │
 └── extra-immagini-senza-testo/  <- immagini ORFANE (NO testo nel database)
     ├── diritto-commerciale/ (cover + 3 preview + lista feature dal codice)
@@ -43,22 +43,21 @@ TABELLA STATO (la verità, niente fronzoli)
 
 PRODOTTI COMPLETI (testo nel database = vendibili):
 
-  PRODOTTO          COVER   PREVIEW   RECENSIONE
-  analisi-1          sì      3 sì      Marco R. (5)
-  analisi-2          sì      3 sì      nessuna
-  anatomia           sì      3 sì      Sara L. (4)
-  fisica-1           sì      3 sì      Alessandro M. (5)
-  statistica         sì      3 sì      Federico B. (5)
-  biochimica         sì      3 sì      nessuna
-  chimica            sì      3 sì      Chiara P. (5)
-  diritto-privato    sì      3 sì      Giulia T. (5)
-  informatica        sì      3 sì      nessuna
+  PRODOTTO          COVER   PREVIEW v2   EBOOK v2     RECENSIONE
+  analisi-1          sì      3 sì         sì (47 pag)  Marco R. (5)
+  analisi-2          sì      NO           NO GENERATO  nessuna
+  anatomia           sì      3 sì         sì (51 pag)  Sara L. (4)
+  fisica-1           sì      3 sì         sì (50 pag)  Alessandro M. (5)
+  statistica         sì      NO           NO GENERATO  Federico B. (5)
+  biochimica         sì      3 sì         sì (34 pag)  nessuna
+  chimica            sì      3 sì         sì (33 pag)  Chiara P. (5)
+  diritto-privato    sì      3 sì         sì (47 pag)  Giulia T. (5)
+  informatica        sì      NO           NO GENERATO  nessuna
 
-  -> 9 prodotti, TUTTI con copertina + 3 immagini di anteprima.
-  -> Le preview di analisi-1, fisica-1, diritto-privato erano già nel sito.
-  -> Le preview di analisi-2, anatomia, statistica, biochimica, chimica,
-     informatica sono state generate dalle pagine reali dei PDF originali
-     (pagine 2, 4, 6 di ogni PDF in public/pdf/).
+  -> 6 prodotti su 9 hanno l'ebook v2 (grafica nuova, kit-generator) e le
+     relative preview, estratte dalle pagine reali dell'ebook v2.
+  -> 3 prodotti (analisi-2, statistica, informatica) NON hanno ancora l'ebook
+     v2 generato col kit generator: niente preview finché non viene creato.
   -> 6 recensioni totali, tutte vere, prese dal sito vecchio.
 
 IMMAGINI ORFANE (NON sono prodotti, nessun testo nel database):
@@ -89,11 +88,12 @@ Categorie usate:
 NOTA PER CHI RICOSTRUISCE IL SITO
 ───────────────────────────────────────────────────────────────────────
 
-- Tutti e 9 i prodotti hanno copertina + 3 immagini di anteprima + testo
-  completo. Niente di mancante lato prodotti.
-- Le preview di 6 prodotti sono pagine reali estratte dai PDF originali, quindi
-  mostrano il contenuto vero del kit (non mockup inventati).
+- Le preview sono pagine reali degli ebook v2 (grafica nuova, fatti col kit
+  generator). Niente mockup inventati, niente pagine dei vecchi PDF.
+- 3 prodotti (analisi-2, statistica, informatica) NON hanno ancora l'ebook v2:
+  vanno generati col kit generator prima di poter avere le preview v2.
 - I testi (descrizione + "cosa troverai dentro") sono completi per tutti e 9.
+- Le copertine sono presenti per tutti e 9.
 - Le recensioni sono 6 (alcuni prodotti non ne hanno: non sono state inventate).
 - diritto-commerciale ha le immagini ma NON una descrizione: va scritta da zero
   se lo si vuole vendere.

@@ -18,7 +18,7 @@ COSA TROVERAI DENTRO:
 
 IMMAGINI IN QUESTA CARTELLA:
 - cover.png (copertina)
-- preview-1.jpg, preview-2.jpg, preview-3.jpg (anteprima kit, pagine reali del PDF)
+- ATTENZIONE: ebook v2 NON ancora generato con il kit generator -> nessuna anteprima v2 disponibile
 
 RECENSIONI:
 - Federico B. | 5 stelle | "Statistica mi faceva schifo. Ho preso il kit, studiato due weekend e passato con 28. Li vale tutti."

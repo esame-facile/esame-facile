@@ -18,7 +18,7 @@ COSA TROVERAI DENTRO:
 
 IMMAGINI IN QUESTA CARTELLA:
 - cover.jpg (copertina)
-- preview-1.jpg, preview-2.jpg, preview-3.jpg (anteprima kit, pagine reali del PDF)
+- ATTENZIONE: ebook v2 NON ancora generato con il kit generator -> nessuna anteprima v2 disponibile
 
 RECENSIONI:
 - nessuna recensione
