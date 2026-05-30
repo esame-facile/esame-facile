@@ -1,0 +1,159 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                     MAPPA VELOCE PER ALESSANDRO                              ║
+║              Tutto quello che serve è nel vecchio sito → tuo sito            ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+COPY-PASTE DA FARE:
+
+┌─ 1️⃣  COMPONENTI REACT
+│
+└─ components/product-old/
+   ├─ product-detail.tsx          (Main display)
+   ├─ product-reviews.tsx         (Reviews section)
+   ├─ preview-carousel.tsx        (Image carousel)
+   ├─ product-detail-client.tsx   (Client wrapper)
+   └─ page-product-detail.tsx     (Server route [slug])
+
+   👉 COPIA: cp -r components/product-old/* tuosito/components/
+
+
+┌─ 2️⃣  DATABASE SEED DATA (SQL)
+│
+└─ supabase/
+   ├─ seed.sql                    (9 prodotti completi)
+   │  └─ Analisi 1, 2, Anatomia, Fisica, Chimica, Biochimica, Statistica,
+   │     Diritto Privato, Informatica
+   │
+   └─ seed-reviews.sql            (6 reviews vere)
+      └─ Marco, Giulia, Alessandro, Sara, Federico, Chiara
+
+   👉 ESEGUI: Supabase SQL Editor → copia-incolla → Run
+
+
+┌─ 3️⃣  IMMAGINI (COPIA IN public/)
+│
+├─ Cover (3:4 aspect)
+│  public/images/products/covers/
+│  └─ 10 JPG/PNG:
+│     analisi-1.jpg, analisi-2.jpg, anatomia.jpg, biochimica.png,
+│     chimica.png, diritto-commerciale.jpg, diritto-privato.png,
+│     fisica-1.jpg, informatica.jpg, statistica.png
+│
+└─ Preview (Anteprima kit)
+   public/images/products/previews/
+   └─ 10 cartelle × 3 immagini:
+      analisi-1/ (preview-1/2/3.jpg)
+      analisi-2/ (preview-1/2/3.jpg)
+      anatomia/
+      biochimica/
+      chimica/
+      diritto-commerciale/
+      diritto-privato/
+      fisica-1/
+      informatica/
+      statistica/
+
+   👉 COPIA: cp -r public/images/products tuosito/public/images/
+
+
+┌─ 4️⃣  DOCUMENTAZIONE
+│
+└─ components/product-old/
+   ├─ README.md                    (Guida tecnica)
+   ├─ INTEGRAZIONE_CHECKLIST.md    (Checklist step-by-step)
+   ├─ STRUTTURA_FILE.md            (Mappa dettagliata)
+   └─ MAPPA_VELOCE.txt             (QUESTO FILE)
+
+   👉 LEGGI: README.md per capire come funziona tutto
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                         STEP RAPIDI (5 MIN)                                  ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+1. Clone repo:
+   git clone https://github.com/esame-facile/esame-facile.git
+
+2. Copia componenti:
+   cp -r components/product-old tuosito/components/
+
+3. Copia immagini:
+   cp -r public/images/products tuosito/public/images/
+
+4. Aggiungi prodotti:
+   Supabase → SQL Editor → Copia supabase/seed.sql → Run
+
+5. Aggiungi reviews:
+   Supabase → SQL Editor → Copia supabase/seed-reviews.sql → Run
+
+6. Test:
+   http://localhost:3000/catalogo/analisi-1
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    COSA VEDI DOPO QUESTI STEP?                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+✅ Pagina prodotto con:
+   ├─ Immagine copertina 3:4
+   ├─ Titolo + categoria + rating
+   ├─ Prezzo con badge sconto
+   ├─ "Cosa troverai dentro" (feature list customizzata)
+   ├─ Preview carousel (3 pagine con blur su ultima)
+   ├─ Sezione recensioni (6 reviews da veri studenti)
+   ├─ Descrizione completa
+   └─ Sticky CTA "Acquista ora" (link Stripe funzionante)
+
+✅ Accesso istantaneo a:
+   ├─ /catalogo/analisi-1
+   ├─ /catalogo/analisi-2
+   ├─ /catalogo/anatomia
+   ├─ /catalogo/biochimica
+   ├─ /catalogo/chimica
+   ├─ /catalogo/diritto-privato
+   ├─ /catalogo/diritto-commerciale
+   ├─ /catalogo/fisica-1
+   ├─ /catalogo/informatica
+   └─ /catalogo/statistica
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                        SE NON VEDI LE IMMAGINI                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+Problema #1: "Immagini non caricate"
+→ Controlla: ls -la public/images/products/covers/
+→ Deve avere 10 file (JPG/PNG)
+
+Problema #2: "Preview carousel vuoto"
+→ Controlla: ls -la public/images/products/previews/{slug}/
+→ Deve avere preview-1.jpg, preview-2.jpg, preview-3.jpg
+
+Problema #3: "Reviews non visibili"
+→ Controlla: Nel database, tabella reviews, colonna is_approved = true
+→ Se false, aggiorna: UPDATE reviews SET is_approved = true;
+
+Problema #4: "Bottone Acquista non funziona"
+→ Controlla: Nel seed.sql, ogni prodotto ha stripe_payment_link
+→ Deve iniziare con https://buy.stripe.com/
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                         FILE E LINK UTILI                                   ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+GitHub:     https://github.com/esame-facile/esame-facile
+Branch:     main
+Folder:     components/product-old/
+
+File SQL:
+- seed.sql:         https://github.com/esame-facile/esame-facile/blob/main/supabase/seed.sql
+- seed-reviews.sql: https://github.com/esame-facile/esame-facile/blob/main/supabase/seed-reviews.sql
+
+Immagini:
+- Covers:   https://github.com/esame-facile/esame-facile/tree/main/public/images/products/covers
+- Previews: https://github.com/esame-facile/esame-facile/tree/main/public/images/products/previews
+
+
+Generated: 2026-05-30
+Version: 2.0 (Complete file structure)
