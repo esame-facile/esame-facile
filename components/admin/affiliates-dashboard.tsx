@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { saleCommission } from "@/lib/commission";
 
 type Sale = {
   id: string;
@@ -17,8 +18,6 @@ type Affiliate = {
   color: string;
   affiliate_sales: Sale[];
 };
-
-const COMMISSION_RATE = 0.2;
 
 const COLOR_MAP: Record<string, { card: string; badge: string; btn: string; unpaid10: string; unpaid20: string }> = {
   violet: {
@@ -44,10 +43,6 @@ const COLOR_MAP: Record<string, { card: string; badge: string; btn: string; unpa
   },
 };
 
-function commission(amount: number) {
-  return amount * COMMISSION_RATE;
-}
-
 function formatEur(val: number) {
   return `€${val % 1 === 0 ? val : val.toFixed(2)}`;
 }
@@ -68,11 +63,11 @@ export function AffiliatesDashboard({ initialAffiliates }: { initialAffiliates: 
 
   // Total pending across all affiliates
   const totalPending = affiliates.reduce((acc, a) => {
-    return acc + a.affiliate_sales.filter((s) => !s.paid_at).reduce((s, sale) => s + commission(sale.amount), 0);
+    return acc + a.affiliate_sales.filter((s) => !s.paid_at).reduce((s, sale) => s + saleCommission(sale, a.code), 0);
   }, 0);
 
   const totalPaid = affiliates.reduce((acc, a) => {
-    return acc + a.affiliate_sales.filter((s) => s.paid_at).reduce((s, sale) => s + commission(sale.amount), 0);
+    return acc + a.affiliate_sales.filter((s) => s.paid_at).reduce((s, sale) => s + saleCommission(sale, a.code), 0);
   }, 0);
 
   async function addSale(affiliateId: string, amount: 10 | 20) {
@@ -160,8 +155,8 @@ export function AffiliatesDashboard({ initialAffiliates }: { initialAffiliates: 
       {affiliates.map((affiliate) => {
         const colors = COLOR_MAP[affiliate.color] ?? COLOR_MAP.violet;
         const sales = affiliate.affiliate_sales;
-        const totalComm = sales.reduce((acc, s) => acc + commission(s.amount), 0);
-        const paidComm = sales.filter((s) => s.paid_at).reduce((acc, s) => acc + commission(s.amount), 0);
+        const totalComm = sales.reduce((acc, s) => acc + saleCommission(s, affiliate.code), 0);
+        const paidComm = sales.filter((s) => s.paid_at).reduce((acc, s) => acc + saleCommission(s, affiliate.code), 0);
         const pendingComm = totalComm - paidComm;
 
         return (
@@ -221,7 +216,7 @@ export function AffiliatesDashboard({ initialAffiliates }: { initialAffiliates: 
                           {isPaid && <span>✓</span>}
                           {sale.amount === 10 ? "10€" : "20€"}
                           <span className="text-[10px] opacity-60">
-                            ({formatEur(commission(sale.amount))})
+                            ({formatEur(saleCommission(sale, affiliate.code))})
                           </span>
                         </button>
 

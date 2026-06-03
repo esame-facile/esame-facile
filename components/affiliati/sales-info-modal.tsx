@@ -2,9 +2,13 @@
 
 import { useState } from "react";
 import { HelpCircle, X, ShoppingCart, Percent, CreditCard } from "lucide-react";
+import { currentCommissionRate } from "@/lib/commission";
 
 export function SalesInfoModal({ code }: { code: string }) {
   const [open, setOpen] = useState(false);
+
+  const ratePct = Math.round(currentCommissionRate(code) * 100);
+  const perSale = 10 * (ratePct / 100);
 
   return (
     <>
@@ -62,9 +66,9 @@ export function SalesInfoModal({ code }: { code: string }) {
                   <Percent size={14} className="text-green-400" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-neutral-100">Commissione 20%</p>
+                  <p className="text-sm font-semibold text-neutral-100">Commissione {ratePct}%</p>
                   <p className="text-xs text-neutral-500 mt-0.5 leading-relaxed">
-                    Ricevi il <span className="text-white font-semibold">20%</span> su ogni vendita generata dal tuo codice. Ogni vendita tracciata vale <span className="text-green-400 font-semibold">€2</span> di commissione per te.
+                    Ricevi il <span className="text-white font-semibold">{ratePct}%</span> su ogni vendita generata dal tuo codice. Ogni vendita tracciata vale <span className="text-green-400 font-semibold">€{perSale}</span> di commissione per te.
                   </p>
                 </div>
               </div>

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp, CheckCircle, Clock } from "lucide-react";
 import type { Sale } from "@/lib/affiliate-store";
+import { saleCommission } from "@/lib/commission";
 
 const INITIAL_COUNT = 5;
 
@@ -10,7 +11,7 @@ function formatDate(iso: string): string {
   return new Date(iso).toLocaleDateString("it-IT", { day: "numeric", month: "short" });
 }
 
-export function SalesList({ sales }: { sales: Sale[] }) {
+export function SalesList({ sales, affiliateCode }: { sales: Sale[]; affiliateCode?: string }) {
   const [expanded, setExpanded] = useState(false);
 
   const sorted = [...sales].sort(
@@ -31,7 +32,7 @@ export function SalesList({ sales }: { sales: Sale[] }) {
               {formatDate(sale.created_at)}
             </p>
             <p className="text-xs text-neutral-500 mt-0.5">
-              Commissione €{(sale.amount * 0.2).toFixed(0)}
+              Commissione €{saleCommission(sale, affiliateCode).toFixed(0)}
             </p>
           </div>
           <span

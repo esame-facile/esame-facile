@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { LogOut } from "lucide-react";
 import { verifySessionCookie } from "@/lib/affiliati-auth";
 import { readStore } from "@/lib/affiliate-store";
+import { saleCommission } from "@/lib/commission";
 import { CountUp } from "@/components/affiliati/count-up";
 import { SalesList } from "@/components/affiliati/sales-list";
 import { Chart } from "@/components/affiliati/chart";
@@ -30,8 +31,8 @@ export default async function AffiliateDashboard() {
 
   const vapidKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY ?? "";
 
-  const totalEarned = sales.reduce((sum, s) => sum + s.amount * 0.2, 0);
-  const totalPaid = sales.filter((s) => s.paid_at).reduce((sum, s) => sum + s.amount * 0.2, 0);
+  const totalEarned = sales.reduce((sum, s) => sum + saleCommission(s, affiliate.code), 0);
+  const totalPaid = sales.filter((s) => s.paid_at).reduce((sum, s) => sum + saleCommission(s, affiliate.code), 0);
   const totalPending = totalEarned - totalPaid;
 
   return (
@@ -89,7 +90,7 @@ export default async function AffiliateDashboard() {
             </p>
             <SalesInfoModal code={affiliate.code} />
           </div>
-          <SalesList sales={sales} />
+          <SalesList sales={sales} affiliateCode={affiliate.code} />
         </div>
 
         {/* Chart */}
