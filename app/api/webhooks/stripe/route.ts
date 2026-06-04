@@ -206,13 +206,6 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ received: true, fulfilled: downloadLinks.length });
   } catch (err) {
     console.error("[webhook] processing error:", err);
-    return NextResponse.json(
-      {
-        error: "Processing error",
-        detail: err instanceof Error ? err.message : String(err),
-        stack: err instanceof Error ? (err.stack ?? "").split("\n").slice(0, 5) : undefined,
-      },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Processing error" }, { status: 500 });
   }
 }
