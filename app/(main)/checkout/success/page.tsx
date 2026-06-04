@@ -142,12 +142,14 @@ export default function CheckoutSuccessPage() {
         </div>
       )}
 
-      {/* Order still processing */}
-      {!loading && order && !hasLinks && (
+      {/* Order still processing / links not ready */}
+      {!loading && !hasLinks && (
         <div className="flex items-start gap-3 bg-amber-950/40 border border-amber-800/40 rounded-xl px-4 py-3.5">
           <AlertCircle size={16} className="text-amber-400 mt-0.5 flex-shrink-0" />
           <p className="text-sm text-amber-200">
-            Il tuo ordine è in elaborazione. Controlla la tua email — riceverai i link di download a breve.
+            Il tuo ordine è confermato e in elaborazione. Controlla la tua email (anche nello spam) —
+            riceverai il link di download entro pochi minuti. Se non arriva, scrivici su WhatsApp con la
+            tua email e ti inviamo subito il kit.
           </p>
         </div>
       )}

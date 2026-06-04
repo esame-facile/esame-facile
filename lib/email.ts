@@ -11,7 +11,42 @@ function getResend() {
   return _resend;
 }
 
-function buildEmailHtml(productName: string, price: string, downloadUrl: string): string {
+type EmailItem = { product_name: string; price: number; download_url: string };
+
+function buildEmailHtml(
+  items: EmailItem[],
+  opts?: { intro?: string; heading?: string }
+): string {
+  const heading = opts?.heading ?? "Il tuo Kit è pronto!";
+  const intro =
+    opts?.intro ??
+    "Ciao! Il tuo acquisto è confermato. Qui sotto trovi il link per scaricare il tuo kit.";
+
+  // One product box + download button per item (supports multi-product orders)
+  const itemsHtml = items
+    .map(
+      (it) => `
+              <table width="100%" cellpadding="0" cellspacing="0" style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;margin-bottom:12px;">
+                <tr>
+                  <td style="padding:16px 20px;">
+                    <p style="margin:0 0 4px;color:#6b7280;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">Prodotto acquistato</p>
+                    <p style="margin:0;color:#111827;font-size:16px;font-weight:700;">${it.product_name}</p>
+                    <p style="margin:4px 0 0;color:#4f46e5;font-size:15px;font-weight:600;">${formatPrice(it.price)}</p>
+                  </td>
+                </tr>
+              </table>
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:24px;">
+                <tr>
+                  <td align="center">
+                    <a href="${it.download_url}" style="display:inline-block;background:#4f46e5;color:#ffffff;font-size:16px;font-weight:700;text-decoration:none;padding:14px 36px;border-radius:8px;">
+                      Scarica ${it.product_name}
+                    </a>
+                  </td>
+                </tr>
+              </table>`
+    )
+    .join("");
+
   return `<!DOCTYPE html>
 <html lang="it">
 <head>
@@ -29,7 +64,7 @@ function buildEmailHtml(productName: string, price: string, downloadUrl: string)
           <tr>
             <td style="background:#4f46e5;padding:28px 32px;text-align:center;">
               <p style="margin:0;color:#c7d2fe;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;">Esame Facile</p>
-              <h1 style="margin:8px 0 0;color:#ffffff;font-size:22px;font-weight:700;">Il tuo Kit è pronto!</h1>
+              <h1 style="margin:8px 0 0;color:#ffffff;font-size:22px;font-weight:700;">${heading}</h1>
             </td>
           </tr>
 
@@ -37,30 +72,10 @@ function buildEmailHtml(productName: string, price: string, downloadUrl: string)
           <tr>
             <td style="padding:32px;">
               <p style="margin:0 0 20px;color:#374151;font-size:15px;line-height:1.6;">
-                Ciao! Il tuo acquisto è confermato. Qui sotto trovi il link per scaricare il tuo kit.
+                ${intro}
               </p>
 
-              <!-- Product box -->
-              <table width="100%" cellpadding="0" cellspacing="0" style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;margin-bottom:24px;">
-                <tr>
-                  <td style="padding:16px 20px;">
-                    <p style="margin:0 0 4px;color:#6b7280;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">Prodotto acquistato</p>
-                    <p style="margin:0;color:#111827;font-size:16px;font-weight:700;">${productName}</p>
-                    <p style="margin:4px 0 0;color:#4f46e5;font-size:15px;font-weight:600;">${price}</p>
-                  </td>
-                </tr>
-              </table>
-
-              <!-- Download button -->
-              <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:24px;">
-                <tr>
-                  <td align="center">
-                    <a href="${downloadUrl}" style="display:inline-block;background:#4f46e5;color:#ffffff;font-size:16px;font-weight:700;text-decoration:none;padding:14px 36px;border-radius:8px;">
-                      Scarica il Kit
-                    </a>
-                  </td>
-                </tr>
-              </table>
+              ${itemsHtml}
 
               <!-- Info -->
               <table width="100%" cellpadding="0" cellspacing="0" style="background:#fffbeb;border:1px solid #fde68a;border-radius:8px;margin-bottom:24px;">
@@ -101,16 +116,39 @@ function buildEmailHtml(productName: string, price: string, downloadUrl: string)
 }
 
 export async function sendPurchaseEmail(order: OrderConfirmation) {
-  const item = order.items[0];
-  const productName = item?.product_name ?? "Kit Esame";
-  const price = formatPrice(item?.price ?? order.total);
-  const downloadUrl = item?.download_url ?? SITE_CONFIG.url;
+  const items =
+    order.items.length > 0
+      ? order.items
+      : [{ product_name: "Kit Esame", price: order.total, download_url: SITE_CONFIG.url }];
 
   const { error } = await getResend().emails.send({
     from: `Esame Facile <${SITE_CONFIG.email}>`,
     to: order.customer_email,
     subject: `Il tuo Kit è pronto — Esame Facile`,
-    html: buildEmailHtml(productName, price, downloadUrl),
+    html: buildEmailHtml(items),
+  });
+
+  if (error) {
+    throw new Error(`Resend error: ${JSON.stringify(error)}`);
+  }
+}
+
+/** Apology + delivery email for orders that were paid but never fulfilled. */
+export async function sendApologyEmail(order: OrderConfirmation) {
+  const items =
+    order.items.length > 0
+      ? order.items
+      : [{ product_name: "Kit Esame", price: order.total, download_url: SITE_CONFIG.url }];
+
+  const { error } = await getResend().emails.send({
+    from: `Esame Facile <${SITE_CONFIG.email}>`,
+    to: order.customer_email,
+    subject: `Ci scusiamo — ecco il tuo Kit, Esame Facile`,
+    html: buildEmailHtml(items, {
+      heading: "Scusaci per l'attesa",
+      intro:
+        "Ciao! Per un problema tecnico il link di download del tuo acquisto non ti era stato inviato. Ci dispiace molto per il disagio: ecco subito il tuo Kit, scaricalo qui sotto. Il pagamento era andato a buon fine.",
+    }),
   });
 
   if (error) {
