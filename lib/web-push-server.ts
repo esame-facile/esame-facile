@@ -9,7 +9,7 @@ webpush.setVapidDetails(
 
 export async function sendPushNotifications(
   subscriptions: PushSubscriptionJSON[],
-  payload: { title: string; body: string }
+  payload: { title: string; body: string; url?: string }
 ): Promise<PushSubscriptionJSON[]> {
   // Returns list of expired subscriptions to remove (HTTP 410)
   const expired: PushSubscriptionJSON[] = [];

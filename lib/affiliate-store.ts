@@ -37,6 +37,8 @@ export type Affiliate = {
 export type AffiliateStore = {
   affiliates: Affiliate[];
   sales: Sale[];
+  // Push subscriptions of the owner/HQ admin (notified on every sale)
+  admin_subscriptions?: PushSubscriptionJSON[];
 };
 
 export type AffiliateWithSales = Affiliate & {

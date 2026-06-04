@@ -164,11 +164,12 @@ export async function POST(req: NextRequest) {
           created_at: new Date().toISOString(),
         });
 
-        // Send push notification if subscriptions exist
+        // Send push notification to the affiliate
         if (affiliate.push_subscriptions?.length) {
           const expired = await sendPushNotifications(affiliate.push_subscriptions, {
             title: "Nuova vendita!",
             body: `${product.name} — commissione in arrivo`,
+            url: "/affiliati/dashboard",
           });
           // Clean up expired subscriptions
           if (expired.length > 0) {
@@ -177,6 +178,20 @@ export async function POST(req: NextRequest) {
               affiliate.push_subscriptions.filter(
                 (s) => !expired.some((e) => e.endpoint === s.endpoint)
               );
+          }
+        }
+
+        // Notify the owner/HQ on every sale, naming the affiliate
+        if (affiliateStore.admin_subscriptions?.length) {
+          const expiredAdmin = await sendPushNotifications(affiliateStore.admin_subscriptions, {
+            title: `Nuova vendita — ${affiliate.name}`,
+            body: `${product.name} · codice ${affiliate.code}`,
+            url: "/admin/affiliates",
+          });
+          if (expiredAdmin.length > 0) {
+            affiliateStore.admin_subscriptions = affiliateStore.admin_subscriptions.filter(
+              (s) => !expiredAdmin.some((e) => e.endpoint === s.endpoint)
+            );
           }
         }
 

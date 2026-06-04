@@ -1,12 +1,14 @@
 import { LogOut, Inbox } from "lucide-react";
 import { readStore, nestAffiliates } from "@/lib/affiliate-store";
 import { AffiliatesDashboard } from "@/components/admin/affiliates-dashboard";
+import { PushSubscribeButton } from "@/components/admin/push-subscribe-button";
 
 export const dynamic = "force-dynamic";
 
 export default async function AffiliatesPage() {
   const store = await readStore();
   const affiliates = nestAffiliates(store);
+  const vapidKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY ?? "";
 
   return (
     <div className="min-h-screen bg-neutral-950">
@@ -31,7 +33,8 @@ export default async function AffiliatesPage() {
         </div>
       </div>
 
-      <div className="container-app py-6">
+      <div className="container-app py-6 space-y-5">
+        {vapidKey && <PushSubscribeButton vapidKey={vapidKey} />}
         <AffiliatesDashboard initialAffiliates={affiliates} />
       </div>
     </div>
