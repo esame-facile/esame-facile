@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Plus, Check, X } from "lucide-react";
 import { saleCommission } from "@/lib/commission";
 
 type Sale = {
@@ -19,27 +20,21 @@ type Affiliate = {
   affiliate_sales: Sale[];
 };
 
-const COLOR_MAP: Record<string, { card: string; badge: string; btn: string; unpaid10: string; unpaid20: string }> = {
+const COLOR_MAP: Record<string, { dot: string; badge: string; unpaid: string }> = {
   violet: {
-    card: "border-violet-200",
-    badge: "bg-violet-100 text-violet-700",
-    btn: "bg-violet-600 hover:bg-violet-700 text-white",
-    unpaid10: "bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100",
-    unpaid20: "bg-violet-50 text-violet-700 border-violet-200 hover:bg-violet-100",
+    dot: "bg-violet-400",
+    badge: "bg-violet-500/15 text-violet-300 border border-violet-500/25",
+    unpaid: "bg-violet-500/15 text-violet-200 border-violet-500/30 hover:bg-violet-500/25",
   },
   pink: {
-    card: "border-pink-200",
-    badge: "bg-pink-100 text-pink-700",
-    btn: "bg-pink-600 hover:bg-pink-700 text-white",
-    unpaid10: "bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100",
-    unpaid20: "bg-pink-50 text-pink-700 border-pink-200 hover:bg-pink-100",
+    dot: "bg-pink-400",
+    badge: "bg-pink-500/15 text-pink-300 border border-pink-500/25",
+    unpaid: "bg-pink-500/15 text-pink-200 border-pink-500/30 hover:bg-pink-500/25",
   },
   emerald: {
-    card: "border-emerald-200",
-    badge: "bg-emerald-100 text-emerald-700",
-    btn: "bg-emerald-600 hover:bg-emerald-700 text-white",
-    unpaid10: "bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100",
-    unpaid20: "bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100",
+    dot: "bg-emerald-400",
+    badge: "bg-emerald-500/15 text-emerald-300 border border-emerald-500/25",
+    unpaid: "bg-emerald-500/15 text-emerald-200 border-emerald-500/30 hover:bg-emerald-500/25",
   },
 };
 
@@ -52,7 +47,7 @@ export function AffiliatesDashboard({ initialAffiliates }: { initialAffiliates: 
     initialAffiliates.map((a) => ({
       ...a,
       affiliate_sales: [...(a.affiliate_sales ?? [])].sort(
-        (x, y) => new Date(x.created_at).getTime() - new Date(y.created_at).getTime()
+        (x, y) => new Date(y.created_at).getTime() - new Date(x.created_at).getTime()
       ),
     }))
   );
@@ -61,7 +56,6 @@ export function AffiliatesDashboard({ initialAffiliates }: { initialAffiliates: 
   const setItemLoading = (id: string, val: boolean) =>
     setLoading((prev) => ({ ...prev, [id]: val }));
 
-  // Total pending across all affiliates
   const totalPending = affiliates.reduce((acc, a) => {
     return acc + a.affiliate_sales.filter((s) => !s.paid_at).reduce((s, sale) => s + saleCommission(sale, a.code), 0);
   }, 0);
@@ -69,6 +63,8 @@ export function AffiliatesDashboard({ initialAffiliates }: { initialAffiliates: 
   const totalPaid = affiliates.reduce((acc, a) => {
     return acc + a.affiliate_sales.filter((s) => s.paid_at).reduce((s, sale) => s + saleCommission(sale, a.code), 0);
   }, 0);
+
+  const totalSales = affiliates.reduce((acc, a) => acc + a.affiliate_sales.length, 0);
 
   async function addSale(affiliateId: string, amount: 10 | 20) {
     const key = `add-${affiliateId}-${amount}`;
@@ -83,7 +79,7 @@ export function AffiliatesDashboard({ initialAffiliates }: { initialAffiliates: 
       setAffiliates((prev) =>
         prev.map((a) =>
           a.id === affiliateId
-            ? { ...a, affiliate_sales: [...a.affiliate_sales, newSale] }
+            ? { ...a, affiliate_sales: [newSale, ...a.affiliate_sales] }
             : a
         )
       );
@@ -93,20 +89,13 @@ export function AffiliatesDashboard({ initialAffiliates }: { initialAffiliates: 
 
   async function togglePaid(affiliateId: string, saleId: string) {
     setItemLoading(saleId, true);
-    const res = await fetch(`/api/admin/affiliates/sales/${saleId}`, {
-      method: "PATCH",
-    });
+    const res = await fetch(`/api/admin/affiliates/sales/${saleId}`, { method: "PATCH" });
     if (res.ok) {
       const updated: Sale = await res.json();
       setAffiliates((prev) =>
         prev.map((a) =>
           a.id === affiliateId
-            ? {
-                ...a,
-                affiliate_sales: a.affiliate_sales.map((s) =>
-                  s.id === saleId ? updated : s
-                ),
-              }
+            ? { ...a, affiliate_sales: a.affiliate_sales.map((s) => (s.id === saleId ? updated : s)) }
             : a
         )
       );
@@ -115,10 +104,9 @@ export function AffiliatesDashboard({ initialAffiliates }: { initialAffiliates: 
   }
 
   async function deleteSale(affiliateId: string, saleId: string) {
+    if (!confirm("Eliminare questa vendita?")) return;
     setItemLoading(`del-${saleId}`, true);
-    const res = await fetch(`/api/admin/affiliates/sales/${saleId}`, {
-      method: "DELETE",
-    });
+    const res = await fetch(`/api/admin/affiliates/sales/${saleId}`, { method: "DELETE" });
     if (res.ok || res.status === 204) {
       setAffiliates((prev) =>
         prev.map((a) =>
@@ -132,22 +120,30 @@ export function AffiliatesDashboard({ initialAffiliates }: { initialAffiliates: 
   }
 
   return (
-    <div className="space-y-6">
-      {/* Global summary */}
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-        <div className="bg-white rounded-xl border border-gray-200 p-4">
-          <p className="text-xs font-medium text-gray-400 uppercase tracking-wide mb-1">Da pagare totale</p>
-          <p className="text-3xl font-bold text-red-500">{formatEur(totalPending)}</p>
+    <div className="space-y-5">
+      {/* Hero — da pagare totale */}
+      <div
+        className="rounded-2xl p-6 text-center"
+        style={{ background: "linear-gradient(135deg, #451a03, #78350f)" }}
+      >
+        <p className="text-xs font-semibold text-amber-300 uppercase tracking-widest mb-2">
+          Da pagare in totale
+        </p>
+        <p className="text-5xl font-bold text-white mb-1">{formatEur(totalPending)}</p>
+        <p className="text-sm text-amber-300/70 mt-1">
+          {affiliates.length} affiliate · {totalSales} vendite
+        </p>
+      </div>
+
+      {/* Pagato / Vendite */}
+      <div className="grid grid-cols-2 gap-3">
+        <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-4 text-center">
+          <p className="text-2xl font-bold text-green-400">{formatEur(totalPaid)}</p>
+          <p className="text-xs text-neutral-500 mt-1">Già pagato</p>
         </div>
-        <div className="bg-white rounded-xl border border-gray-200 p-4">
-          <p className="text-xs font-medium text-gray-400 uppercase tracking-wide mb-1">Già pagato</p>
-          <p className="text-3xl font-bold text-green-600">{formatEur(totalPaid)}</p>
-        </div>
-        <div className="bg-white rounded-xl border border-gray-200 p-4">
-          <p className="text-xs font-medium text-gray-400 uppercase tracking-wide mb-1">Vendite totali</p>
-          <p className="text-3xl font-bold text-gray-900">
-            {affiliates.reduce((acc, a) => acc + a.affiliate_sales.length, 0)}
-          </p>
+        <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-4 text-center">
+          <p className="text-2xl font-bold text-white">{totalSales}</p>
+          <p className="text-xs text-neutral-500 mt-1">Vendite totali</p>
         </div>
       </div>
 
@@ -160,32 +156,47 @@ export function AffiliatesDashboard({ initialAffiliates }: { initialAffiliates: 
         const pendingComm = totalComm - paidComm;
 
         return (
-          <div
-            key={affiliate.id}
-            className={`bg-white rounded-xl border-2 ${colors.card} overflow-hidden`}
-          >
-            {/* Card header */}
-            <div className="px-5 py-4 border-b border-gray-100 flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <p className="text-lg font-bold text-gray-900">{affiliate.name}</p>
-                <span className={`text-xs font-mono font-semibold px-2.5 py-1 rounded-full ${colors.badge}`}>
+          <div key={affiliate.id} className="bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden">
+            {/* Header */}
+            <div className="px-4 py-4 border-b border-neutral-800 flex items-center justify-between">
+              <div className="flex items-center gap-2.5">
+                <span className={`w-2.5 h-2.5 rounded-full ${colors.dot}`} />
+                <p className="text-base font-bold text-white">{affiliate.name}</p>
+                <span className={`text-[11px] font-mono font-semibold px-2 py-0.5 rounded-full ${colors.badge}`}>
                   {affiliate.code}
                 </span>
-                <span className="text-xs text-gray-400">{sales.length} vendite</span>
               </div>
-              <div className="text-right">
-                {pendingComm > 0 ? (
-                  <p className="text-sm font-bold text-red-500">{formatEur(pendingComm)} da pagare</p>
-                ) : (
-                  <p className="text-sm font-bold text-green-600">✓ In pari</p>
-                )}
+              {pendingComm > 0 ? (
+                <p className="text-sm font-bold text-amber-400">{formatEur(pendingComm)}</p>
+              ) : (
+                <span className="inline-flex items-center gap-1 text-xs font-semibold text-green-400">
+                  <Check size={13} /> In pari
+                </span>
+              )}
+            </div>
+
+            {/* Stats row */}
+            <div className="px-4 py-3 grid grid-cols-3 gap-2 text-center border-b border-neutral-800/60">
+              <div>
+                <p className="text-sm font-bold text-white">{formatEur(totalComm)}</p>
+                <p className="text-[10px] text-neutral-500 uppercase tracking-wide mt-0.5">Totale</p>
+              </div>
+              <div>
+                <p className="text-sm font-bold text-green-400">{formatEur(paidComm)}</p>
+                <p className="text-[10px] text-neutral-500 uppercase tracking-wide mt-0.5">Pagato</p>
+              </div>
+              <div>
+                <p className={`text-sm font-bold ${pendingComm > 0 ? "text-amber-400" : "text-neutral-600"}`}>
+                  {formatEur(pendingComm)}
+                </p>
+                <p className="text-[10px] text-neutral-500 uppercase tracking-wide mt-0.5">Rimane</p>
               </div>
             </div>
 
-            {/* Chips area */}
-            <div className="px-5 py-4">
+            {/* Chips */}
+            <div className="px-4 py-4">
               {sales.length === 0 ? (
-                <p className="text-sm text-gray-400 italic">Nessuna vendita ancora</p>
+                <p className="text-sm text-neutral-600 italic">Nessuna vendita ancora</p>
               ) : (
                 <div className="flex flex-wrap gap-2">
                   {sales.map((sale) => {
@@ -194,46 +205,34 @@ export function AffiliatesDashboard({ initialAffiliates }: { initialAffiliates: 
                     const isDeleting = loading[`del-${sale.id}`];
 
                     return (
-                      <div key={sale.id} className="relative group">
-                        {/* Sale chip */}
+                      <div
+                        key={sale.id}
+                        role="button"
+                        tabIndex={0}
+                        onClick={() => !isToggling && !isDeleting && togglePaid(affiliate.id, sale.id)}
+                        title={isPaid ? "Segna come da pagare" : "Segna come pagata"}
+                        className={`
+                          inline-flex items-center gap-1 pl-2.5 pr-2 py-1.5 rounded-full border text-xs font-semibold
+                          transition-all duration-150 select-none
+                          ${isToggling ? "opacity-50 cursor-wait" : "cursor-pointer"}
+                          ${isPaid
+                            ? "bg-neutral-800 text-neutral-500 border-neutral-700 line-through"
+                            : colors.unpaid}
+                        `}
+                      >
+                        {isPaid && <Check size={10} />}
+                        {sale.amount === 10 ? "10€" : "20€"}
+                        <span className="text-[10px] opacity-60">
+                          ({formatEur(saleCommission(sale, affiliate.code))})
+                        </span>
                         <button
-                          onClick={() => !isToggling && !isDeleting && togglePaid(affiliate.id, sale.id)}
-                          disabled={isToggling || isDeleting}
-                          title={isPaid ? "Clicca per annullare pagamento" : "Clicca per segnare pagata"}
-                          className={`
-                            relative inline-flex items-center gap-1 px-3 py-1.5 rounded-full border text-xs font-semibold
-                            transition-all duration-150 select-none
-                            ${isToggling ? "opacity-50 cursor-wait" : "cursor-pointer"}
-                            ${
-                              isPaid
-                                ? "bg-gray-100 text-gray-400 border-gray-200 hover:bg-gray-200 line-through"
-                                : sale.amount === 10
-                                ? colors.unpaid10
-                                : colors.unpaid20
-                            }
-                          `}
-                        >
-                          {isPaid && <span>✓</span>}
-                          {sale.amount === 10 ? "10€" : "20€"}
-                          <span className="text-[10px] opacity-60">
-                            ({formatEur(saleCommission(sale, affiliate.code))})
-                          </span>
-                        </button>
-
-                        {/* Delete × on hover */}
-                        <button
-                          onClick={() => !isDeleting && deleteSale(affiliate.id, sale.id)}
+                          type="button"
+                          onClick={(e) => { e.stopPropagation(); if (!isDeleting) deleteSale(affiliate.id, sale.id); }}
                           disabled={isDeleting}
                           title="Elimina vendita"
-                          className="
-                            absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-red-500 text-white
-                            text-[10px] font-bold items-center justify-center
-                            opacity-0 group-hover:opacity-100 transition-opacity
-                            hidden group-hover:flex
-                            hover:bg-red-600
-                          "
+                          className="ml-0.5 w-4 h-4 rounded-full flex items-center justify-center text-neutral-500 hover:text-red-400 hover:bg-red-500/10 transition-colors disabled:opacity-50"
                         >
-                          ×
+                          <X size={11} />
                         </button>
                       </div>
                     );
@@ -242,45 +241,22 @@ export function AffiliatesDashboard({ initialAffiliates }: { initialAffiliates: 
               )}
             </div>
 
-            {/* Stats + buttons */}
-            <div className="px-5 py-3 bg-gray-50 border-t border-gray-100 flex flex-wrap items-center justify-between gap-3">
-              {/* Stats */}
-              <div className="flex gap-4 text-xs text-gray-500">
-                <span>
-                  Commissioni:{" "}
-                  <strong className="text-gray-800">{formatEur(totalComm)}</strong>
-                </span>
-                <span className="text-gray-300">|</span>
-                <span>
-                  Pagato:{" "}
-                  <strong className="text-green-600">{formatEur(paidComm)}</strong>
-                </span>
-                <span className="text-gray-300">|</span>
-                <span>
-                  Rimane:{" "}
-                  <strong className={pendingComm > 0 ? "text-red-500" : "text-gray-400"}>
-                    {formatEur(pendingComm)}
-                  </strong>
-                </span>
-              </div>
-
-              {/* Add sale buttons */}
-              <div className="flex gap-2">
-                <button
-                  onClick={() => addSale(affiliate.id, 10)}
-                  disabled={loading[`add-${affiliate.id}-10`]}
-                  className="px-3 py-1.5 rounded-lg bg-blue-50 text-blue-700 border border-blue-200 text-xs font-semibold hover:bg-blue-100 transition-colors disabled:opacity-50"
-                >
-                  + 10€
-                </button>
-                <button
-                  onClick={() => addSale(affiliate.id, 20)}
-                  disabled={loading[`add-${affiliate.id}-20`]}
-                  className="px-3 py-1.5 rounded-lg bg-violet-50 text-violet-700 border border-violet-200 text-xs font-semibold hover:bg-violet-100 transition-colors disabled:opacity-50"
-                >
-                  + 20€
-                </button>
-              </div>
+            {/* Add sale buttons */}
+            <div className="px-4 py-3 bg-white/[0.02] border-t border-neutral-800 flex gap-2">
+              <button
+                onClick={() => addSale(affiliate.id, 10)}
+                disabled={loading[`add-${affiliate.id}-10`]}
+                className="flex-1 inline-flex items-center justify-center gap-1 px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-neutral-300 border border-white/10 text-xs font-semibold transition-colors disabled:opacity-50"
+              >
+                <Plus size={13} /> 10€
+              </button>
+              <button
+                onClick={() => addSale(affiliate.id, 20)}
+                disabled={loading[`add-${affiliate.id}-20`]}
+                className="flex-1 inline-flex items-center justify-center gap-1 px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-neutral-300 border border-white/10 text-xs font-semibold transition-colors disabled:opacity-50"
+              >
+                <Plus size={13} /> 20€
+              </button>
             </div>
           </div>
         );
