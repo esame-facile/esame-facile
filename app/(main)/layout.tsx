@@ -1,7 +1,7 @@
+import Script from "next/script";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { WhatsAppButton } from "@/components/layout/whatsapp-button";
-import { LandingTracker } from "@/components/analytics/landing-tracker";
 
 export default function MainLayout({
   children,
@@ -10,7 +10,12 @@ export default function MainLayout({
 }) {
   return (
     <>
-      <LandingTracker />
+      {/* Tracking centralizzato Nucleo (multi-sito) */}
+      <Script
+        src="https://nucleo-wine.vercel.app/t.js"
+        data-site="esamefacile"
+        strategy="afterInteractive"
+      />
       <Navbar />
       <main className="min-h-screen pt-14">{children}</main>
       <Footer />

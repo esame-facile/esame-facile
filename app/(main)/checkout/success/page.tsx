@@ -56,6 +56,21 @@ export default function CheckoutSuccessPage() {
     });
   }, [searchParams]);
 
+  // Conversione → Nucleo (raggiungere la pagina di grazie = acquisto andato a buon fine)
+  useEffect(() => {
+    try {
+      const k = "nx_conv_" + (searchParams.get("session_id") || "x");
+      if (sessionStorage.getItem(k)) return;
+      sessionStorage.setItem(k, "1");
+      const body = JSON.stringify({ site: "esamefacile", event: "conversion", page: "/checkout/success" });
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon("https://nucleo-wine.vercel.app/api/track", new Blob([body], { type: "text/plain" }));
+      } else {
+        fetch("https://nucleo-wine.vercel.app/api/track", { method: "POST", headers: { "Content-Type": "text/plain" }, body, keepalive: true }).catch(() => {});
+      }
+    } catch {}
+  }, [searchParams]);
+
   const isCompleted = order?.status === "completed";
   const hasLinks = isCompleted && order?.items?.some((i) => i.download_url);
 
