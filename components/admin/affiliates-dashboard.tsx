@@ -36,6 +36,11 @@ const COLOR_MAP: Record<string, { dot: string; badge: string; unpaid: string }> 
     badge: "bg-emerald-500/15 text-emerald-300 border border-emerald-500/25",
     unpaid: "bg-emerald-500/15 text-emerald-200 border-emerald-500/30 hover:bg-emerald-500/25",
   },
+  amber: {
+    dot: "bg-amber-400",
+    badge: "bg-amber-500/15 text-amber-300 border border-amber-500/25",
+    unpaid: "bg-amber-500/15 text-amber-200 border-amber-500/30 hover:bg-amber-500/25",
+  },
 };
 
 function formatEur(val: number) {
