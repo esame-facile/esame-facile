@@ -56,12 +56,11 @@ export default function CheckoutSuccessPage() {
     });
   }, [searchParams]);
 
-  // Conversione → Nucleo (raggiungere la pagina di grazie = acquisto andato a buon fine)
+  // Conversione → Nucleo, poi redirect alla thank-you di Skuoola
   useEffect(() => {
+    const sessionId = searchParams.get("session_id");
+    // Traccia la conversione prima di lasciare la pagina (sendBeacon sopravvive all'unload)
     try {
-      const k = "nx_conv_" + (searchParams.get("session_id") || "x");
-      if (sessionStorage.getItem(k)) return;
-      sessionStorage.setItem(k, "1");
       const body = JSON.stringify({ site: "esamefacile", event: "conversion", page: "/checkout/success" });
       if (navigator.sendBeacon) {
         navigator.sendBeacon("https://nucleo-wine.vercel.app/api/track", new Blob([body], { type: "text/plain" }));
@@ -69,6 +68,10 @@ export default function CheckoutSuccessPage() {
         fetch("https://nucleo-wine.vercel.app/api/track", { method: "POST", headers: { "Content-Type": "text/plain" }, body, keepalive: true }).catch(() => {});
       }
     } catch {}
+    const dest =
+      "https://www.skuoola.it/acquisto/success" +
+      (sessionId ? `?session_id=${encodeURIComponent(sessionId)}` : "");
+    window.location.replace(dest);
   }, [searchParams]);
 
   const isCompleted = order?.status === "completed";
