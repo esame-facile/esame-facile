@@ -1,6 +1,7 @@
 {
   "framework": "nextjs",
   "crons": [
-    { "path": "/api/cron/landing-report", "schedule": "0 18 * * *" }
+    { "path": "/api/cron/encourage?slot=mattina", "schedule": "0 7 * * *" },
+    { "path": "/api/cron/encourage?slot=pomeriggio", "schedule": "0 12 * * *" }
   ]
 }
