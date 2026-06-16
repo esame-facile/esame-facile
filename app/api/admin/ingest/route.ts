@@ -164,28 +164,37 @@ export async function POST(req: NextRequest) {
           created_at: new Date().toISOString(),
         });
 
-        // Frase motivazionale a rotazione (cambia a ogni vendita)
-        const MOTIVAZIONALI = [
-          "Boom! Un'altra vendita 💥",
-          "Continua così, stai spaccando! 🔥",
-          "Il lavoro paga 💪",
-          "Un'altra vinta! 🏆",
-          "Stai costruendo qualcosa di grande 🌟",
-          "Chi semina raccoglie 🌱",
-          "Grande! Non fermarti ⚡",
-          "Numeri che crescono 📈",
-          "Sei sulla strada giusta ✨",
-          "Cassa! Ottimo lavoro 💸",
-          "La costanza vince sempre 🎯",
-          "Ogni vendita è un passo avanti 🚀",
-        ];
-        const frase = MOTIVAZIONALI[Math.floor(Math.random() * MOTIVAZIONALI.length)];
+        // Conta le vendite di OGGI (fuso Italia) di questa affiliata e scegli il
+        // messaggio motivazionale in base al numero della vendita (1ª → 10ª, poi oltre).
+        const oggiIT = new Date().toLocaleDateString("en-CA", { timeZone: "Europe/Rome" });
+        const venditeOggi = affiliateStore.sales.filter(
+          (s) =>
+            s.affiliate_id === affiliate.id &&
+            new Date(s.created_at).toLocaleDateString("en-CA", { timeZone: "Europe/Rome" }) === oggiIT
+        ).length;
 
-        // Send push notification to the affiliate
+        const MESSAGGI: Record<number, { title: string; body: string }> = {
+          1: { title: "1ª vendita di oggi! 🎉", body: "Ecco la prima… sarà solo una delle tante. Spingi! 💪" },
+          2: { title: "2 vendite oggi 🔥", body: "Un gioco da ragazzi per te. Continua a spingere!!" },
+          3: { title: "3 vendite! 🚀", body: "Sei lanciatissima, non fermarti!" },
+          4: { title: "4 vendite oggi 💪", body: "Stai andando fortissimo, avanti così!" },
+          5: { title: "5 vendite! 🏆", body: "Metà strada verso le 10, sei una macchina!" },
+          6: { title: "6 vendite oggi ⚡", body: "Inarrestabile! Le altre ti guardano 👀" },
+          7: { title: "7 vendite! 🌟", body: "Giornata da campionessa, continua!" },
+          8: { title: "8 vendite oggi 💥", body: "Stai spaccando di brutto, ancora!" },
+          9: { title: "9 vendite! 🤯", body: "Una in più e fai dieci. Vai!!" },
+          10: { title: "10 VENDITE OGGI! 👑", body: "Giornata leggendaria. Sei un fenomeno!" },
+        };
+        const msg = MESSAGGI[venditeOggi] ?? {
+          title: `${venditeOggi} vendite oggi! 🚀`,
+          body: "Inarrestabile, oltre ogni limite!",
+        };
+
+        // Notifica all'affiliata (messaggio in base al conteggio di oggi)
         if (affiliate.push_subscriptions?.length) {
           const expired = await sendPushNotifications(affiliate.push_subscriptions, {
-            title: frase,
-            body: `${product.name} — commissione in arrivo 💰`,
+            title: msg.title,
+            body: msg.body,
             url: "/affiliati/dashboard",
           });
           // Clean up expired subscriptions
@@ -201,8 +210,8 @@ export async function POST(req: NextRequest) {
         // Notify the owner/HQ on every sale, naming the affiliate
         if (affiliateStore.admin_subscriptions?.length) {
           const expiredAdmin = await sendPushNotifications(affiliateStore.admin_subscriptions, {
-            title: `Vendita — ${affiliate.name}`,
-            body: `${product.name} · ${affiliate.code} — ${frase}`,
+            title: `Vendita #${venditeOggi} oggi — ${affiliate.name}`,
+            body: `${product.name} · ${affiliate.code}`,
             url: "/admin/affiliates",
           });
           if (expiredAdmin.length > 0) {
