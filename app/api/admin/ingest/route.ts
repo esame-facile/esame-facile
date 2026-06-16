@@ -164,11 +164,28 @@ export async function POST(req: NextRequest) {
           created_at: new Date().toISOString(),
         });
 
+        // Frase motivazionale a rotazione (cambia a ogni vendita)
+        const MOTIVAZIONALI = [
+          "Boom! Un'altra vendita 💥",
+          "Continua così, stai spaccando! 🔥",
+          "Il lavoro paga 💪",
+          "Un'altra vinta! 🏆",
+          "Stai costruendo qualcosa di grande 🌟",
+          "Chi semina raccoglie 🌱",
+          "Grande! Non fermarti ⚡",
+          "Numeri che crescono 📈",
+          "Sei sulla strada giusta ✨",
+          "Cassa! Ottimo lavoro 💸",
+          "La costanza vince sempre 🎯",
+          "Ogni vendita è un passo avanti 🚀",
+        ];
+        const frase = MOTIVAZIONALI[Math.floor(Math.random() * MOTIVAZIONALI.length)];
+
         // Send push notification to the affiliate
         if (affiliate.push_subscriptions?.length) {
           const expired = await sendPushNotifications(affiliate.push_subscriptions, {
-            title: "Nuova vendita!",
-            body: `${product.name} — commissione in arrivo`,
+            title: frase,
+            body: `${product.name} — commissione in arrivo 💰`,
             url: "/affiliati/dashboard",
           });
           // Clean up expired subscriptions
@@ -184,8 +201,8 @@ export async function POST(req: NextRequest) {
         // Notify the owner/HQ on every sale, naming the affiliate
         if (affiliateStore.admin_subscriptions?.length) {
           const expiredAdmin = await sendPushNotifications(affiliateStore.admin_subscriptions, {
-            title: `Nuova vendita — ${affiliate.name}`,
-            body: `${product.name} · codice ${affiliate.code}`,
+            title: `Vendita — ${affiliate.name}`,
+            body: `${product.name} · ${affiliate.code} — ${frase}`,
             url: "/admin/affiliates",
           });
           if (expiredAdmin.length > 0) {
