@@ -57,27 +57,25 @@ export async function GET(
     .update({ download_count: tokenRecord.download_count + 1 })
     .eq("id", tokenRecord.id);
 
-  // Scarica il file da Supabase e lo restituisce direttamente
-  // così Content-Disposition: attachment forza il download su tutti i device (incluso iPhone)
-  const { data: fileData, error: downloadError } = await supabase.storage
-    .from("ebooks")
-    .download(filePath);
+  const fileName = tokenRecord.product?.name
+    ? `${tokenRecord.product.name}.pdf`
+    : "kit-esame.pdf";
 
-  if (downloadError || !fileData) {
+  // Redirect a una signed URL con download forzato (opzione `download` →
+  // Content-Disposition: attachment, funziona anche su iPhone).
+  // NON bufferizziamo il file nella funzione: i pack grandi (>4.5MB, es. i pack
+  // Maturità da ~12MB) superavano il limite di risposta serverless di Vercel e
+  // restituivano 500. La signed URL è servita da Supabase, senza limiti di size.
+  const { data: signed, error: signError } = await supabase.storage
+    .from("ebooks")
+    .createSignedUrl(filePath, 60 * 10, { download: fileName });
+
+  if (signError || !signed?.signedUrl) {
     return NextResponse.json(
       { error: "Impossibile generare il link di download" },
       { status: 500 }
     );
   }
 
-  const fileName = tokenRecord.product?.name
-    ? `${tokenRecord.product.name}.pdf`
-    : "kit-esame.pdf";
-
-  return new NextResponse(fileData, {
-    headers: {
-      "Content-Type": "application/pdf",
-      "Content-Disposition": `attachment; filename="${fileName}"`,
-    },
-  });
+  return NextResponse.redirect(signed.signedUrl);
 }
